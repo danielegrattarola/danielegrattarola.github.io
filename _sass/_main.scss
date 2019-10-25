@@ -3,11 +3,11 @@
 body {
     font-family: $base-font;
     color: $text-color;
-	margin: 0;
-	padding: 0;
-	width: 100%;
 	background-color: $body-color;
     font-size: 0px + $doc-font-size;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /*--- GLOBAL TRANSITION -----------------------------------------------------*/
@@ -47,7 +47,6 @@ a {
     line-height: 1.7em;
 
     a {
-    	text-decoration: none !important;
     	border-bottom: solid 1px;
     	display: inline;
     	padding-bottom: 0px;
@@ -305,18 +304,15 @@ svg:not(:root) {
 /*--- PAGINATION ------------------------------------------------------------*/
 
 .pagination {
-    a{
-        color: $base-color;
-    }
-    
-    a:hover {
-        color: lighten($base-color,30);
-    }
-    
     word-spacing: 10px;
 }
 
-/*--- EQUATIONS -------------------------------------------------------------*/
+/*--- MATHJAX ---------------------------------------------------------------*/
+
+.MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 
 .has-jax {
     font: inherit; 
@@ -420,45 +416,3 @@ h1 {
         font-size: 32px;
 	}
 }
-
-/*--- SVG -------------------------------------------------------------------*/
-
-.svg {
-	height: 30px !important;
-	width: 30px !important;
-}
-
-.svg path {
-	fill: $text-color;
-}
-
-.svg:hover path {
-	@media #{$large} {
-		fill: $highlight-color;
-	}
-}
-
-/*--- HEADER ----------------------------------------------------------------*/
-
-#header-caption {
-	width: 90% !important;
-	font-size: 14px;
-	font-weight: 100; 
-	letter-spacing: 5px;
-	margin-right: -5px;
-	display: block;
-	margin-top: 1em !important;
-	@media #{$medium} {
-		font-size: 0px + $doc-font-size;
-		letter-spacing: 10px;
-		margin-right: -10px;
-	}
-}
-
-/*--- MATHJAX ----------------------------------------------------------------*/
-
-.MathJax_Display {
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-

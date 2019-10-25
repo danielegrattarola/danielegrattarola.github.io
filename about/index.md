@@ -23,14 +23,14 @@ Favourite places: Eivissa | Kyōto | Queensland.
 
 <center>
     <span class='personal-social-media'>
-        <a target="_blank" href="https://twitter.com/riceasphait">
+        <a target="_blank" href="https://twitter.com/riceasphait" rel="noopener">
             <i class="fab fa-twitter" style="font-size: 30px;"></i>
         </a>
-        <a target="_blank" href="https://github.com/danielegrattarola">
+        <a target="_blank" href="https://github.com/danielegrattarola" rel="noopener">
             <i class="fab fa-github" style="font-size: 30px;"></i>
         </a>
         </a>
-        <a target="_blank" href="https://linkedin.com/in/danielegrattarola">
+        <a target="_blank" href="https://linkedin.com/in/danielegrattarola" rel="noopener">
             <i class="fab fa-linkedin" style="font-size: 30px;"></i>
         </a>
         <a target="_blank" href="/feed.xml">
