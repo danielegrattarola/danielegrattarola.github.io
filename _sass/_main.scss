@@ -44,7 +44,6 @@ a {
 /*--- MAIN CONTENT ----------------------------------------------------------*/
 
 .entry-content {
-    font-size: 18px;
     line-height: 1.7em;
 
     a {
@@ -89,7 +88,6 @@ header .entry-meta {
 /*---- NAVBAR --------------------------------------------------------------*/
 .brand{
 	float: left;
-	font-size: 20;
 	letter-spacing: 7px;
 }
 
@@ -135,6 +133,10 @@ header .entry-meta {
 		display: none !important;
 	}
 
+    .brand {
+        font-size: 14px;
+    }
+
 	.slicknav_menu {
 		display: block !important;
 		background: $navbar-dark !important;
@@ -157,7 +159,6 @@ header .entry-meta {
 	
 	.slicknav_nav {
 		background: none !important;
-		font-size: 18px !important;
 		color: $navbar-light !important;
 		text-align: right !important;
 	}
