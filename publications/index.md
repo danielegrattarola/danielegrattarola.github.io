@@ -14,6 +14,8 @@ image: /images/header/publications.png
 F. M. Bianchi, D. Grattarola, C. Alippi.
 <br>
 Preprint (2019).
+<br>
+<a href="https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
 <br><br>
 
 <a href="https://arxiv.org/abs/1903.07299">Autoregressive Models for Sequences of Graphs.</a>
@@ -21,6 +23,10 @@ Preprint (2019).
 D. Zambon, D. Grattarola, L. Livi, C. Alippi.
 <br>
 International Joint Conference on Neural Networks (2019).
+<br>
+<a href="https://github.com/dzambon/NGAR" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+&nbsp;
+<a href="https://doi.org/10.1109/IJCNN.2019.8852131" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>
 <br><br>
 
 <a href="https://arxiv.org/abs/1901.01343">Graph Neural Networks with Convolutional ARMA Filters.</a>
@@ -28,6 +34,8 @@ International Joint Conference on Neural Networks (2019).
 F. M. Bianchi, D. Grattarola, L. Livi, C. Alippi.
 <br>
 Preprint (2019).
+<br>
+<a href="https://danielegrattarola.github.io/spektral/layers/convolution/#armaconv" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
 <br><br>
 
 <a href="https://arxiv.org/abs/1812.04314">Adversarial Autoencoders with Constant-Curvature Latent Manifolds.</a>
@@ -36,7 +44,9 @@ D. Grattarola, L. Livi, C. Alippi.
 <br>
 Applied Soft Computing (2019).
 <br>
-DOI: <a href="https://doi.org/10.1016/j.asoc.2019.105511">10.1016/j.asoc.2019.105511</a>
+<a href="https://github.com/danielegrattarola/ccm-aae" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+&nbsp;
+<a href="https://doi.org/10.1016/j.asoc.2019.105511" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>
 <br><br>
 
 <a href="https://arxiv.org/abs/1805.06299">Change Detection in Graph Streams by Learning Graph Embeddings on Constant-Curvature Manifolds.</a>
@@ -45,7 +55,9 @@ D. Grattarola, D. Zambon, L. Livi, C. Alippi.
 <br>
 IEEE Transactions on Neural Networks and Learning Systems (2019).
 <br>
-DOI: <a href="https://doi.org/10.1109/TNNLS.2019.2927301">10.1109/TNNLS.2019.2927301</a>
+<a href="https://github.com/danielegrattarola/cdt-ccm-aae" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+&nbsp;
+<a href="https://doi.org/10.1109/TNNLS.2019.2927301" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>
 <br><br>
 
 <a href="/files/publications/2017_10_grattarola_master_thesis.pdf">Deep Feature Extraction for Sample-Efficient Reinforcement Learning.</a>
@@ -53,6 +65,8 @@ DOI: <a href="https://doi.org/10.1109/TNNLS.2019.2927301">10.1109/TNNLS.2019.292
 D. Grattarola.
 <br>
 Master's thesis (2017).
+<br>
+<a href="https://github.com/danielegrattarola/deepRFS" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
 <br><br>
 
 <a href="/files/publications/2017_grattarola_recsys.pdf">Content-Based Approaches for Cold-Start Job Recommendations.</a>
@@ -61,5 +75,5 @@ M. Bianchi, F. Cesaro, F. Ciceri, M. Dagrada, A. Gasparin, D. Grattarola, I. Ina
 <br>
 Proceedings of the ACM Recsys Challenge (2017).
 <br>
-DOI: <a href="https://doi.org/10.1145/3124791.3124793">10.1145/3124791.3124793</a>
+<a href="https://doi.org/10.1145/3124791.3124793" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>
 <br><br>
