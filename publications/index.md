@@ -9,6 +9,15 @@ image: /images/header/publications.png
 </center>
 <br>
 
+<a href="https://arxiv.org/abs/1910.11436">Hierarchical Representation Learning in Graph Neural Networks with Node Decimation Pooling.</a>
+<br>
+F. M. Bianchi, D. Grattarola, L. Livi, C. Alippi.
+<br>
+Preprint (2019).
+<br>
+<a href="https://github.com/danielegrattarola/decimation-pooling" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+<br><br>
+
 <a href="https://arxiv.org/abs/1907.00481">Mincut Pooling in Graph Neural Networks.</a>
 <br>
 F. M. Bianchi, D. Grattarola, C. Alippi.
