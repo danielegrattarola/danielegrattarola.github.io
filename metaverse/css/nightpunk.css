@@ -1,0 +1,18 @@
+.container {
+	max-width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+.text {
+    padding-bottom: 2em;
+}
+
+.image {
+    padding-bottom: 1em;
+}
+
+.image > img {
+    width: 100%;
+}

@@ -9,6 +9,7 @@ extra_css:
   <canvas id="stage" height="300"></canvas>
 
   <ul>
+    <li><a href="nightpunk.html">nightpunk</a></li>
     <li><a href="sudo_rm_r_self.html">sudo rm -r self</a></li>
     <li><a href="illyousion.html">ill(you)sion</a></li>
     <li><a href="findme.html">./find_me</a></li>
