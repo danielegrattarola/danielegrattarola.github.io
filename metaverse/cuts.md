@@ -6,30 +6,28 @@ extra_css:
     - css/base.css
 ---
 
-<p class="header">cuts</p>
-<canvas id="can"></canvas>
-<div class="container">
-Generated with <3 by
-<pre>
-{
-    red: function(i, j) {
-        return 2 * i +  j;
-    },
-    green: function(i, j) {
-        return 2 * i - j;
-    },
-    blue: function(i, j) {
-        return i + 2 * j;
-    }
-}
-</pre>
-<br>
-<a href="/metaverse">back</a>
+<div class="image">
+    <canvas id="can"></canvas>
+</div>
 
+<div class="text">
+    Generated with <3 by
+    <pre>
+red: function(i, j) {
+    return 2 * i +  j;
+}
+
+green: function(i, j) {
+    return 2 * i - j;
+}
+
+blue: function(i, j) {
+    return i + 2 * j;
+}
+    </pre>
 </div>
 
 <script type="text/javascript">
-
 	var def = {
 		size: 700,
 		red: function(i, j) {
@@ -43,7 +41,7 @@ Generated with <3 by
 		blue: function(i, j) {
 			return i + 2 * j;
 		}
-	}
+	};
 
 	function draw(f) {
 		var can = document.getElementById('can');
@@ -60,7 +58,7 @@ Generated with <3 by
 			data[i + 2] = f.blue(i2, j2) % 256;
 		}
 		ctx.putImageData(imgData, 0, 0);
-	}
+	};
 
 	draw(def);
 

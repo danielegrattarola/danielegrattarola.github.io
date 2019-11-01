@@ -6,12 +6,6 @@ extra_css:
     - css/base.css
 ---
 
-<p class="header">./find_me</p>
-
-<div class="container">
-<img src="/images/metaverse/find_me.png" style="width: 100%;"/>
-<br>
-<br>
-<a href="/metaverse">back</a>
-
+<div class="image">
+    <img src="/images/metaverse/find_me.png"/>
 </div>

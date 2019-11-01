@@ -6,28 +6,27 @@ extra_css:
     - css/base.css
 ---
 
-<p class="header">deep sea</p>
-<canvas id="can"></canvas>
-<div class="container">
-Generated with <3 by
-<pre>
-{
-    red: function(i, j) {
-        var a=0,b=0,d=0,n=0;
-        for(;a*a+(d=b*b)<4&&n++<1024;b=2*a*b+j/5e4+.06,a=a*a-d+i/5e4+.34);
-        return n/4;
-    },
-    green: function(i, j) {
-        return 4 * this.red(i, j);
-    },
-    blue: function(i, j) {
-        return 6 * this.red(i, j)
-    }
-}
-</pre>
-<br>
-<a href="/metaverse">back</a>
+<div class="image">
+    <canvas id="can"></canvas>
+</div>
 
+<div class="text">
+    Generated with <3 by
+    <pre>
+red: function(i, j) {
+    var a=0,b=0,d=0,n=0;
+    for(;a*a+(d=b*b)<4&&n++<1024;b=2*a*b+j/5e4+.06,a=a*a-d+i/5e4+.34);
+    return n/4;
+}
+
+green: function(i, j) {
+    return 4 * this.red(i, j);
+}
+
+blue: function(i, j) {
+    return 6 * this.red(i, j)
+}
+    </pre>
 </div>
 
 <script type="text/javascript">

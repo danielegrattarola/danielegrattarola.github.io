@@ -1,42 +1,21 @@
 ---
-layout: metaverse
+layout: metaverse-index
 title: metaverse
 image: /images/metaverse/1.jpg
 extra_css:
   - css/base.css
 ---
 
-<div class='home-container'>
-	<div id="wrapper">
-      <canvas id="stage" height="300"></canvas>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="box">
-    	<a href="/" class='home-a'>home</a>
-			<br>
-			<br>
-			<a href="breathe.html" class='home-a'>breathe</a>
-			<br>
-			<br>
-			<a href="cuts.html" class='home-a'>cuts</a>
-			<br>
-			<br>
-      <a href="deep-sea.html" class='home-a'>deep sea</a>
-      <br>
-      <br>
-      <a href="findme.html" class='home-a'>./find_me</a>
-      <br>
-      <br>
-      <a href="illyousion.html" class='home-a'>ill(you)sion</a>
-      <br>
-      <br>
-      <a href="sudo_rm_r_self.html" class='home-a'>sudo rm -r self</a>
-      <br>
-      <br>
-	</div>
-</div>
+  <canvas id="stage" height="300"></canvas>
+
+  <ul>
+    <li><a href="sudo_rm_r_self.html">sudo rm -r self</a></li>
+    <li><a href="illyousion.html">ill(you)sion</a></li>
+    <li><a href="findme.html">./find_me</a></li>
+    <li><a href="deep-sea.html">deep sea</a></li>
+    <li><a href="cuts.html">cuts</a></li>
+    <li><a href="breathe.html">breathe</a></li>
+  </ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js"></script>
 <script type="text/javascript">
@@ -195,7 +174,7 @@ extra_css:
     resize: function () {
       this.width = document.documentElement.offsetWidth;
       //this.height = window.innerHeight;
-		this.height = 300;  
+		  this.height = 300;  
       if (this.canvas) {
         this.canvas.height = this.height;
         //document.documentElement.offsetHeight;
