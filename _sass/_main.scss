@@ -3,16 +3,16 @@
 body {
     font-family: $base-font;
     color: $text-color;
-	margin: 0;
-	padding: 0;
-	width: 100%;
 	background-color: $body-color;
-    font-size: 0px + $doc-font-size;
+    font-size: $doc-font-size;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 /*--- GLOBAL TRANSITION -----------------------------------------------------*/
 
-b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, path {
+b, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, path {
 	transition: all 0.3s ease;
 }
 
@@ -44,11 +44,9 @@ a {
 /*--- MAIN CONTENT ----------------------------------------------------------*/
 
 .entry-content {
-    font-size: 18px;
-    line-height: 1.7em;
+    line-height: $doc-line-height;
 
     a {
-    	text-decoration: none !important;
     	border-bottom: solid 1px;
     	display: inline;
     	padding-bottom: 0px;
@@ -89,8 +87,7 @@ header .entry-meta {
 /*---- NAVBAR --------------------------------------------------------------*/
 .brand{
 	float: left;
-	font-size: 20;
-	letter-spacing: 7px;
+	letter-spacing: 6px;
 }
 
 .navbar {
@@ -126,6 +123,14 @@ header .entry-meta {
 	display: none;
 }
 
+.slicknav_nav {
+    font-size: $nav-link-font-size !important;
+}
+
+.slicknav_brand {
+    padding-right: 0px !important;
+}
+
 @media (max-width: 50em) {
 	#menu {
 		display: none;
@@ -134,6 +139,10 @@ header .entry-meta {
 	.navbar {
 		display: none !important;
 	}
+
+    .brand {
+        font-size: $nav-link-font-size;
+    }
 
 	.slicknav_menu {
 		display: block !important;
@@ -157,7 +166,6 @@ header .entry-meta {
 	
 	.slicknav_nav {
 		background: none !important;
-		font-size: 18px !important;
 		color: $navbar-light !important;
 		text-align: right !important;
 	}
@@ -178,7 +186,7 @@ header .entry-meta {
 
 blockquote {
     border-left: 4px solid $border-color;
-    font-size: 14px;
+    font-size: $blockquote-font-size;
     font-family: $alt-font;
     margin-left: 1em;
     margin-right: 5em;
@@ -197,18 +205,18 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
+    font-size: $code-font-size;
+	line-height: $code-line-height ;
     margin: 0 2px;
-	padding: 0 5px;
-    font-size: 12px;
-	line-height: 1.5;
+    padding: 0 5px;
     border: 1px solid lighten(#000, 90);
 	background-color: lighten(#000, 95);
 	border-radius: 3px;
 }
 
 pre {
-    font-size: 12px;
-	line-height: 1.5;
+    font-size: $code-font-size;
+	line-height: $code-line-height ;
 	overflow-x: auto;
 
 	&::-webkit-scrollbar {
@@ -304,18 +312,15 @@ svg:not(:root) {
 /*--- PAGINATION ------------------------------------------------------------*/
 
 .pagination {
-    a{
-        color: $base-color;
-    }
-    
-    a:hover {
-        color: lighten($base-color,30);
-    }
-    
     word-spacing: 10px;
 }
 
-/*--- EQUATIONS -------------------------------------------------------------*/
+/*--- MATHJAX ---------------------------------------------------------------*/
+
+.MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 
 .has-jax {
     font: inherit; 
@@ -359,7 +364,7 @@ svg:not(:root) {
 	}
 
 	article {
-		background-color: #fff;
+		background-color: $article-background;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color,0.1);
 		border-radius: 3px;
 		margin-bottom: 20px;
@@ -415,48 +420,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@media #{$medium} {
-        font-size: 32px;
-	}
+    font-size: $h1-font-size;
 }
-
-/*--- SVG -------------------------------------------------------------------*/
-
-.svg {
-	height: 30px !important;
-	width: 30px !important;
-}
-
-.svg path {
-	fill: $text-color;
-}
-
-.svg:hover path {
-	@media #{$large} {
-		fill: $highlight-color;
-	}
-}
-
-/*--- HEADER ----------------------------------------------------------------*/
-
-#header-caption {
-	width: 90% !important;
-	font-size: 14px;
-	font-weight: 100; 
-	letter-spacing: 5px;
-	margin-right: -5px;
-	display: block;
-	margin-top: 1em !important;
-	@media #{$medium} {
-		font-size: 0px + $doc-font-size;
-		letter-spacing: 10px;
-		margin-right: -10px;
-	}
-}
-
-/*--- MATHJAX ----------------------------------------------------------------*/
-
-.MathJax_Display {
-    overflow-x: scroll;
-}
-

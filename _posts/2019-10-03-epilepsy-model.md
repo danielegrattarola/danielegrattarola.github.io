@@ -306,6 +306,8 @@ timesteps = np.array(timesteps)
 
 You can now run any analysis on `timesteps`, which will be a Numpy array of `np.complex128`. Note also how we had to cast the initial conditions `z0` to this `dtype`, in order to have strict typing in the JIT-compiled code. 
 
+[I published the full code as a Gist, including the code I used to make the plots.](https://gist.github.com/danielegrattarola/c663346b529e758f0224c8313818ad77)
+
 ## General notes on performance
 
 My original implementation was based on a `Simulator` class that implemented all the same methods in a compact abstraction: 

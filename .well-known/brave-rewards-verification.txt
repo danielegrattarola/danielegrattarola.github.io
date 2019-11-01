@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: danielegrattarola.github.io
+Token: d7db02933303d04a16a4cfbc2e08e8eaf341dbfa52028f50cdd179ffc1df455c

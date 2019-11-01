@@ -39,6 +39,7 @@ paginate: 3
 
 include: 
   - .htaccess
+  - .well-known
 
 exclude: 
   - "*.less"
