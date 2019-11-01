@@ -1,7 +1,7 @@
 ---
 layout: metaverse
 title: nightpunk
-image: /images/metaverse/photo_toronto_1_small.jpg
+image: /images/metaverse/photo_toronto_1.jpg
 extra_css: 
     - css/base.css
     - css/nightpunk.css
