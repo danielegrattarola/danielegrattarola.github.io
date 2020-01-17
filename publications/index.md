@@ -24,7 +24,9 @@ F. M. Bianchi, D. Grattarola, C. Alippi.
 <br>
 Preprint (2019).
 <br>
-<a href="https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+<a href="https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a> 
+&nbsp;
+<a href="https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#module-torch_geometric.nn.dense.mincut_pool" style="border-bottom: none;"><i class="fab fa-github"></i> Code (PyTorch)</a> 
 <br><br>
 
 <a href="https://arxiv.org/abs/1903.07299">Autoregressive Models for Sequences of Graphs.</a>
@@ -44,7 +46,9 @@ F. M. Bianchi, D. Grattarola, L. Livi, C. Alippi.
 <br>
 Preprint (2019).
 <br>
-<a href="https://danielegrattarola.github.io/spektral/layers/convolution/#armaconv" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
+<a href="https://danielegrattarola.github.io/spektral/layers/convolution/#armaconv" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a> 
+&nbsp;
+<a href="https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.ARMAConv" style="border-bottom: none;"><i class="fab fa-github"></i> Code (PyTorch)</a> 
 <br><br>
 
 <a href="https://arxiv.org/abs/1812.04314">Adversarial Autoencoders with Constant-Curvature Latent Manifolds.</a>
