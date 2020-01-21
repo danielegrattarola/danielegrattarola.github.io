@@ -10,19 +10,19 @@ date-string: JANUARY 21, 2020
 ![]({{ site.url }}/images/2020-01-21/telestrations.jpg)
 
 Yesterday, it was board game day at [the lab](http://www.neurontobrainlaboratory.ca/) where I have been working recently. 
-Everyone got together for lunch at Snakes & Lattes, a Torontian board game cafè chain, and we spent a couple of hours laughing and chatting and, obviously, playing board games. 
+Everyone got together for lunch at Snakes & Lattes, a Torontonian board game cafè chain, and we spent a couple of hours laughing and chatting and, obviously, playing board games. 
 
 The lab has a go-to traditional game for the occasion: [Telestrations](https://en.wikipedia.org/wiki/Telestrations).
 The game is inspired by the classic childhood's game of [Chinese whispers](https://en.wikipedia.org/wiki/Chinese_whispers) (or _Telephone_, or _Wireless phone_, or _Gossip_, there's a bunch of different names for different countries) and its rules are pretty simple. 
 
-Everyone gets a booklet, an eraseable sharpie, and a list of random terms like "flamingo" or "pipe dream" or "tree house". Everyone picks a word and writes it on the first page of the booklet: that's the secret source word. 
+Everyone gets a booklet, an erasable sharpie, and a list of random terms like "flamingo" or "pipe dream" or "treehouse". Everyone picks a word and writes it on the first page of the booklet: that's the secret source word. 
 
 At each turn, players pass their booklet to the person on their right, and the rules are as follows: 
 
-- When you see a word, you turn the page and you have sixty second to _draw_ whatever the word is;
+- When you see a word, you turn the page and you have sixty seconds to _draw_ whatever the word is;
 - When you see a drawing, you turn the page and you write your best guess for what is pictured. 
 
-Players keep alternating between guessing, drawing, and passing down the booklets, until every booklet has done a full round of the table and is back in the hands of the original owner. 
+Players keep alternating between guessing, drawing, and passing down the booklets until every booklet has done a full round of the table and is back in the hands of the original owner. 
 For extra fun, everybody gets to draw their secret source word at the very beginning.
 
 In other words, it's a written game of Chinese whispers where every other word is drawn instead of written. 
@@ -47,22 +47,22 @@ The idea now is to play the game using BigGAN to draw, and ResNet to guess: you 
 I'll start with my favourite sequence: honeycomb to cheeseburger. 
 The images below are read top-to-bottom, left-to-right. At the very top you see the source class, then the first generated image, then what that image was classified as, then the next generated image, etc.. 
 
-The first image is generated from class 599 of ImageNet, "honeycomb". It looked a lot like a bagel, I guess because of that bright spot in the middle (?), so the ResNet classified it as such. From that classification, we get a couple of bagel-y looking breads, which soon become French loafs, then dough.  
+The first image is generated from class 599 of ImageNet, "honeycomb". It looked a lot like a bagel, I guess because of that bright spot in the middle (?), so the ResNet classified it as such. From that classification, we get a couple of bagel-y looking pieces of bread, which soon become French loafs, then dough.  
 Then, that perfect-looking dough in image 6 gets classified as a wooden spoon (probably because of the extra noise that I mentioned). 
-Finally, the green spot on the wooden spoon confuses ResNet into thinking it's a cheeseburger, and we get juicy bugers until the end. That burger generation is impressive, not gonna lie. 
+Finally, the green spot on the wooden spoon confuses ResNet into thinking it's a cheeseburger, and we get juicy burgers until the end. That burger generation is impressive, not gonna lie. 
 
 ![]({{ site.url }}/images/2020-01-21/bagel.png)
 
 Moving on: trilobite to long-horned beetle. 
 The first two trilobites look really good, but then get classified as isopods after two turns (curiously, isopods and trilobites look a lot similar but are not that closely related according [to Reddit](https://www.reddit.com/r/geology/comments/lt9so/how_closely_related_are_isopods_to_trilobites/)).
-From the isopod label we get what is clearly a marine creature (look at the background), which unfortunately gets classified as a cockroach. From there, we stay on dry land and just get more and more specialized bugs until the end. 
+From the isopod label, we get what is clearly a marine creature (look at the background), which unfortunately gets classified as a cockroach. From there, we stay on dry land and just get more and more specialized bugs until the end. 
 
 ![]({{ site.url }}/images/2020-01-21/trilobite.png)
 
-The next one is __REALLY__ good, because it's remarkably similar to a real game of Telestrations. It could happen. Hell, it probably happened.
+The next one is __REALLY__ good because it's remarkably similar to a real game of Telestrations. It could happen. Hell, it probably happened.
 
-We start with a coffeepot. At image three, the cofeepot is a bit ambiguous and becomes a teapot. Understandable, I would probably have made that mistake myself. Then we get a proper teapot, that gets recognized as such. 
-The next image, however, is half-assed by the player and it's not clear at all what it is. The next player guesses that it's a pitcher. The next guy tries his best, but eventually the pitcher becomes a vase. 
+We start with a coffeepot. At image three, the coffeepot is a bit ambiguous and becomes a teapot. Understandable, I would probably have made that mistake myself. Then we get a proper teapot, that gets recognized as such. 
+The next image, however, is half-assed by the player and it's not clear at all what it is. The next player guesses that it's a pitcher. The next guy tries his best but eventually, the pitcher becomes a vase. 
 
 Nothing more to say, I can see this happening in real life. 
 
@@ -75,11 +75,11 @@ A volcano. Easy. We get two perfect volcano drawings. Except that the last one g
 The next player over-does it, and draws a full camping spot with caravans instead of a tent. Curiously, we still have a volcano-looking thing in the background, but that's just a coincidence (no information from previous images or labels is preserved between turns).
 
 The camp is seen as a bee house. Next thing we know, there's a weird-looking BigGAN human harvesting honey. 
-But ResNet doesn't care about the human, and focuses on the crate in the middle, instead. 
+But ResNet doesn't care about the human and focuses on the crate in the middle, instead. 
 
 We get a good-looking crate, that becomes a chest, and we stay with chests until the end. 
 
-The yurt and the apiary are the only weird ones in this sequence, and the least likely to appear in a human game. I can see someone drawing a full camping spot instead of a single yurt, and I can see how one would mistake a poorly-drawn volcano for a tent, but no human would ignore the beekeper in image 4. 
+The yurt and the apiary are the only weird ones in this sequence, and the least likely to appear in a human game. I can see someone drawing a full camping spot instead of a single yurt, and I can see how one would mistake a poorly-drawn volcano for a tent, but no human would ignore the beekeeper in image 4. 
 
 ![]({{ site.url }}/images/2020-01-21/volcano.png)
 
