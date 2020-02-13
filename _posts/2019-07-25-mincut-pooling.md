@@ -17,7 +17,7 @@ In [our latest paper](https://arxiv.org/abs/1907.00481), we presented a new pool
 4. It can be trained on its own without a task-specific loss, if needed;
 5. It's fast;
 
-The method is based on the minCUT optimization problem, which consists of finding cuts on a weighted graph. We considered a continuous relaxation of minCUT and implemented it as a neural network layer to provide a sound pooling method for GNNs. 
+The method is based on the minCUT optimization problem, which conists of finding a cut on weighted graph in such a way that the overall weight of the cut is minimized. We considered a continuous relaxation of the minCUT problem and implemented it as a neural network layer to provide a sound pooling method for GNNs. 
 
 In this post, I'll describe the working principles of minCUT pooling and show some applications of the layer.
 
