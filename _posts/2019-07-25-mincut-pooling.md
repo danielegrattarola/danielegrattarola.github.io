@@ -9,19 +9,17 @@ date-string: JULY 25, 2019
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/horses.png){: .full-width}
 
-Pooling in GNNs is a fairly complicated task that requires a solid understanding of a graph's structure in order to work properly. 
+In [our latest paper](https://arxiv.org/abs/1907.00481), we presented a new pooling method for GNNs, called **minCUT pooling**, which has a lot of desirable properties as far as pooling goes: 
 
-In [our latest paper](https://arxiv.org/abs/1907.00481), we presented a new pooling method for GNNs, called **minCUT pooling**, which has a lot of desirable properties for pooling methods: 
+1. It's based on well-understood theoretical techniques for node clustering;
+2. It's fully differentiable and learnable with gradient descent;
+3. It depends directly on the task-specific loss on which the GNN is being trained, but ...
+4. It can be trained on its own without a task-specific loss, if needed;
+5. It's fast;
 
-1. it's based on well-understood theoretical techniques for node clustering;
-2. it's fully differentiable and learnable with gradient descent;
-3. it depends directly on the task-specific loss on which the GNN is being trained, but ...
-4. ... it can be trained on its own without a task-specific loss, if needed;
-5. it's fast;
+The method is based on the minCUT optimization problem, which consists of finding cuts on a weighted graph. We considered a continuous relaxation of minCUT and implemented it as a neural network layer to provide a sound pooling method for GNNs. 
 
-The method is based on the minCUT optimization problem from operational research. We considered a relaxed and differentiable version of minCUT, and implemented it as a neural network layer in order to provide a sound pooling method for GNNs. 
-
-In this post I'll describe the working principles of minCUT pooling and show some applications of the layer.
+In this post, I'll describe the working principles of minCUT pooling and show some applications of the layer.
 
 <!--more-->
 
@@ -45,15 +43,14 @@ $$
 
 where $$A$$ is the adjacency matrix of the graph, and $$D$$ is the diagonal degree matrix. 
 
-While finding the optimal minCUT is a NP-hard problem, there exist relaxations that can be leveraged by [spectral clustering (SC)](https://en.wikipedia.org/wiki/Spectral_clustering) to find near-optimal solutions in polynomial time. Still, the complexity of SC is in the order of $$O(N^3)$$ for a graph of $$N$$ nodes, making it expensive to apply to large graphs. 
-
-A possible way of solving this scalability issue is to search for good cluster assignments using SGD, which is the idea on which we based our implementation of minCUT pooling.
+While finding the optimal minCUT is a NP-hard problem, there exist relaxations that can find near-optimal solutions in polynomial time. These relaxations, however, are still very expensive and are not able to generalize to unseen samples.
 
 ## MinCUT pooling
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/GNN_pooling.png)
 
-We designed minCUT pooling to be used in-between message-passing layers of GNNs. The idea is that, like in standard convolutional networks, pooling layers should help the network capture broader patterns in the input data by summarizing local information.
+The idea behind minCUT pooling is to take a continuous relaxation of the minCUT problem and implement it as a GNN layer with a custom loss function. By minimizing the custom loss, the GNN learns to find minCUT clusters on any given graph and aggregates the clusters to reduce the graph's size.   
+At the same time, because the layer can be used as a part of a larger architecture, any other loss that is being minimized during training will influence the clusters found by the minCUT layer, making them optimal for the particular task at hand. 
 
 At the core of minCUT pooling there is a MLP, which maps the node features $$\mathbf{X}$$ to a __continuous__ cluster assignment matrix $$\mathbf{S}$$ (of size $$N \times K$$):
 
@@ -69,15 +66,15 @@ $$
 
 At this point, we can already make a couple of considerations: 
 
-1. Nodes with similar features will likely belong to the same cluster, because they will be "classified" similarly by the MLP. This is especially good when using message-passing layers before pooling, since they will cause the node features of connected nodes to become similar;
-2. $$\mathbf{S}$$ depends only on the features of the graph, making the layer __transferable__ to new graphs once it has been trained. 
+1. Nodes with similar features will likely belong to the same cluster because they will be "classified" similarly by the MLP. This is especially true when using message-passing layers before pooling, since they will cause the node features of connected nodes to become similar;
+2. Because of the MLP, $$\mathbf{S}$$ is pretty fast to compute and the layer can generalize to new graphs once it has been trained. 
 
-This is already pretty good, and it covers some of the main desiderata of a GNN layer, but it still isn't enough. We want to explicitly account for the connectivity of the graph in order to pool it. 
+This is already pretty good, and it covers some of the main desiderata of a GNN layer, but we also want to explicitly account for the connectivity of the graph in order to pool it. 
 
 This is where the minCUT optimization comes in. 
 
 By slightly adapting the minCUT formulation above, we can design an auxiliary loss to train the MLP, so that it will learn to solve the minCUT problem in an unsupervised way.   
-In practice, our unsupervised regularization loss encourages the MLP to cluster together nodes that are  strongly connected with each other and weakly connected with the nodes in the other clusters.
+In practice, our unsupervised regularization loss encourages the MLP to cluster together nodes that are strongly connected with each other and weakly connected with the nodes in the other clusters.
 
 The full unsupervised loss that we minimize in order to achieve this is: 
 
@@ -93,20 +90,20 @@ Let's break this loss down and see how it works.
 
 
 ### Cut loss
-The first term, $$\mathcal{L}_c$$, forces the MLP to find a cluster assignment to solve the minCUT problem (to see why, compare it with the minCUT maximization that we described above). We refer to this loss as the __cut loss__.
+The first term, $$\mathcal{L}_c$$, encourages the MLP to find cluster assignments that solve the minCUT problem (to see why, compare it with the minCUT maximization that I described above). We refer to this loss as the __cut loss__.
 
 In particular, minimizing the numerator leads to clustering together nodes that are strongly connected on the graph, while the denominator prevents any of the clusters to be too small.
 
 The cut loss is bounded between -1 and 0, which are **ideally** reached in the following situations: 
 
-- $$\mathcal{L}_c = -1$$ when there are $$K$$ disconnected components in the graph, and $$\mathbf{S}$$ exactly maps the $$K$$ components to the $$K$$ clusters;
 - $$\mathcal{L}_c = 0$$ when all pairs of connected nodes are assigned to different clusters;
+- $$\mathcal{L}_c = -1$$ when there are $$K$$ disconnected components in the graph, and $$\mathbf{S}$$ exactly maps the $$K$$ components to the $$K$$ clusters;
 
-The figure below shows what these situations might look like. Note that in the case $$\mathcal{L}_c = 0$$ the clustering corresponds to a bipartite grouping of the graph. This could be a desirable outcome for some applications, but the general assumption is that connected nodes should be clustered together, and not vice-versa.
+The figure below shows what these situations might look like. Note that both cases can only happen if $$\mathbf{S}$$ is binary.
 
 ![L_c bounds](/images/2019-07-25/loss_bounds.png)
 
-We must also consider that $$\mathcal{L}_c$$ is non-convex, and that there are spurious minima that can be found via SGD.  
+However, because of the continuous relaxation, $$\mathcal{L}_c$$ is non-convex and there are spurious minima that can be found by SGD.  
 For example, for $$K = 4$$, the uniform assignment matrix
 
 $$
@@ -149,25 +146,24 @@ Out[8]: 1.0
 ### Orthogonality loss
 The second term, $$\mathcal{L}_o$$, helps to avoid such degenerate minima of $$\mathcal{L}_c$$ by encouraging the MLP to find clusters that are orthogonal between each other. We call this the __orthogonality loss__. 
 
-In other words, $$\mathcal{L}_o$$ encourages the MLP to "make a decision" about which nodes belong to which clusters, avoiding those degenerate solutions where $$\mathbf{S}$$ assigns all nodes equally to every cluster.   
-By adding the orthogonality constraint, we force the MLP to find a non-trivial assignment for the nodes. 
+In other words, $$\mathcal{L}_o$$ encourages the MLP to "make a decision" about which nodes belong to which clusters, avoiding those degenerate solutions where $$\mathbf{S}$$ assigns one $$K$$-th of a node to each cluster.   
 
-Moreover, we can see that the perfect minimizer of $$\mathcal{L}_o$$ is only attainable if we have $$N \le K$$ nodes, because in general, given a $$K$$ dimensional vector space, we cannot find more than $$K$$ mutually orthogonal vectors. 
-The only way to minimize $$\mathcal{L}_o$$ given $$N$$ assignment vectors is therefore to distribute the nodes equally between the $$K$$ clusters. This causes the MLP to avoid the other type of spurious minima of $$\mathcal{L}_c$$, where all nodes are in a single cluster.
+Moreover, we can see that the perfect minimizer of $$\mathcal{L}_o$$ is only reached if we have $$N \le K$$ nodes, because in general, given a $$K$$ dimensional vector space, we cannot find more than $$K$$ mutually orthogonal vectors. 
+The only way to minimize $$\mathcal{L}_o$$ given $$N$$ assignment vectors is, therefore, to distribute the nodes between the $$K$$ clusters. This causes the MLP to avoid the other type of spurious minima of $$\mathcal{L}_c$$, where all nodes are in a single cluster.
 
 ## Interaction of the two losses
 
 ![Loss terms](/images/2019-07-25/cora_mc_loss+nmi.png)
 
 We can see how the two loss terms interact with each other to find a good solution to the cluster assignment problem. 
-The figure above shows the evolution of the unsupervised loss as the network is trained to cluster the nodes of Cora (plot on the left). We can see that as the network is trained, the normalized mutual information (NMI) score of the clustering improves, meaning that the layer is able to find meaningful clusters (plot on the right). 
+The figure above shows the evolution of the unsupervised loss as the network is trained to cluster the nodes of Cora (plot on the left). We can see that as the network is trained, the normalized mutual information (NMI) between the cluster assignments and the true labels improves, meaning that the layer is learning to find meaningful clusters (plot on the right). 
 
-Note how $$\mathcal{L}_c$$ starts from a trivial assignment (-1) due to the random initialization, and then moves away from the spurious minima as the orthogonality loss forces the MLP towards more sensible solutions.
+Note how $$\mathcal{L}_c$$ starts from a trivial assignment (-1) due to the random initialization and then moves away from the spurious minima as the orthogonality loss forces the MLP towards more sensible solutions.
 
 ### Pooled graph
 As a further consideration, we can take a closer look at the pooled adjacency matrix $$\mathbf{A}^{pool}$$.    
 First of all, we can see that it is a $$K \times K$$ matrix that contains the number of links connecting each cluster. For example, the entry $$\mathbf{A}^{pool}_{1,\;2}$$ contains the number of links between the nodes in cluster 1 and cluster 2, while the entry $$\mathbf{A}^{pool}_{1,\;1}$$ is the number of links between the nodes in cluster 1.   
-We can also see that the trace of $$\mathbf{A}^{pool}$$ is exactly the numerator that is being minimized in $$\mathcal{L}_c$$. Therefore, we can expect the diagonal elements $$\mathbf{A}^{pool}_{i,\;i}$$ to be much larger than the other entries of $$\mathbf{A}^{pool}$$.
+We can also see that the trace of $$\mathbf{A}^{pool}$$ is being maximized in $$\mathcal{L}_c$$. Therefore, we can expect the diagonal elements $$\mathbf{A}^{pool}_{i,\;i}$$ to be much larger than the other entries of $$\mathbf{A}^{pool}$$.
 
 For this reason, $$\mathbf{A}^{pool}$$ will represent a graph with very strong self-loops, and the message-passing layers after pooling will have a hard time propagating information on the graph (because the self-loops will keep sending the information of a node back onto itself, and not its neighbors).   
 
@@ -177,18 +173,16 @@ $$
   \hat{\mathbf{A}} =  \mathbf{A}^{pool} - \mathbf{I}_K \cdot diag(\mathbf{A}^{pool}); \;\; \tilde{\mathbf{A}}^{pool} = \hat{\mathbf{D}}^{-\frac{1}{2}} \hat{\mathbf{A}} \hat{\mathbf{D}}^{-\frac{1}{2}}
 $$
 
-Our reccomendation is to combine minCUT with message-passing layers with a built-in skip connection, in order to bring each node’s information forward (e.g., Spektral's [GraphConvSkip](https://danielegrattarola.github.io/spektral/layers/convolution/#graphconvskip)). 
-However, if your GNN is based on the [graph convolutional networks (GCN)](https://danielegrattarola.github.io/spektral/layers/convolution/#graphconv) of [Kipf & Welling](https://arxiv.org/abs/1609.02907), you may want to manually re-compute the normalized Laplacian after pooling in order to add the self-loops back.
+In the paper, we combined minCUT with message-passing layers that have a built-in skip connection, in order to bring each node’s information forward (e.g., Spektral's [GraphConvSkip](https://danielegrattarola.github.io/spektral/layers/convolution/#graphconvskip)). 
+However, if your GNN is based on the [graph convolutional networks (GCN)](https://danielegrattarola.github.io/spektral/layers/convolution/#graphconv) of [Kipf & Welling](https://arxiv.org/abs/1609.02907), you may want to manually add the self-loops back after pooling.
 
 ### Notes on gradient flow
 
 ![mincut scheme](/images/2019-07-25/mincut_layer.png)
 
-A couple of notes for the gradient-heads out there.
-
 The unsupervised loss $$\mathcal{L}_u$$ can be optimized on its own, adapting the weights of the MLP to compute an $$\mathbf{S}$$ that solves the minCUT problem under the orthogonality constraint. 
 
-However, given the multiplicative interaction between $$\mathbf{S}$$ and $$\mathbf{X}$$, the gradient can also flow from the task-specific loss (i.e., whatever the GNN is being trained to do) through the MLP. We can see in the picture above how there is a path going from the input $$\mathbf{X}^{(t+1)}$$ to the output $$\mathbf{X}_{\textrm{pool}}^{(t+1)}$$, directly passing through the MLP. 
+However, given the multiplicative interaction between $$\mathbf{S}$$ and $$\mathbf{X}$$, the gradient of the task-specific loss (i.e., whatever the GNN is being trained to do) can flow through the MLP. We can see in the picture above how there is a path going from the input $$\mathbf{X}^{(t+1)}$$ to the output $$\mathbf{X}_{\textrm{pool}}^{(t+1)}$$, directly passing through the MLP. 
 
 This means that the overall solution found by the GNN will keep into account both the graph structure (to solve minCUT) and the final task.
 
@@ -266,6 +260,8 @@ A_pool = (A_pool / D_pool) / tf.transpose(D_pool)
 
 Wrap this up in a layer, and use the layer in a GNN. Done. 
 
+You can find minCUT pooling implementations both in [Spektral](https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool) and [Pytorch Geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#module-torch_geometric.nn.dense.mincut_pool).
+
 ## Experiments
 
 ### Unsupervised clustering
@@ -282,12 +278,12 @@ The results look nice, and remember that this was obtained by only optimizing $$
 ![Horse segmentation with minCUT pooling](/images/2019-07-25/horses.png)
 
 Finally, we also checked the clustering abilities of minCUT pooling on the popular citations datasets: Cora, Citeseer, and Pubmed. 
-As mentioned before, we used the Normalized Mutual Information (NMI) score to test whether the layer was clustering together nodes of the same class. Note that the layer did not have access to the labels during training (meaning that we didn't need to decide how to split the data into train and test sets, which is a known issue in the GNN community).
+As mentioned before, we used the NMI score to see whether the layer was clustering together nodes of the same class. Note that the layer did not have access to the labels during training.
 
-You can check [the paper](https://arxiv.org/abs/1907.00481) to see how minCUT fared in comparison to other methods, but in short: it did well, sometimes by a full order of magnitude better than previous methods. 
+You can check [the paper](https://arxiv.org/abs/1907.00481) to see how minCUT fared in comparison to other methods, but in short: it did well, sometimes by a full order of magnitude better than other methods. 
 
 ### Autoencoder
-Another interesting unsupervised test that we came up with was to check how much information is preserved in the coarsened graph after pooling.
+Another interesting unsupervised test that we did was to check how much information is preserved in the coarsened graph after pooling.
 To do this, we built a simple graph autoencoder with the structure pictured below: 
 
 ![unsupervised reconstruction with AE](/images/2019-07-25/ae.png)
@@ -298,7 +294,7 @@ $$
 \mathbf{A}^\text{unpool} = \mathbf{S} \mathbf{A}^\text{pool} \mathbf{S}^T; \;\; \mathbf{X}^\text{unpool} = \mathbf{S}\mathbf{X}^\text{pool}.
 $$
 
-We tested the graph AE on some very regular graphs, that should have been easy to reconstruct after pooling. Surprisingly, this turned out to be a difficult problem for some pooling layers from the GNN literature. MinCUT, on the other hand, was able to defend itself quite nicely.
+We tested the graph AE on some very regular graphs that should have been easy to reconstruct after pooling. Surprisingly, this turned out to be a difficult problem for some pooling layers from the GNN literature. MinCUT, on the other hand, was able to defend itself quite nicely.
 
 ![unsupervised reconstruction with AE](/images/2019-07-25/reconstructions.png)
 
@@ -326,9 +322,9 @@ We were once again surprised to see that, while minCUT yielded a consistent impr
 
 Working on minCUT pooling was an interesting experience that deepened my understanding of GNNs, and allowed me to see what is really necessary for a GNN to work. 
 
-We have put the paper [on arXiv](https://arxiv.org/abs/1907.00481), and I'm going to release an official implementation of the layer on [Spektral](https://danielegrattarola.github.io/spektral/layers/pooling/) soon.
+We have put the paper [on arXiv](https://arxiv.org/abs/1907.00481), and you can check the official implementations of the method in [Spektral](https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool) and [Pytorch Geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#module-torch_geometric.nn.dense.mincut_pool).
 
-If you want to build on our work and use minCUT in your own GNNs, you can cite us with:
+If you want to use minCUT in your own work, you can cite us with:
 
 ```
 @article{bianchi2019mincut,
