@@ -162,7 +162,7 @@ Note how $$\mathcal{L}_c$$ starts from a trivial assignment (-1) due to the rand
 
 ### Pooled graph
 As a further consideration, we can take a closer look at the pooled adjacency matrix $$\mathbf{A}^{pool}$$.    
-First of all, we can see that it is a $$K \times K$$ matrix that contains the number of links connecting each cluster. For example, the entry $$\mathbf{A}^{pool}_{1,\;2}$$ contains the number of links between the nodes in cluster 1 and cluster 2, while the entry $$\mathbf{A}^{pool}_{1,\;1}$$ is the number of links between the nodes in cluster 1.   
+First of all, we can see that it is a $$K \times K$$ matrix that contains the number of links connecting each cluster. For example, the entry $$\mathbf{A}^{pool}_{1,\;2}$$ contains the number of links between the nodes in cluster 1 and cluster 2. 
 We can also see that the trace of $$\mathbf{A}^{pool}$$ is being maximized in $$\mathcal{L}_c$$. Therefore, we can expect the diagonal elements $$\mathbf{A}^{pool}_{i,\;i}$$ to be much larger than the other entries of $$\mathbf{A}^{pool}$$.
 
 For this reason, $$\mathbf{A}^{pool}$$ will represent a graph with very strong self-loops, and the message-passing layers after pooling will have a hard time propagating information on the graph (because the self-loops will keep sending the information of a node back onto itself, and not its neighbors).   
