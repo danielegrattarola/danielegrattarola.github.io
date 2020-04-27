@@ -10,7 +10,7 @@ I research graph neural networks and their applications to systems that change o
 I am also the main developer of <a href="https://danielegrattarola.github.io/spektral">Spektral</a>, a library for graph deep learning in Keras. 
 <br>
 <br>
-Currently, I am at the Krembil Research Institute in Toronto, working with Dr. Valiante's <a href="http://www.neurontobrainlaboratory.ca">Neuron To Brain Lab</a> on the prediction and localization of epileptic seizures.
+Currently I am working with the <a href="http://www.neurontobrainlaboratory.ca">Neuron To Brain Lab</a> on the detection and localization of epileptic seizures.
 <br>
 <br>
 I love coding, writing, traveling, food, art, cinema, reading, and plants.
