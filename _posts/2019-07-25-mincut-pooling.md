@@ -9,15 +9,15 @@ date-string: JULY 25, 2019
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/horses.png){: .full-width}
 
-In [our latest paper](https://arxiv.org/abs/1907.00481), we presented a new pooling method for GNNs, called **minCUT pooling**, which has a lot of desirable properties as far as pooling goes: 
+In [our latest paper](https://arxiv.org/abs/1907.00481), we presented a new pooling method for GNNs, called **MinCutPool**, which has a lot of desirable properties as far as pooling goes: 
 
 1. It's based on well-understood theoretical techniques for node clustering;
 2. It's fully differentiable and learnable with gradient descent;
 3. It depends directly on the task-specific loss on which the GNN is being trained, but ...
-4. It can be trained on its own without a task-specific loss, if needed;
+4. It can be trained on its own without a task-specific loss if needed;
 5. It's fast;
 
-The method is based on the minCUT optimization problem, which conists of finding a cut on weighted graph in such a way that the overall weight of the cut is minimized. We considered a continuous relaxation of the minCUT problem and implemented it as a neural network layer to provide a sound pooling method for GNNs. 
+The method is based on the minCUT optimization problem, which consists of finding a cut on a weighted graph in such a way that the overall weight of the cut is minimized. We considered a continuous relaxation of the minCUT problem and implemented it as a neural network layer to provide a sound pooling method for GNNs. 
 
 In this post, I'll describe the working principles of minCUT pooling and show some applications of the layer.
 
@@ -43,14 +43,14 @@ $$
 
 where $$A$$ is the adjacency matrix of the graph, and $$D$$ is the diagonal degree matrix. 
 
-While finding the optimal minCUT is a NP-hard problem, there exist relaxations that can find near-optimal solutions in polynomial time. These relaxations, however, are still very expensive and are not able to generalize to unseen samples.
+While finding the optimal minCUT is an NP-hard problem, there exist relaxations that can find near-optimal solutions in polynomial time. These relaxations, however, are still very expensive and are not able to generalize to unseen samples.
 
 ## MinCUT pooling
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/GNN_pooling.png)
 
 The idea behind minCUT pooling is to take a continuous relaxation of the minCUT problem and implement it as a GNN layer with a custom loss function. By minimizing the custom loss, the GNN learns to find minCUT clusters on any given graph and aggregates the clusters to reduce the graph's size.   
-At the same time, because the layer can be used as a part of a larger architecture, any other loss that is being minimized during training will influence the clusters found by the minCUT layer, making them optimal for the particular task at hand. 
+At the same time, because the layer can be used as a part of a larger architecture, any other loss that is being minimized during training will influence the clusters found by MinCutPool, making them optimal for the particular task at hand. 
 
 At the core of minCUT pooling there is a MLP, which maps the node features $$\mathbf{X}$$ to a __continuous__ cluster assignment matrix $$\mathbf{S}$$ (of size $$N \times K$$):
 
@@ -265,9 +265,9 @@ You can find minCUT pooling implementations both in [Spektral](https://danielegr
 ## Experiments
 
 ### Unsupervised clustering
-Because the core of minCUT pooling is an unsupervised loss that does not require labeled data in order to be minimized, we can optimize $$\mathcal{L}_u$$ on its own to test the clustering ability of minCUT. 
+Because the core of MinCutPool is an unsupervised loss that does not require labeled data in order to be minimized, we can optimize $$\mathcal{L}_u$$ on its own to test the clustering ability of minCUT. 
 
-A good first test is to check whether the layer is able to cluster a grid (the size of the clusters should be the same), and to isolate communities in a network. 
+A good first test is to check whether the layer is able to cluster a grid (the size of the clusters should be the same) and to isolate communities in a network. 
 We see in the figure below that minCUT was able to do this perfectly.  
 
 ![Clustering with minCUT pooling](/images/2019-07-25/regular_clustering.png)
@@ -277,7 +277,7 @@ The results look nice, and remember that this was obtained by only optimizing $$
 
 ![Horse segmentation with minCUT pooling](/images/2019-07-25/horses.png)
 
-Finally, we also checked the clustering abilities of minCUT pooling on the popular citations datasets: Cora, Citeseer, and Pubmed. 
+Finally, we also checked the clustering abilities of MinCutPool on the popular citations datasets: Cora, Citeseer, and Pubmed. 
 As mentioned before, we used the NMI score to see whether the layer was clustering together nodes of the same class. Note that the layer did not have access to the labels during training.
 
 You can check [the paper](https://arxiv.org/abs/1907.00481) to see how minCUT fared in comparison to other methods, but in short: it did well, sometimes by a full order of magnitude better than other methods. 
@@ -301,7 +301,7 @@ We tested the graph AE on some very regular graphs that should have been easy to
 ### Supervised inductive tasks
 
 Finally, we tested whether minCUT provides an improvement on the usual graph classification and graph regression tasks.   
-We picked a fixed GNN architecture, and tested several pooling strategies by swapping the pooling layers in the network. 
+We picked a fixed GNN architecture and tested several pooling strategies by swapping the pooling layers in the network. 
 
 The dataset that we used were: 
 
@@ -324,14 +324,14 @@ Working on minCUT pooling was an interesting experience that deepened my underst
 
 We have put the paper [on arXiv](https://arxiv.org/abs/1907.00481), and you can check the official implementations of the method in [Spektral](https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool) and [Pytorch Geometric](https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#module-torch_geometric.nn.dense.mincut_pool).
 
-If you want to use minCUT in your own work, you can cite us with:
+If you want to use MinCutPool in your own work, you can cite us with:
 
 ```
 @article{bianchi2019mincut,
-  title={Mincut Pooling in Graph Neural Networks},
+  title={Spectral Clustering with Graph Neural Networks for Graph Pooling},
   author={Filippo Maria Bianchi and Daniele Grattarola and Cesare Alippi},
-  journal={arXiv preprint arXiv:1907.00481},
-  year={2019}
+  booktitle={Proceedings of the 37th International Conference on Machine learning (ICML)},
+  year={2020}
 }
 ```
 

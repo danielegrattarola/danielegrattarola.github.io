@@ -18,11 +18,11 @@ Preprint (2019).
 <a href="https://github.com/danielegrattarola/decimation-pooling" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a> 
 <br><br>
 
-<a href="https://arxiv.org/abs/1907.00481">Mincut Pooling in Graph Neural Networks.</a>
+<a href="https://arxiv.org/abs/1907.00481">Spectral Clustering with Graph Neural Networks for Graph Pooling.</a>
 <br>
 F. M. Bianchi, D. Grattarola, C. Alippi.
 <br>
-Preprint (2019).
+International Conference on Machine Learning (2020).
 <br>
 <a href="https://danielegrattarola.github.io/spektral/layers/pooling/#mincutpool" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a> 
 &nbsp;
