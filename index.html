@@ -1,52 +1,45 @@
 ---
 layout: post-index
-image: /images/header/oz.jpg
+title:
+image: /images/about/1.jpg
 ---
-{% for post in paginator.posts %}
-<article>
-    <!-- POST TITLE -->
-    <header>
-        <h1 class="entry-title">
-            <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
-        </h1>
-    </header>
-    
-    <!-- POST CONTENT -->
-    <div class="entry-content">
-        {{ post.excerpt }}
-        {% if post.excerpt != post.content %}
-            <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-        {% endif %}
-    </div>
-    
-    <!--- DIVIDING LINE -->
-    <hr>
-    
-    <!-- POST TAGS -->
-    <div class="inline-tags">
-        <span>
-        {% for tag in post.tags %}
-            <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
-        {% endfor %}
-        </span>
-    </div>
-    
-    <br>
-    
-    <!-- POST DATE -->
-    <div class="post-date">
-        <span class="entry-date date published updated">
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-                <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
-            </time>
-        </span>
-    </div>
-    
-</article>
-{% endfor %}
 
-<div class="pagination">
+<article>
+<img src="/images/about/1.jpg" style="grid-column: 1 / span 2;" title="Île Saint-Louis, Paris, France">
+
+<div class="entry-content">
+<p>I am a Ph.D. student at Università della Svizzera Italiana (Lugano, Switzerland). 
+I research graph neural networks and their applications to systems that change over time.<br>
+I am also the main developer of <a href="https://danielegrattarola.github.io/spektral">Spektral</a>, a library for graph deep learning in Keras.</p>
+
+<p>Currently I am working with the <a href="http://www.neurontobrainlaboratory.ca">Neuron To Brain Lab</a> on the detection and localization of epileptic seizures.</p>
+
+<p>I love coding, writing, traveling, creating visual art, and nature.</p>
+
+<br>
+
 <center>
-{% include pagination.html %}
+    <span class='personal-social-media'>
+        <a target="_blank" href="https://twitter.com/riceasphait" rel="noopener">
+            <i class="fab fa-twitter" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://github.com/danielegrattarola" rel="noopener">
+            <i class="fab fa-github" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://linkedin.com/in/danielegrattarola" rel="noopener">
+            <i class="fab fa-linkedin" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="/feed.xml">
+            <i class="fas fa-rss" style="font-size: 30px;"></i>
+        </a>
+    </span>
 </center>
-    </div>
+</div>
+</article>
+
+<!-- <article>
+<h1 class="entry-title">Highlights</h1>
+
+<div class="entry-content">
+</div>
+</article> -->

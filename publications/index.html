@@ -1,0 +1,34 @@
+---
+layout: post
+title: Publications
+image: /images/header/publications.png
+---
+
+<center>
+    <img src="/images/header/publications.png" alt="Glitch art #1 (by Daniele Grattarola)" class="full-width"/>
+</center>
+<br>
+
+{% for pub in site.data.publications %}
+    <a href="{{pub.link}}">{{pub.title}}.</a>
+    <br>
+    {{pub.authors}}.
+    <br>
+    {{pub.venue}} ({{pub.year}}).
+    {% if pub.code or pub.code-tf or pub.code-pt or pub.doi %}
+    <br>
+    {% endif %}
+    {% if pub.code %} 
+    <a href="{{pub.code}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a>&nbsp;
+    {% endif %}
+    {% if pub.code-tf %} 
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a>&nbsp;
+    {% endif %}
+    {% if pub.code-pt %} 
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a>&nbsp;
+    {% endif %}
+    {% if pub.doi %} 
+    <a href="{{pub.doi}}" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>&nbsp;
+    {% endif %}
+    <br><br>
+{% endfor %}

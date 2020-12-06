@@ -28,6 +28,7 @@ permalink: /:categories/:year-:month-:day/:title.html
 
 # Amount of post to show on home page
 paginate: 3
+paginate_path: 'blog/page:num'
 
 #kramdown:
 #  input: GFM
