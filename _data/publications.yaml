@@ -11,13 +11,13 @@
 
 - title: Hierarchical Representation Learning in Graph Neural Networks with Node Decimation Pooling
   authors: F. M. Bianchi, D. Grattarola, L. Livi, C. Alippi
-  venue: Preprint
+  venue: IEEE Transactions on Neural Networks and Learning Systems
   link: https://arxiv.org/abs/1910.11436
   code: https://github.com/danielegrattarola/decimation-pooling
   code-tf: 
   code-pt: 
   doi: 
-  year: 2019
+  year: 2020
 
 - title: Spectral Clustering with Graph Neural Networks for Graph Pooling
   authors: F. M. Bianchi, D. Grattarola, C. Alippi
