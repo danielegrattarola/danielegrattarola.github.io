@@ -1,0 +1,8 @@
+- title: Graph Neural Networks
+  description: My Ph.D. focuses on graph neural networks and their applications. I have published several papers that introduced state-of-the-art methods for graph representation learning and graph pooling. 
+
+- title: Epilepsy research 
+  description: Since 2019, I have been working with Dr. Taufik Valiante’s <a href="http://www.neurontobrainlaboratory.ca">Neuron To Brain Lab</a> on detecting and localising epileptic seizures in the human brain using iEEG data and graph neural networks.
+
+- title: Spektral
+  description: <a href="https://graphneural.network">Spektral</a> is an open-source Python library that provides a simple but flexible framework for creating graph neural networks in TensorFlow and Keras. <br> I recently released version 1.0 of the library, which brings several new features and improvements.

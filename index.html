@@ -2,20 +2,17 @@
 layout: post-index
 title:
 image: /images/about/1.jpg
-alias: [/about/index.html]
 ---
 
 <article>
-<img src="/images/about/1.jpg" style="grid-column: 1 / span 2;" title="Île Saint-Louis, Paris, France">
+<img src="/images/about/1.jpg" style="grid-column: 1 / span 2;">
 
 <div class="entry-content">
-<p>I am a Ph.D. student at Università della Svizzera Italiana (Lugano, Switzerland). 
-I research graph neural networks and their applications to systems that change over time.<br>
-I am also the main developer of <a href="https://danielegrattarola.github.io/spektral">Spektral</a>, a library for graph deep learning in Keras.</p>
+<p>I am a Ph.D. student at Università della Svizzera Italiana (CH) in the <a href="https://gmlg.ch/">Graph Machine Learning Group</a>.</p> 
 
-<p>Currently I am working with the <a href="http://www.neurontobrainlaboratory.ca">Neuron To Brain Lab</a> on the detection and localization of epileptic seizures.</p>
+<p>I research graph neural networks and their applications to systems that change over time. I am also the main developer of <a href="https://graphneural.network">Spektral</a>, a library for graph deep learning in Keras.</p>
 
-<p>I love coding, writing, traveling, <a href="https://danielegrattarola.github.io/metaverse">creating visual art</a>, and nature.</p>
+<p>I love coding, <a href="/blog">writing</a>, traveling, <a href="https://danielegrattarola.github.io/metaverse">creating visual art</a>, and spending time in nature.</p>
 
 <br>
 
@@ -41,9 +38,44 @@ I am also the main developer of <a href="https://danielegrattarola.github.io/spe
 </div>
 </article>
 
-<!-- <article>
-<h1 class="entry-title">Highlights</h1>
+<article>
+    <h1 class="entry-title">Projects</h1>   
+
+    <div class="entry-content">
+        This is a summary of my active projects. <br>
+        You can find a complete list of publications (including links to code) <a href="/publications"> here</a>.
+
+        <br><br>
+
+        {% for item in site.data.projects %}
+        <strong>{{item.title}}.</strong>
+        {% if item.description %}
+            <br>
+            {{item.description}}
+        {% endif %}
+        <br><br>
+    {% endfor %}
+    </div> 
+</article>
+
+<article>
+<h1 class="entry-title">Academia</h1>
 
 <div class="entry-content">
+    Teaching is an integral part of my academic life and I enjoy every minute of it.<br>
+    Besides being teaching assistant for many courses at USI, I have co-supervised MSc students for their theses, on topics ranging from seizure prediction to ML-driven molecular design.
+
+    <br><br>    
+    Here is a summary of my academic experience since 2018. 
+
+    <br><br>
+    {% for item in site.data.academia %}
+        <strong>{{item.title}} ({{item.period}}).</strong>
+        {% if item.description %}
+            <br>
+            {{item.description}}.
+        {% endif %}
+        <br><br>
+    {% endfor %}
 </div>
-</article> -->
+</article>
