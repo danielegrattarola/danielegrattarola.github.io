@@ -16,7 +16,7 @@
   code: https://github.com/danielegrattarola/decimation-pooling
   code-tf: 
   code-pt: 
-  doi: 
+  doi: https://doi.org/10.1109/TNNLS.2020.3044146
   year: 2020
 
 - title: Spectral Clustering with Graph Neural Networks for Graph Pooling
