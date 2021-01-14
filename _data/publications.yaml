@@ -1,3 +1,13 @@
+- title: Graph Edit Networks
+  authors: B. Paassen, D. Grattarola, D.Zambon, C. Alippi, B. Hammer
+  venue: International Conference on Learning Representations
+  link: https://openreview.net/forum?id=dlEJsyHGeaL
+  code: 
+  code-tf: 
+  code-pt: 
+  doi: 
+  year: 2021
+
 - title: Graph Neural Networks in TensorFlow and Keras with Spektral
   authors: D. Grattarola, C. Alippi
   venue: Graph Representation Learning and Beyond Workshop - ICML
