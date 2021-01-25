@@ -50,7 +50,7 @@
 
 - title: Graph Neural Networks with Convolutional ARMA Filters
   authors: F. M. Bianchi, D. Grattarola, L. Livi, C. Alippi
-  venue: Preprint
+  venue: IEEE Transactions on Pattern Analysis and Machine Intelligence
   link: https://arxiv.org/abs/1901.01343
   code: 
   code-tf: https://danielegrattarola.github.io/spektral/layers/convolution/#armaconv
