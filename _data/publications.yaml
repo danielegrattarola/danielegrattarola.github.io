@@ -10,12 +10,12 @@
 
 - title: Graph Neural Networks in TensorFlow and Keras with Spektral
   authors: D. Grattarola, C. Alippi
-  venue: Graph Representation Learning and Beyond Workshop - ICML
+  venue: Graph Representation Learning and Beyond Workshop @ ICML
   link: https://arxiv.org/abs/2006.12138
   code: https://github.com/danielegrattarola/spektral
-  code-tf: 
+  code-tf:
   code-pt: 
-  doi: 
+  doi: https://doi.org/10.1109/MCI.2020.3039072
   year: 2020
 
 - title: Hierarchical Representation Learning in Graph Neural Networks with Node Decimation Pooling
