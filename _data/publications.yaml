@@ -55,8 +55,8 @@
   code: 
   code-tf: https://danielegrattarola.github.io/spektral/layers/convolution/#armaconv
   code-pt: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.ARMAConv
-  doi: 
-  year: 2019
+  doi: https://doi.org/10.1109/TPAMI.2021.3054830
+  year: 2021
 
 - title: Adversarial Autoencoders with Constant-Curvature Latent Manifolds
   authors: D. Grattarola, L. Livi, C. Alippi
