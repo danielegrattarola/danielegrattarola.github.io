@@ -1,5 +1,6 @@
-title:            Daniele Grattarola
-author:           Daniele Grattarola
+title: Daniele Grattarola
+author: Daniele Grattarola
+description: "Ph.D. student | Graph neural networks @ USI | Epilepsy @ Neuron To Brain Lab | Developer of Spektral (graphneural.network) | Co-host of Smarter Podcast"
 twitter:
     username: riceasphait
 social:
@@ -26,7 +27,7 @@ sass:
 permalink: /:categories/:year-:month-:day/:title.html
 
 # Amount of post to show on home page
-paginate: 3
+paginate: 5
 paginate_path: 'blog/page:num'
 
 #kramdown:
