@@ -63,7 +63,7 @@ a {
 }
 
 .post-date {
-    font-size: 12px;
+    font-size: 14px;
 	text-transform: uppercase;
     color: lighten($base-color,50);
 
@@ -75,6 +75,11 @@ a {
         color: lighten($base-color,20);
     }
 }
+
+.post-date a {
+    border-bottom: none;
+}
+
 
 header .entry-meta {
 	display: none; // hide header meta on small screens
@@ -334,7 +339,6 @@ svg:not(:root) {
 
 .inline-tags {
     font-size: 14px;
-
     a {
         color: $highlight-color;
     }
@@ -342,6 +346,10 @@ svg:not(:root) {
     &:hover {
         color: $base-color;
     }
+}
+
+.inline-tags a {
+    border-bottom: none;
 }
 
 /*--- POST INDEX ------------------------------------------------------------*/

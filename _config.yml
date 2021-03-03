@@ -10,7 +10,7 @@ social:
         - https://linkedin.com/in/danielegrattarola
         - https://danielegrattarola.github.io/feed.xml
 
-future:      true  # publish future dated posts --  true, false (default) 
+future:      false  # publish future dated posts --  true, false (default) 
 highlighter: rouge
 markdown:    kramdown
 gems:
