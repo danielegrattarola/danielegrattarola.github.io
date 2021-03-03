@@ -30,10 +30,10 @@ We could go as far as saying that an image is only an image because its pixels a
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-4.svg" width="100%" style="border: solid 1px;"/>
 
-CNNs are designed to take this __locality__ into account. They are designed to transform the value of each pixel, not as a function of the whole image (like a MLP would do), but as a function of the pixel's immediate surroundings. Its neighbours.
+CNNs are designed to take this __locality__ into account. They are designed to transform the value of each pixel, not as a function of the whole image (like a MLP would do), but as a function of the pixel's immediate surroundings. Its neighbors.
 
 Since **locality is a kind of relation** between pixels, it is natural to represent the underlying structure of an image using a graph.
-And, by requiring that each pixel is related only to the few other pixels that are closer to it, our graph will be a **regular grid**. Every pixel has 8 neighbours (give or take boundary conditions), and the CNN uses this fact to compute a localized transformation.
+And, by requiring that each pixel is related only to the few other pixels that are closer to it, our graph will be a **regular grid**. Every pixel has 8 neighbors (give or take boundary conditions), and the CNN uses this fact to compute a localized transformation.
 
 You can also interpret it the other way around. The kind of processing that the CNN does means that the transformation of each pixel will only depend on the few pixels that fall under the convolutional kernel. We can say that the grid structure emerges as a consequence of the CNN's inductive bias.
 
@@ -47,7 +47,7 @@ _Can we create a neural network in which the structure of the data is no longer 
 
 In other words, since we know that data and structure are different things, can we change the structure as we please?
 
-The only thing that we require is that the CNN does the same kind of local processing as it did for the regular grid: transform each node as a function of its neighbours. 
+The only thing that we require is that the CNN does the same kind of local processing as it did for the regular grid: transform each node as a function of its neighbors. 
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-6.svg" width="100%" style="border: solid 1px;"/>
 
@@ -73,7 +73,7 @@ Same thing for edges, with attributes $$\mathbf{e}_{ij} \in \mathbb{R}^S$$ for e
 
 Then there are the characteristic matrices of a graph:
 
-- The adjacency matrix $$\mathbf{A}$$ is binary and has a 1 in postion i-j if there exists an edge from node i to node j. All entries are 0 otherwise.
+- The adjacency matrix $$\mathbf{A}$$ is binary and has a 1 in position i-j if there exists an edge from node i to node j. All entries are 0 otherwise.
 
 - The degree matrix $$\mathbf{D}$$ counts the number of neighbors of each node. It's a diagonal matrix so that the degree of node i is in position i-i.
 
@@ -126,12 +126,12 @@ Done! We have our first GNN: $$\mathbf{X}' = \mathbf{R} \mathbf{X} \mathbf{\Thet
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-9.svg" width="100%" style="border: solid 1px;"/>
 
-One thing that is still missing from our relatively simple implementation is the ability to have kernels that span more than the immediate neighborhood of a node. In fact, in a CNN this is usually a hyperparameter. Also, depending on the reference operator that we use, we may or may not condsider a node itself when computing its transformation: it depends on whether $$\mathbf{R}$$ has a non-zero diagonal.
+One thing that is still missing from our relatively simple implementation is the ability to have kernels that span more than the immediate neighborhood of a node. In fact, in a CNN this is usually a hyperparameter. Also, depending on the reference operator that we use, we may or may not consider a node itself when computing its transformation: it depends on whether $$\mathbf{R}$$ has a non-zero diagonal.
 
 Luckily we can generalize the idea of a bigger kernel to the graph domain: we simply process each node as a function of its neighbors up to $$K$$ steps away from it.
 
 We can achieve this by considering that applying a reference operator to a graph signal has the effect of making node attributes _flow_ through the graph. 
-Apply a reference operator once, and all nodes will "read" from their immediate neighbors to update themselves. Apply it again, and all nodes will read again from their neighbours, except that this time the information that they read will be whatever the neighbours computed at the previous step.
+Apply a reference operator once, and all nodes will "read" from their immediate neighbors to update themselves. Apply it again, and all nodes will read again from their neighbors, except that this time the information that they read will be whatever the neighbors computed at the previous step.
 
 In other words: if we multiply a graph signal by $$\mathbf{R}^{K}$$, each node will update itself with the node attributes of nodes $$K$$ steps away.
 
@@ -145,7 +145,7 @@ This is called a **polynomial graph filter**, and we will see a different interp
 Note that this filter solves both problems that we had before, and also makes our GNN more expressive: 
 
 1. The value of a node itself is always included in the transformation, since $$\mathbf{R}^{0} = \mathbf{I}$$;
-2. The sum of polynomials up to order $$K$$ will necessarily cover all neighbours in a radius of $$K$$ steps;
+2. The sum of polynomials up to order $$K$$ will necessarily cover all neighbors in a radius of $$K$$ steps;
 3. Since we can treat neighborhoods separately, we can also have different weights $$\mathbf{\Theta}^{(k)}$$ for each $$k$$-hop neighborhood. This is like having a radial filter, a function that only depends on the radius from the origin.
 
 
@@ -167,7 +167,7 @@ Just a few months after the paper by Defferrard et al. was published on ArXiv, a
 In that paper, the authors looked at the Chebyshev filter proposed by Defferrard et al. and introduced a few key changes to make the layer more simple and more scalable. 
 
 1. They changed the reference operator. Instead of the rescaled and normalized Laplacian, they assumed that $$\lambda_{max} = 2$$ so that the whole formulation of the operator was simplified to $$-\mathbf{A}_n$$.
-2. They proposed to use polynomials of order 1, following the intution that $$K$$ layers of order 1 would be equivalent to 1 layer of order $$K$$. In particular, they also added non-linerities between each successive layer, leading to more complex transformations of the nodes at each propagation step.
+2. They proposed to use polynomials of order 1, following the intuition that $$K$$ layers of order 1 would be equivalent to 1 layer of order $$K$$. In particular, they also added non-linearities between each successive layer, leading to more complex transformations of the nodes at each propagation step.
 3. They observed that the same set of weights could be used both for a node itself and its neighbors. No need to have $$\mathbf{\Theta}^{(0)}$$ and $$\mathbf{\Theta}^{(1)}$$ as different weights.
 4. After simplifying the layer down to 
 $$
@@ -182,7 +182,7 @@ $$
 
 ---
 
-What we have seen so far is a very simple construction that takes the general concepts behind CNNs and, by changing a few assumptions, extends them to the case in which the input is any arbitrary graph instead of a grid. 
+What we have seen so far is a very simple construction that takes the general concepts behind CNNs and, by changing a few assumptions, extends them to the case in which the input is an arbitrary graph instead of a grid. 
 
 This is far from the whole story, but it should give you a good starting point to learn about GNNs.
 
