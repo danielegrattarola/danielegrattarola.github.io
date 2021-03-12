@@ -58,9 +58,9 @@ If $$\mathbf{R}$$ has a non-zero diagonal, then each node also computes a messag
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-15.svg" width="100%" style="border: solid 1px;"/>
 
-Message passing is usually formalized with the equation above which, if you are not a math person, may look ominous. 
+Message passing is usually formalized with the equation in the slide above. 
 
-However, it simply describes the three steps that we saw above, and if you wanted to write it in pseudo-Python it would look something like this: 
+While it may look complicated at first, the formula simply describes the three steps that we saw before, and if you wanted to write it in pseudo-Python it would look something like this: 
 
 ```py
 # For every node in the graph
@@ -88,7 +88,10 @@ class MessagePassing(Layer): # Or `Module`
         # This is the actual message-passing step
         return self.propagate(*inputs)
 
-    def propagate(self, x, a, e=None, **kwargs):
+    def propagate(self, x, a, e, **kwargs):
+        # process arguments and create *_kwargs
+        ...
+
         # Message
         messages = self.message(x, **msg_kwargs)
 
@@ -132,7 +135,7 @@ In fact, this is a limitation of every GNN with edge-dependent messages.
 We could still implement our Edge Convolution using broadcasting operations, but it would not be efficient at all. Here's one way we could do it: 
 
 ```py
-import jax
+import jax, jax.numpy as jnp
 
 x = ...  # Node attributes of shape [n, f]
 a = ...  # Adjacency matrix of shape [n, n]
@@ -141,10 +144,10 @@ a = ...  # Adjacency matrix of shape [n, n]
 x_diff = x[None, :, :] - x[:, None, :]  # shape: (n, n, f)
 
 # Repeat the nodes so that we can concatenate them to the differences
-x_repeat = jax.numpy.repeat(x[:, None, :], n, axis=1)  # shape: (n, n, f)
+x_repeat = jnp.repeat(x[:, None, :], n, axis=1)  # shape: (n, n, f)
 
 # Concatenate the attributes so that, for each edge, we have x_i || (x_i - x_j)
-x_all = jax.numpy.concatenate([x_repeat, x_diff], axis=-1)  # shape: (n, n, 2 * f)
+x_all = jnp.concatenate([x_repeat, x_diff], axis=-1)  # shape: (n, n, 2 * f)
 
 # Give x_i || (x_i - x_j) as input to an MLP
 messages = mlp(x_all)  # shape: (n, n, channels)
@@ -250,7 +253,7 @@ senders, recipients, _ = scipy.sparse.find(a)
 x_diff = x[senders] - x[recipients]  # shape: (n_edges, f)
 
 # Concatenate x_i with (x_i - x_j) for each edge j -> i
-x_all = jax.numpy.concatenate([x[recipients], x_diff], axis=-1)  # shape: (n_edges, 2 * f)
+x_all = jnp.concatenate([x[recipients], x_diff], axis=-1)  # shape: (n_edges, 2 * f)
 
 # Give x_i || (x_i - x_j) as input to an MLP
 messages = mlp(x_all)  # shape: (n_edges, channels)
@@ -272,11 +275,14 @@ Since now we've moved past the simple models based on reference operators and ed
 For instance, the popular [Graph Attention Networks](https://arxiv.org/abs/1710.10903) by Veličković et al. can be implemented as a message-passing network using gather-scatter: 
 
 ```py
-# Transform node attributes with a dense layer
+# Transform node attributes with a dense layer (defined elsewhere)
 h = dense(x)
 
-# Compute attention logits w/ a dense layer (with a single output and LeakyReLU)
-logits = dense(concatenate([h[recipients], h[senders]], axis=-1))
+# Concatenate attributes of recipients/senders
+h_cat = jnp.concatenate([h[recipients], h[senders]], axis=-1)
+
+# Compute attention logits w/ a dense layer (single output, LeakyReLU)
+logits = dense(h_cat)
 
 # Apply softmax only to the logits in the same segment, as defined by recipients
 # i.e., normalize the scores only among the neighbors of each node.
@@ -288,7 +294,7 @@ logits = dense(concatenate([h[recipients], h[senders]], axis=-1))
 coef = segment_softmax(logits, recipients)
 
 # Now we aggregate with a weighted sum (weights given by coef)
-output = segment_sum(coef * h[senders], recipients)
+output = jax.ops.segment_sum(coef * h[senders], recipients)
 ```
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-18.svg" width="100%" style="border: solid 1px;"/>
@@ -298,19 +304,19 @@ And, easily enough, we can also define a message-passing network that includes e
 To implement it with gather-scatter we can do: 
 
 ```py
-# Use a Filter-Generating Network to create the weights
+# Use a Filter-Generating Network to create the weights (defined elsewhere)
 kernel = fgn(e)
 
 # Reshape the weights so that we have a matrix of shape (f, f_) for each edge
-kernel = reshape(kernel, (-1, f, f_))
+kernel = jnp.reshape(kernel, (-1, f, f_))
 
 # Multiply the node attribute of each neighbor by the associated edge-dependent
 # kernel. 
 # We can use einsum to do this efficiently
-messages = einsum("ab,abc->ac", x[senders], kernel)
+messages = jnp.einsum("ab,abc->ac", x[senders], kernel)
 
 # Aggergate with a sum
-output = segment_sum(messages, recipients)
+output = jax.ops.segment_sum(messages, recipients)
 ```
 
 Once you get the hang of it, building GNNs becomes so intuitive that you'll never want to go back to the matrix-multiplication-based implementations. 
