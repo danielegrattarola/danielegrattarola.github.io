@@ -44,40 +44,19 @@ image: /images/about/1.jpg
     <h1 class="entry-title">Projects</h1>   
 
     <div class="entry-content">
-        This is a summary of my active projects. <br>
-        You can find a complete list of publications (including links to code) <a href="/publications"> here</a>.
-
-        <br><br>
+        <p>
+            This is a summary of my active projects.
+            You can find a complete <a href="/publications">list of publications here</a> (including links to code) and a summary of <a href="/teaching">my teaching activity here</a>.
+        </p>
 
         {% for item in site.data.projects %}
-        <strong>{{item.title}}.</strong>
-        {% if item.description %}
-            <br>
-            {{item.description}}
-        {% endif %}
-        <br><br>
-    {% endfor %}
+            <p>
+                <strong>{{item.title}}.</strong>
+                {% if item.description %}
+                    <br>
+                    {{item.description}}
+                {% endif %}
+            </p>
+        {% endfor %}
     </div> 
-</article>
-
-<article>
-<h1 class="entry-title">Academia</h1>
-
-<div class="entry-content">
-    Teaching is an integral part of my academic life and I enjoy every minute of it.<br>
-    Besides being teaching assistant for many courses at USI, I have co-supervised MSc students for their theses, on topics ranging from seizure prediction to ML-driven molecular design.
-
-    <br><br>    
-    Here is a summary of my academic experience since 2018. 
-
-    <br><br>
-    {% for item in site.data.academia %}
-        <strong>{{item.title}} ({{item.period}}).</strong>
-        {% if item.description %}
-            <br>
-            {{item.description}}.
-        {% endif %}
-        <br><br>
-    {% endfor %}
-</div>
 </article>

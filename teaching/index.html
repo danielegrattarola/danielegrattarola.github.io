@@ -1,0 +1,58 @@
+---
+layout: post
+title: Teaching
+image: /images/header/publications.png
+---
+
+This is a summary of my academic and teaching activity, including the courses for which I have been teaching assistant, the talks I have given at universities, conferences, and meetups, and the students I have supervised.
+
+<h2>Faculty</h2>
+
+I have been the Ph.D. representative for USI's Faculty of Informatics in the A.Y. 2018/2019. 
+<br>
+During that time, I was the official point of contact between USI’s Faculty of Informatics and its Ph.D. students, participating in faculty meetings and contributing to the strategical decisions of the faculty.
+
+<hr>
+
+<h2>Teaching Assistant</h2>
+
+{% for item in site.data.ta %}
+    <p>
+    <strong><a href="{{item.url}}">{{item.title}}</a></strong><br>
+    {{item.description}}
+    ({{item.period}}).
+    </p>
+{% endfor %}
+
+<hr>
+
+<h2>Talks & Lectures</h2>
+
+{% for item in site.data.talks %}
+    <p>
+        <strong>{{item.title}}</strong><br>
+        <a href="{{item.url}}">{{item.venue}} ({{item.period}})</a>
+        {% if item.slides or item.video %}
+            <br>
+        {% endif %}
+        {% if item.slides %}
+            <a href="{{item.slides}}" style="border-bottom: none;"><i class="fas fa-tv"></i> Slides</a>&nbsp;
+        {% endif %}
+        {% if item.video %}
+            <a href="{{item.video}}" style="border-bottom: none;"><i class="fab fa-youtube"></i> Video</a>&nbsp;
+        {% endif %}
+    </p>
+{% endfor %}
+
+<hr>
+
+<h2>Theses & Projects</h2>
+<ul>
+{% for item in site.data.students %}
+    <li>
+        "{{item.title}}"<br>
+        {{item.name}}, {{item.type}} ({{item.year}})
+    </li>
+{% endfor %}
+</ul>
+
