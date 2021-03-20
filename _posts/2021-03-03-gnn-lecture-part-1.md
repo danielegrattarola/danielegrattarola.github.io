@@ -2,7 +2,7 @@
 layout: post
 categories: posts
 title: "A practical introduction to GNNs - Part 1"
-image: /images/2021-03-03/presentation-4.svg
+image: /images/2021-03-03/presentation-1.png
 tags: [GNN, lecture]
 date-string: MARCH 3, 2021
 ---
