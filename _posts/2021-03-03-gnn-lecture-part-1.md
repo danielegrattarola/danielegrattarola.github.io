@@ -186,7 +186,7 @@ What we have seen so far is a very simple construction that takes the general co
 
 This is far from the whole story, but it should give you a good starting point to learn about GNNs.
 
-In the next part of this series we will see: 
+In the [next part of this series]({{ site.url }}/posts/2021-03-12/gnn-lecture-part-2.html) we will see: 
 
 1. How to describe what we just saw as a general algorithm that allows us to describe a much richer family of operations on graphs.
 2. How to throw edge attributes in the mix and create GNNs that can treat neighbors differently.
