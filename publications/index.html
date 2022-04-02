@@ -1,0 +1,43 @@
+---
+layout: post
+title: Publications
+image: /images/header/publications.png
+---
+
+<center>
+    <img src="/images/header/publications.png" alt="Glitch art #1 (by Daniele Grattarola)" class="full-width"/>
+</center>
+<br>
+
+{% for venue in site.data.publications %}
+<h2>{{venue.type}}</h2>
+{% for pub in venue.pubs %}
+    <a href="{{pub.link}}"><strong>{{pub.title}}.</strong></a>
+    <br>
+    <i>{{pub.authors}}.</i>
+    <br>
+    <i>{{pub.venue}} ({{pub.year}})</i>.
+    {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
+    <br>
+    {% endif %}
+    {% if pub.code %} 
+    <a href="{{pub.code}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a>&nbsp;
+    {% endif %}
+    {% if pub.code-tf %} 
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a>&nbsp;
+    {% endif %}
+    {% if pub.code-pt %} 
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (PyTorch)</a>&nbsp;
+    {% endif %}
+    {% if pub.poster %} 
+    <a href="{{pub.poster}}" style="border-bottom: none;"><i class="fas fa-pager"></i> Poster</a>&nbsp;
+    {% endif %}
+    {% if pub.doi %} 
+    <a href="{{pub.doi}}" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>&nbsp;
+    {% endif %}
+    <br><br>
+{% endfor %}
+{% endfor %}
+
+<hr>
+<span>* Equal contribution</span>

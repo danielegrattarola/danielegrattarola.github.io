@@ -1,0 +1,121 @@
+---
+layout: post-index
+title: Activity
+image: /images/header/publications.png
+---
+
+<article>
+    <div class="entry-content">
+
+    <h1>Activity</h1>
+
+    <p>This is a summary of my academic activity, including teaching and participating as a member of the faculty at USI, supervising and mentoring students, giving talks, and serving as reviewer at top AI venues.</p>
+    
+    </div>
+</article>
+
+<article>
+    <div class="entry-content">
+
+    <h1>Teaching</h1>
+    
+    {% for item in site.data.teaching %}
+        <p>
+        <strong><a href="{{item.url}}">{{item.title}}</a></strong><br>
+        {{item.description}}
+        ({{item.period}}).
+        </p>
+    {% endfor %}
+
+    <h2>Faculty</h2>
+
+    I have been the Ph.D. representative for USI's Faculty of Informatics in the A.Y. 2018/2019. 
+    <br>
+    During that time, I was the official point of contact between USI’s Faculty of Informatics and its Ph.D. students, participating in faculty meetings and contributing to the strategical decisions of the faculty.
+
+    </div>
+</article>
+
+<article>
+    <div class="entry-content">
+    
+    <h1>Supervision & Mentoring</h1>
+    
+    {% for item in site.data.students %}
+        <p>
+            <strong>{{item.title}}</strong><br>
+            {{item.name}}<br>
+            {{item.type}} ({{item.year}})
+        </p>
+    {% endfor %}
+    
+    </div>
+</article>
+
+<article>
+    <div class="entry-content">
+
+    <h1>Talks</h1>
+    
+    {% for item in site.data.talks %}
+        <p>
+            <strong>{{item.title}}</strong><br>
+            <a href="{{item.url}}">{{item.venue}}</a> ({{item.period}})
+            {% if item.slides or item.video %}
+                <!-- <br> -->
+                &nbsp;|&nbsp;
+            {% endif %}
+            {% if item.slides %}
+                <a href="{{item.slides}}" style="border-bottom: none;"><i class="fas fa-tv"></i> Slides</a>&nbsp;
+            {% endif %}
+            {% if item.video %}
+                <a href="{{item.video}}" style="border-bottom: none;"><i class="fab fa-youtube"></i> Video</a>&nbsp;
+            {% endif %}
+        </p>
+    {% endfor %}
+    
+    </div>
+</article>
+
+<article>
+    <div class="entry-content">
+    
+    <h1>Reviewing</h1>
+
+    I serve as reviewer for the following artificial intelligence conferences, journals and workshops. 
+    
+    <h2>Conferences</h2>
+    <ul>
+    {% for item in site.data.review %}
+        {% if item.conference %}
+        <li>
+            {{item.conference}}
+        </li> 
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h2>Journals</h2>
+    <ul>
+    {% for item in site.data.review %}
+        {% if item.journal %}
+        <li>
+            {{item.journal}}
+        </li> 
+        {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h2>Workshops</h2>
+    <ul>
+    {% for item in site.data.review %}
+        {% if item.workshop %}
+        <li>
+            {{item.workshop}}
+        </li> 
+        {% endif %}
+    {% endfor %}
+    </ul>
+    
+    </div>
+</article>

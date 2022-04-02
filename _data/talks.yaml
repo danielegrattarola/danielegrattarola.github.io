@@ -1,0 +1,85 @@
+- title: "Introduction to Graph Neural Networks and Graph Pooling"
+  venue: Graph Deep Learning course @ USI
+  url: https://search.usi.ch/en/courses/35263629/graph-deep-learning
+  slides: /files/talks/2022-02-28-USI_GDL.pdf
+  video: 
+  period: Feb 28, 2022
+
+- title: "Learning Graph Cellular Automata"
+  venue: Learning on Graphs and Geometry Reading Group
+  url: https://hannes-stark.com/logag-reading-group
+  slides: /files/talks/2021-NeurIPS-graph-neural-cellular-automata-long.pdf
+  video: https://www.youtube.com/watch?v=ilrl_opwpEw
+  period: Jan 11, 2022
+
+- title: "Graph Neural Networks: Operators and Architectures"
+  venue: Dissertation defense @ USI
+  url: https://www.inf.usi.ch/en/feeds/10183
+  slides: /files/talks/2021-12-10-dissertation-defense.pdf
+  period: Dec 10, 2021
+
+- title: "Pooling in Graph Neural Networks"
+  venue: Advanced Machine Learning course @ U. Manitoba
+  url: https://sci.umanitoba.ca/cs/courses/
+  slides: /files/talks/2021-12-01-Pooling-UManitoba.pdf
+  period: Dec 1, 2021
+
+- title: "Learning Graph Cellular Automata"
+  venue: Italian Workshop on Machine Learning and Data Mining @ AIXIA
+  url: https://sites.google.com/view/mldm2021/program
+  slides: /files/talks/2021-NeurIPS-graph-neural-cellular-automata.pdf
+  period: 2021
+
+- title: "Learning Graph Cellular Automata"
+  venue: Neural Information Processing Systems
+  url: https://neurips.cc/Conferences/2021/Schedule
+  slides: /files/talks/2021-NeurIPS-graph-neural-cellular-automata.pdf
+  period: Dec 7, 2021
+
+- title: "Pooling in Graph Neural Networks"
+  venue: "Graph Deep Learning course @ USI"
+  url: https://search.usi.ch/it/corsi/35262194/graph-deep-learning
+  slides: /files/talks/2021-03-15-USI_GDL_Pooling.pdf
+  period: Mar 15, 2021
+
+- title: "Introduction to Graph Neural Networks"
+  venue: Graph Deep Learning course @ USI
+  url: https://search.usi.ch/it/corsi/35262194/graph-deep-learning
+  slides: /files/talks/2021-03-01-USI_GDL_GNNs.pdf
+  video: 
+  period: Mar 1, 2021
+
+- title: "Spectral Clustering with Graph Neural Networks for Graph Pooling"
+  venue: International Conference on Machine Learning
+  url: https://icml.cc/Conferences/2020/Schedule?showEvent=6018
+  slides: /files/talks/2020-ICML-mincut.pdf
+  video: 
+  period: 2020
+
+- title: "Graph Neural Networks in Tensorflow and Keras with Spektral"
+  venue: Graph Representation Learning and Beyond @ ICML
+  url: https://grlplus.github.io/papers/
+  slides: /files/talks/2020-ICML-spektral.pdf
+  video: 
+  period: 2020
+
+- title: "Graph Neural Networks e MinCut Pooling (in Italian)"
+  venue: Italian Association for Machine Learning (ML/DS Meetup)
+  url: https://www.meetup.com/it-IT/Machine-Learning-Data-Science-Meetup/events/271226235/
+  slides: /files/talks/2020-06-29-MLDS_meetup_IAML.pdf
+  video: https://www.youtube.com/watch?v=Yq1Nmu5Y4P0&t=529s
+  period: 2020
+
+- title: "Generative Adversarial Networks"
+  venue: Advanced Topics in Machine Learning course @ USI
+  url: https://search.usi.ch/en/courses/35262237/advanced-topics-in-machine-learning
+  slides: /files/talks/2020-ATML_GAN.pdf
+  video: 
+  period: Sep 17, 2020
+
+- title: "Autoregressive Models for Sequences of Graphs"
+  venue: International Joint Conference on Neural Networks
+  url: http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=78918&copyownerid=105620
+  slides: /files/talks/2019-ijcnn-ngar.pdf
+  video: 
+  period: 2019

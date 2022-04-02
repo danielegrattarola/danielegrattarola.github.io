@@ -1,0 +1,89 @@
+---
+layout: post-index
+title:
+image: /images/about/1.jpg
+---
+
+<article>
+<img src="/images/about/1.jpg" style="grid-column: 1 / span 2;">
+
+<div class="entry-content">
+<p>I am a postdoctoral researcher at <a href="https://www.epfl.ch/">EPFL</a>, working with the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> laboratories.</p>
+
+<p>I research graph neural networks and their applications to dynamical systems and computational biology, specifically for protein design. I am also the main developer of <a href="https://graphneural.network">Spektral</a>, a library for graph deep learning in TensorFlow/Keras.</p>
+
+<p>I obtained my PhD at <a href="https://idsia.ch/">IDSIA</a>, as part of the <a href="https://gmlg.ch/">GML</a> group.    
+I hold an MSc in Computer Science and Engineering with honors from <a href="https://polimi.it">Politecnico di Milano</a>.</p> 
+
+<p>In my free time, I co-host and manage <a href="https://www.youtube.com/channel/UCEcWriMWPpO_RIbpkJvHc8w">Smarter Podcast</a>, a live streaming podcast in Italian in which we interview AI researchers from academia and industry.</p>
+
+<br>
+
+<center>
+    <span class='personal-social-media'>
+        <a target="_blank" href="mailto:daniele.grattarola@gmail.com">
+            <i class="fas fa-envelope" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://twitter.com/riceasphait" rel="noopener">
+            <i class="fab fa-twitter" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://github.com/danielegrattarola" rel="noopener">
+            <i class="fab fa-github" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://scholar.google.com/citations?user=2AcU-iAAAAAJ&hl=en" rel="noopener">
+            <i class="fa fa-graduation-cap" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="https://linkedin.com/in/danielegrattarola" rel="noopener">
+            <i class="fab fa-linkedin" style="font-size: 30px;"></i>
+        </a>
+        <a target="_blank" href="/feed.xml">
+            <i class="fas fa-rss" style="font-size: 30px;"></i>
+        </a>
+    </span>
+</center>
+</div>
+</article>
+
+<article>
+    <h1 class="entry-title">Projects</h1>   
+
+    <div class="entry-content">
+        <p>
+            This is a summary of my active projects.
+            You can find a complete <a href="/publications">list of publications here</a> (including links to code) and a summary of <a href="/activity">my academic activity here</a>.
+        </p>
+
+        {% for item in site.data.projects %}
+            <p>
+                <strong>{{item.title}}.</strong>
+                {% if item.description %}
+                    <br>
+                    {{item.description}}
+                {% endif %}
+            </p>
+        {% endfor %}
+    </div> 
+</article>
+
+<article>
+    <h1 class="entry-title">News</h1>   
+
+    <div class="entry-content">
+        
+        {% for item in site.data.news | limit: 10 %}
+        <p>
+        {% if item.news.date %}
+        <span class="entry-date post-date date published updated">
+            <time datetime="{{ item.news.date | date_to_xmlschema }}">
+                {{ item.news.date | date: "%B %Y" }}
+            </time>
+        </span>
+        <br>
+        {% endif %}
+        {{item.news.text}} 
+        </p>
+        {% endfor %}    
+        
+        
+    </div> 
+</article>

@@ -1,0 +1,463 @@
+/*--- BODY ------------------------------------------------------------------*/
+
+body {
+    font-family: $base-font;
+    color: $text-color;
+	background-color: $body-color;
+    font-size: $doc-font-size;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*--- GLOBAL TRANSITION -----------------------------------------------------*/
+
+b, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, path {
+	transition: all 0.3s ease;
+}
+
+/*--- LINKS -----------------------------------------------------------------*/
+
+a {  
+	text-decoration: none;
+	color: $link-color; 
+
+	&:visited { 
+		color: $link-color; 
+	}
+
+	&:hover { 
+		color: $highlight-color; 
+	}
+
+	&:focus { 
+		outline: none; 
+		color: $link-color;
+	}
+
+	&:hover, 
+	&:active { 
+		outline: 0; 
+	}
+}
+
+/*--- MAIN CONTENT ----------------------------------------------------------*/
+
+.entry-content {
+    line-height: $doc-line-height;
+
+    a {
+    	border-bottom: solid 1px;
+    	display: inline;
+    	padding-bottom: 0px;
+    	/*font-weight: bold;*/
+    }
+}
+
+.main-header-image {
+    img {
+        @media #{$large} {
+			max-width: $column-width;
+		}
+    }
+}
+
+.post-date {
+    font-size: 14px;
+	text-transform: uppercase;
+    color: lighten($base-color,50);
+
+	a {
+		color: lighten($base-color,50);
+	}
+    
+    a:hover{
+        color: lighten($base-color,20);
+    }
+}
+
+.post-date a {
+    border-bottom: none;
+}
+
+
+header .entry-meta {
+	display: none; // hide header meta on small screens
+
+	@media #{$medium} {
+		display: block;
+	}
+}
+
+/*---- NAVBAR --------------------------------------------------------------*/
+.brand{
+	float: left;
+	letter-spacing: 6px;
+}
+
+.navbar {
+	background: $navbar-dark;
+	box-shadow: 0 0 0 0, 0 3px 6px rgba($navbar-dark,0.1);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 3%;
+	padding-left: 3%;
+	text-align: right;
+}
+
+
+.navbar{
+	a {
+	    color: $navbar-light;
+		text-decoration: none;
+		padding-right: 1%;
+		padding-left: 1%;
+	} 
+
+	a:visited {
+		color: $navbar-light;
+	}
+
+	a:hover {
+		color: $highlight-color;
+	}
+}
+
+/*--Slicknav--*/
+.slicknav_menu {
+	display: none;
+}
+
+.slicknav_nav {
+    font-size: $nav-link-font-size !important;
+}
+
+.slicknav_brand {
+    padding-right: 0px !important;
+}
+
+@media (max-width: 50em) {
+	#menu {
+		display: none;
+	}
+
+	.navbar {
+		display: none !important;
+	}
+
+    .brand {
+        font-size: $nav-link-font-size;
+    }
+
+	.slicknav_menu {
+		display: block !important;
+		background: $navbar-dark !important;
+
+		a {
+			color: $navbar-light !important;
+			text-decoration: none !important;
+		}
+
+		a:visited {
+			color: $navbar-light !important;
+			background: none !important;
+		}
+
+		a:hover {
+			color: $highlight-color !important;
+			background: none !important;
+		}
+	}
+	
+	.slicknav_nav {
+		background: none !important;
+		color: $navbar-light !important;
+		text-align: right !important;
+	}
+	
+	.slicknav_btn {
+		margin: 8px 5px 6px !important;
+		background: none !important;
+	}
+	.slicknav_icon-bar {
+	    background: $navbar-light !important;
+	}
+	.slicknav_icon:hover .slicknav_icon-bar {
+		background: $highlight-color !important;
+	}
+}
+
+/*--- BLOCKQUOTE ------------------------------------------------------------*/
+
+blockquote {
+    border-left: 4px solid $border-color;
+    font-size: $blockquote-font-size;
+    font-family: $alt-font;
+    margin-left: 1em;
+    margin-right: 5em;
+    padding-left: 15px;
+    line-height: 22px;
+}
+
+/*--- CODE FORMAT -----------------------------------------------------------*/
+
+tt, code, kbd, samp, pre {
+	font-family: $code-font;
+}
+
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+    font-size: $code-font-size;
+	line-height: $code-line-height ;
+    margin: 0 2px;
+    padding: 0 5px;
+    border: 1px solid lighten(#000, 90);
+	background-color: lighten(#000, 95);
+	border-radius: 3px;
+}
+
+pre {
+    font-size: $code-font-size;
+	line-height: $code-line-height ;
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		height: 12px;
+		background-color: #34362e;
+		border-radius: 0 0 4px 4px;
+	}
+
+	&::-webkit-scrollbar-thumb:horizontal {
+		background-color: #6a6d5d;
+		border-radius: 4px;
+	}
+}
+
+/*--- ABOUT SECTION (SOCIAL MEDIA) ------------------------------------------*/
+
+.personal-social-media {
+    a {
+    	text-decoration: none !important;
+        border-bottom: none !important;
+    	padding-right: 5px;
+    	padding-left: 5px;
+    }
+    
+    img:hover {
+        opacity: 0.5;
+    }
+}
+
+/*--- DIVIDING LINE ---------------------------------------------------------*/
+
+hr { 
+    display: block; 
+    margin: 1em 0 1.5em; 
+    padding: 0;
+    height: 1px; 
+    border: 0; 
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fff; 
+}
+
+/*--- FIGURES & IMAGES ------------------------------------------------------*/
+
+figure {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  img {
+    margin-bottom: 0px;
+  }
+}
+
+svg:not(:root) {
+  overflow: hidden; 
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%
+}
+
+.threeq-width {
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.half-width {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.third-width {
+    width: 33%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quarter-width {
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.half-left {
+    width: 50%;
+    align: left;
+}
+
+.image-grid {
+    display: grid; 
+    grid-auto-columns: 1fr 1fr; 
+    grid-gap: 5px;
+}
+
+/*--- PAGINATION ------------------------------------------------------------*/
+
+.pagination {
+    word-spacing: 10px;
+}
+
+/*--- MATHJAX ---------------------------------------------------------------*/
+
+.MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.has-jax {
+    font: inherit; 
+    font-size: 100; 
+    background: inherit; 
+    border: inherit;
+    color: #006699;
+}
+
+/*--- TAGS ------------------------------------------------------------------*/
+
+.inline-tags {
+    font-size: 14px;
+    a {
+        color: $highlight-color;
+    }
+    
+    &:hover {
+        color: $base-color;
+    }
+}
+
+.inline-tags a {
+    border-bottom: none;
+}
+
+/*--- POST INDEX ------------------------------------------------------------*/
+
+#post-index {
+	#main {
+		margin: 0px 0px 20px 2px;
+
+		@media #{$medium} {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		@media #{$large} {
+			max-width: $column-width;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	article {
+		background-color: $article-background;
+		box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color,0.1);
+		border-radius: 3px;
+		margin-bottom: 20px;
+		padding: 25px 15px;
+
+		@media #{$medium} {
+			padding: 30px;
+		}
+
+		@media #{$large} {
+			margin-bottom: 30px;
+			padding: 50px 80px;
+		}
+        
+        a { 
+            img:hover {
+                opacity: 0.9;
+            }
+        }
+        
+	}
+}
+
+/*--- FOOTER ----------------------------------------------------------------*/
+
+.footer-wrapper {
+	margin: 2em auto;
+	text-align: center;
+	color: lighten($text-color,20);
+    font-size: 14px;
+
+    a:link{
+        color: darken($text-color,1);
+    }
+    
+	a:hover {
+		color: $highlight-color;
+	}
+}
+
+/*--- BROWSER UPGRADE -------------------------------------------------------*/
+
+.upgrade {
+	padding: 10px;
+	text-align: center;
+}
+
+
+/*--- HEADINGS --------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $heading-font;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+/*--- RESPONSIVE YOUTUBE EMBED --------------------------------------------------------------*/
+.video-container { 
+	position: relative; 
+	padding-bottom: 56.25%; 
+	padding-top: 30px; 
+	height: 0; 
+	overflow: hidden; 
+}
+
+.video-container iframe, .video-container object, .video-container embed { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+}

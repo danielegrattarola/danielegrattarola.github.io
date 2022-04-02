@@ -1,0 +1,8 @@
+- title: Graph Neural Networks
+  description: My core research is on graph neural networks and their applications. I have published several papers that introduced state-of-the-art methods for graph representation learning and graph pooling. 
+
+- title: Protein design
+  description: I have recently joined EPFL to work on geometric deep learning methods for protein design. Stay tuned for a lot of exciting and impactful research!
+
+- title: Spektral
+  description: <a href="https://graphneural.network">Spektral</a> is an open-source Python library that provides a simple but flexible framework for creating graph neural networks in TensorFlow and Keras. <br> I recently released version 1.0 of the library, which brings several new features and improvements.

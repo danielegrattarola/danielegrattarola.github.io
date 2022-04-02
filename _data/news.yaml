@@ -1,0 +1,23 @@
+- news:
+    date: Jan 2022
+    text: "I have become a member of the <a href=\"https://ellis.eu\">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI."
+
+- news:
+    date: Jan 2022
+    text: "I am co-organizing a special session on Deep Learning for Graphs (DL4G) at WCCI 2022. <a href=\"https://sites.google.com/view/dl4g-2022\">Read the call for papers here.</a>"
+
+- news:
+    date: Dec 10, 2021
+    text: "I have successfully defended my PhD dissertation!" 
+
+- news: 
+    date: Oct 2021
+    text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.14237\">Learning graph cellular automata</a>\" will appear at NeurIPS 2021."
+
+- news: 
+    date: Oct 2021
+    text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.05292\">Understanding pooling in graph neural networks</a>\" is out on arXiv."
+
+- news: 
+    date: Sep 2021
+    text: "The paper from my collaboration with <a href=\"https://www.menten.ai/\">Menten AI</a>, \"<a href=\"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009037\">XENet: using a new graph convolution to accelerate the timeline for protein design on quantum computers</a>\", was published in PLOS Computational Biology."

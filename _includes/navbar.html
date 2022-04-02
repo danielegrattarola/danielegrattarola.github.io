@@ -1,0 +1,18 @@
+<div class="navbar">
+    <a class="brand" href="/">{{site.navbar_text}}</a>
+    <div id='menu'>
+        <a href="/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/publications/">Publications</a>
+        <a href="/activity/">Activity</a>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('#menu').slicknav({
+            label: '',
+            brand: '<a class="brand" href="/">{{site.navbar_text}}</a>'
+        });
+    });
+</script>

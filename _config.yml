@@ -1,0 +1,71 @@
+title: Daniele Grattarola
+author: Daniele Grattarola
+description: "Postdoc @ EPFL"
+twitter:
+    username: riceasphait
+social:
+    name: Daniele Grattarola
+    links:
+        - https://github.com/danielegrattarola
+        - https://linkedin.com/in/danielegrattarola
+        - https://danielegrattarola.github.io/feed.xml
+
+future:      false  # publish future dated posts --  true, false (default) 
+highlighter: rouge
+markdown:    kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+permalink: /:categories/:year-:month-:day/:title.html
+
+# Amount of post to show on home page
+paginate: 5
+paginate_path: 'blog/page:num'
+
+#kramdown:
+#  input: GFM
+#  auto_ids: true
+#  footnote_nr: 1
+#  entity_output: as_char
+#  toc_levels: 1..6
+#  enable_coderay: false
+
+include: 
+  - .htaccess
+  - .well-known
+
+exclude: 
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
+
+excerpt_separator: <!--more-->
+
+navbar_text: DANIELE GRATTAROLA°
