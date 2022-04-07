@@ -1,8 +1,12 @@
 ---
-layout: post
+layout: post-index
 title: Publications
 image: /images/header/publications.png
 ---
+
+<article>
+    
+<h1 class="entry-title">Publications</h2>
 
 <center>
     <img src="/images/header/publications.png" alt="Glitch art #1 (by Daniele Grattarola)" class="full-width"/>
@@ -10,7 +14,8 @@ image: /images/header/publications.png
 <br>
 
 {% for venue in site.data.publications %}
-<h2>{{venue.type}}</h2>
+<h2 class="entry-title">{{venue.type}}</h2>
+<div class="entry-content">
 {% for pub in venue.pubs %}
     <a href="{{pub.link}}"><strong>{{pub.title}}.</strong></a>
     <br>
@@ -37,7 +42,9 @@ image: /images/header/publications.png
     {% endif %}
     <br><br>
 {% endfor %}
+</div>
 {% endfor %}
 
 <hr>
 <span>* Equal contribution</span>
+</article>

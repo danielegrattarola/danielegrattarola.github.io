@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: post-index
 title: Blog
 image: /images/header/oz.jpg
 ---
 
+<article>
+<h1 class="entry-title">{{page.title}}</h1>
+
+<div class="entry-content">
 {% for post in site.posts %}
     <p>
         <a href="{{post.url}}">{{post.title}}.</a>
@@ -22,4 +26,4 @@ image: /images/header/oz.jpg
         </span>
     </p>
 {% endfor %}    
-
+</div>
