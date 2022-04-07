@@ -26,19 +26,19 @@ image: /images/header/publications.png
     <br>
     {% endif %}
     {% if pub.code %} 
-    <a href="{{pub.code}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code</a>&nbsp;
+    <a href="{{pub.code}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code</a>&nbsp;
     {% endif %}
     {% if pub.code-tf %} 
-    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (TF/Keras)</a>&nbsp;
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code (TF/Keras)</a>&nbsp;
     {% endif %}
     {% if pub.code-pt %} 
-    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="fab fa-github"></i> Code (PyTorch)</a>&nbsp;
+    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code (PyTorch)</a>&nbsp;
     {% endif %}
     {% if pub.poster %} 
-    <a href="{{pub.poster}}" style="border-bottom: none;"><i class="fas fa-pager"></i> Poster</a>&nbsp;
+    <a href="{{pub.poster}}" style="border-bottom: none;"><i class="icon-list-alt"></i> Poster</a>&nbsp;
     {% endif %}
     {% if pub.doi %} 
-    <a href="{{pub.doi}}" style="border-bottom: none;"><i class="fas fa-book"></i> DOI</a>&nbsp;
+    <a href="{{pub.doi}}" style="border-bottom: none;"><i class="icon-book"></i> DOI</a>&nbsp;
     {% endif %}
     <br><br>
 {% endfor %}
