@@ -10,6 +10,13 @@ body {
     width: 100%;
 }
 
+/*--- IMG ------------------------------------------------------------------*/
+
+img {
+	max-width: 100%;
+  	height: auto;
+}
+
 /*--- GLOBAL TRANSITION -----------------------------------------------------*/
 
 b, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, path {
