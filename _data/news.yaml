@@ -1,4 +1,8 @@
 - news:
+    date: Mar 2022
+    text: "In collaboration with part of the team that I mentored at <a href=\"https://www.logml.ai/people/mentor/daniele\">LOGML 2021</a>, we have released <a href=\"https://arxiv.org/abs/2203.10866\">a preprint</a> on unsupervised embedding of heterophilous graphs."
+
+- news:
     date: Jan 2022
     text: "I have become a member of the <a href=\"https://ellis.eu\">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI."
 
