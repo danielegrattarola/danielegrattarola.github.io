@@ -29,7 +29,7 @@
     link: https://arxiv.org/abs/1907.00481
     code: 
     code-tf: https://graphneural.network/layers/pooling/#mincutpool
-    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#module-torch_geometric.nn.dense.mincut_pool
+    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.dense.dense_mincut_pool
     doi: 
     year: ICML 2020
   
