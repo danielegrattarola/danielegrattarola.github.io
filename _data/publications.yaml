@@ -47,6 +47,16 @@
   type: Journal papers
   pubs:
   
+  - title: Seizure localisation with attention-based graph neural networks
+    authors: D. Grattarola, L. Livi, C. Alippi, R. Wennberg, T. A. Valiante
+    venue: Expert Systems with Applications
+    link: https://www.biorxiv.org/content/10.1101/2020.12.03.409979
+    code: 
+    code-tf: 
+    code-pt: 
+    doi: 
+    year: 2022
+
   - title: "XENet: using a new graph convolution to accelerate the timeline for protein design on quantum computers"
     authors: J. B. Maguire, D. Grattarola, V. K. Mulligan, E. Klyshko, H. Melo
     venue: PLOS Computational Biology
@@ -125,16 +135,6 @@
     code-tf: 
     code-pt: 
     doi:
-    year: 2021
-
-  - title: Seizure localisation with attention-based graph neural networks
-    authors: D. Grattarola, L. Livi, C. Alippi, R. Wennberg, T. A. Valiante
-    venue: Preprint
-    link: https://www.biorxiv.org/content/10.1101/2020.12.03.409979
-    code: 
-    code-tf: 
-    code-pt: 
-    doi: 
     year: 2021
 
 - venue:
