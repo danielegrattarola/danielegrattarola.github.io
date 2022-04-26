@@ -150,13 +150,3 @@
     code-pt: 
     doi: https://doi.org/10.1145/3124791.3124793
     year: 2017
-
-# - title: Deep feature extraction for sample-efficient reinforcement learning
-  # authors: D. Grattarola
-  # venue: Master's thesis
-  # link: /files/publications/2017_10_grattarola_master_thesis.pdf
-  # code: https://github.com/danielegrattarola/deepRFS
-  # code-tf: 
-  # code-pt: 
-  # doi: 
-  # year: 2017
