@@ -1,4 +1,8 @@
 - news:
+    date: Apr 2022
+    text: "I had the absolute pleasure of chatting about cellular automata, emergence, life, graphs, and much more with the amazing Tim and Keith of <a href=\"https://www.youtube.com/watch?v=MDt2e8XtUcA\">Machine Learning Street Talk</a>!"
+
+- news:
     date: Mar 2022
     text: "In collaboration with part of the team that I mentored at <a href=\"https://www.logml.ai/people/mentor/daniele\">LOGML 2021</a>, we have released <a href=\"https://arxiv.org/abs/2203.10866\">a preprint</a> on unsupervised embedding of heterophilous graphs."
 
