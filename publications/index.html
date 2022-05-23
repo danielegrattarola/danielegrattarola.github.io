@@ -17,30 +17,32 @@ image: /images/generic/publications.png
 <h2 class="entry-title">{{venue.type}}</h2>
 <div class="entry-content">
 {% for pub in venue.pubs %}
+    <p>
     <a href="{{pub.link}}"><strong>{{pub.title}}.</strong></a>
     <br>
     <i>{{pub.authors}}.</i>
     <br>
-    <i>{{pub.venue}} ({{pub.year}})</i>.
+    <i>{{pub.venue}} ({{pub.year}})</i>
     {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
-    <br>
+    <!-- <br> -->
+    &nbsp;|&nbsp;
     {% endif %}
     {% if pub.code %} 
-    <a href="{{pub.code}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code</a>&nbsp;
+    <a href="{{pub.code}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code</a>&nbsp;
     {% endif %}
     {% if pub.code-tf %} 
-    <a href="{{pub.code-tf}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code (TF/Keras)</a>&nbsp;
+    <a href="{{pub.code-tf}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code (TF)</a>&nbsp;
     {% endif %}
     {% if pub.code-pt %} 
-    <a href="{{pub.code-pt}}" style="border-bottom: none;"><i class="icon-github-circled"></i> Code (PyTorch)</a>&nbsp;
+    <a href="{{pub.code-pt}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code (Torch)</a>&nbsp;
     {% endif %}
     {% if pub.poster %} 
-    <a href="{{pub.poster}}" style="border-bottom: none;"><i class="icon-list-alt"></i> Poster</a>&nbsp;
+    <a href="{{pub.poster}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-list-alt"></i> Poster</a>&nbsp;
     {% endif %}
     {% if pub.doi %} 
-    <a href="{{pub.doi}}" style="border-bottom: none;"><i class="icon-book"></i> DOI</a>&nbsp;
+    <a href="{{pub.doi}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-book"></i> DOI</a>&nbsp;
     {% endif %}
-    <br><br>
+    <p>
 {% endfor %}
 </div>
 {% endfor %}
