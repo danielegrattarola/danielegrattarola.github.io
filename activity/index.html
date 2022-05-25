@@ -21,9 +21,9 @@ image: /images/header/publications.png
     
     {% for item in site.data.teaching %}
         <p>
-        <strong><a href="{{item.url}}">{{item.title}}</a></strong><br>
-        {{item.description}}
-        ({{item.period}}).
+            <strong><a href="{{item.url}}">{{item.title}}</a></strong><br>
+            {{item.description}}
+            ({{item.period}}).
         </p>
     {% endfor %}
 
@@ -44,8 +44,7 @@ image: /images/header/publications.png
     {% for item in site.data.students %}
         <p>
             <strong>{{item.title}}</strong><br>
-            {{item.name}}<br>
-            {{item.type}} ({{item.year}})
+            {{item.name}}&nbsp;|&nbsp;{{item.type}} ({{item.year}})
         </p>
     {% endfor %}
     
@@ -80,11 +79,16 @@ image: /images/header/publications.png
 <article>
     <div class="entry-content">
     
-    <h1>Reviewing</h1>
+    <h1>Community</h1>
 
-    I serve as reviewer for the following artificial intelligence conferences, journals and workshops. 
+    <p>
+        I am a member of the <a href="https://ellis.eu/">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI.
+    </p>
+    <p>
+        I also serve as reviewer for the following artificial intelligence conferences, journals and workshops. 
+    </p>
     
-    <h2>Conferences</h2>
+    <h3>Conferences</h3>
     <ul>
     {% for item in site.data.review %}
         {% if item.conference %}
@@ -95,7 +99,7 @@ image: /images/header/publications.png
     {% endfor %}
     </ul>
 
-    <h2>Journals</h2>
+    <h3>Journals</h3>
     <ul>
     {% for item in site.data.review %}
         {% if item.journal %}
@@ -106,7 +110,7 @@ image: /images/header/publications.png
     {% endfor %}
     </ul>
 
-    <h2>Workshops</h2>
+    <h3>Workshops</h3>
     <ul>
     {% for item in site.data.review %}
         {% if item.workshop %}
