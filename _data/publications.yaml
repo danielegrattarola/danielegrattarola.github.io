@@ -121,13 +121,20 @@
   type: Preprints
   pubs:
 
-  - title: "Unsupervised Heterophilous Network Embedding via r-Ego Network Discrimination"
-    authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
+  - title: Generalised implicit neural representations
+    authors: D. Grattarola, P. Vandergheynst
     venue: Preprint
-    link: "https://arxiv.org/abs/2203.10866"
+    link: https://arxiv.org/abs/2205.15674
+    code: https://github.com/danielegrattarola/GINR
     year: 2022
 
-  - title: "Understanding Pooling in Graph Neural Networks"
+  - title: Unsupervised heterophilous network embedding via r-ego network discrimination
+    authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
+    venue: Preprint
+    link: https://arxiv.org/abs/2203.10866
+    year: 2022
+
+  - title: Understanding pooling in graph neural networks
     authors: D. Grattarola, D. Zambon, F. M. Bianchi, C. Alippi
     venue: Preprint
     link: https://arxiv.org/abs/2110.05292
