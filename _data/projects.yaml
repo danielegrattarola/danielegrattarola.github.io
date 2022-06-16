@@ -6,3 +6,6 @@
 
 - title: Spektral
   description: <a href="https://graphneural.network">Spektral</a> is an open-source Python library that provides a simple but flexible framework for creating graph neural networks in TensorFlow and Keras. <br> I recently released version 1.0 of the library, which brings several new features and improvements.
+
+- title: Collaborations
+  description: "I am always looking for new and exciting research ideas, so <a href=\"mailto:daniele.grattarola@gmail.com\">get in touch with me</a> if you want to work together. <br> A list of open projects for students is available <a href=\"https://lts2.epfl.ch/projects/list\">here</a>."
