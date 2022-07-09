@@ -46,6 +46,16 @@
 - venue:
   type: Journal papers
   pubs:
+
+  - title: Understanding pooling in graph neural networks
+    authors: D. Grattarola, D. Zambon, F. M. Bianchi, C. Alippi
+    venue: IEEE Transactions on Neural Networks and Learning Systems
+    link: https://arxiv.org/abs/2110.05292
+    code: https://github.com/danielegrattarola/SRC
+    code-tf: 
+    code-pt: 
+    doi:
+    year: 2022
   
   - title: Seizure localisation with attention-based graph neural networks
     authors: D. Grattarola, L. Livi, C. Alippi, R. Wennberg, T. A. Valiante
