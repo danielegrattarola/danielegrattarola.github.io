@@ -144,16 +144,6 @@
     link: https://arxiv.org/abs/2203.10866
     year: 2022
 
-  - title: Understanding pooling in graph neural networks
-    authors: D. Grattarola, D. Zambon, F. M. Bianchi, C. Alippi
-    venue: Preprint
-    link: https://arxiv.org/abs/2110.05292
-    code: https://github.com/danielegrattarola/SRC
-    code-tf: 
-    code-pt: 
-    doi:
-    year: 2021
-
 - venue:
   type: Others
   pubs:
