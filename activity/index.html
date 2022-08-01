@@ -38,6 +38,18 @@ image: /images/header/publications.png
 
 <article>
     <div class="entry-content">
+
+    <h1>Community</h1>
+    This is a list of my past and current roles as an active member of the machine learning community:
+    <ul>
+    {% for item in site.data.community %}
+        <li>{{item}}</li>
+    {% endfor %}
+    </ul>
+</article>
+
+<article>
+    <div class="entry-content">
     
     <h1>Supervision & Mentoring</h1>
     
@@ -79,11 +91,8 @@ image: /images/header/publications.png
 <article>
     <div class="entry-content">
     
-    <h1>Community</h1>
+    <h1>Reviewing</h1>
 
-    <p>
-        I am a member of the <a href="https://ellis.eu/">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI.
-    </p>
     <p>
         I also serve as reviewer for the following artificial intelligence conferences, journals and workshops. 
     </p>
