@@ -1,6 +1,13 @@
 - venue:
   type: Conference papers
   pubs:
+
+  - title: Generalised implicit neural representations
+    authors: D. Grattarola, P. Vandergheynst
+    venue: Neural Information Processing Systems
+    link: https://arxiv.org/abs/2205.15674
+    code: https://github.com/danielegrattarola/GINR
+    year: NeurIPS 2022
   
   - title: Learning graph cellular automata
     authors: D. Grattarola, L. Livi, C. Alippi
@@ -130,13 +137,6 @@
 - venue:
   type: Preprints
   pubs:
-
-  - title: Generalised implicit neural representations
-    authors: D. Grattarola, P. Vandergheynst
-    venue: Preprint
-    link: https://arxiv.org/abs/2205.15674
-    code: https://github.com/danielegrattarola/GINR
-    year: 2022
 
   - title: Unsupervised heterophilous network embedding via r-ego network discrimination
     authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
