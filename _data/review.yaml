@@ -13,9 +13,11 @@
 - journal: Transactions on Neural Networks and Learning Systems (TNNLS)
 - journal: Applied Soft Computing (ASOC)
 - journal: Neurocomputing
+- journal: Transactions on Knowledge Discovery from Data (TKDD)
 - journal: Transactions on Emerging Topics in Computational Intelligence (TETCI)
 - journal: Transactions on Geoscience and Remote Sensing (TGRS)
 
+- workshop: "New Frontiers in Graph Learning: Challenges, Perspectives, and Solutions (NeurIPS 2022)"
 - workshop: Graph Neural Networks and Systems (MLSys 2021)
 - workshop: Graphs and more Complex structures for Learning and Reasoning (AAAI 2021, 2022)
 - workshop: ML Retrospectives (NeurIPS 2020)
