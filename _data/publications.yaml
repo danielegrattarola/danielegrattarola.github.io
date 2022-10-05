@@ -61,7 +61,7 @@
     code: https://github.com/danielegrattarola/SRC
     code-tf: 
     code-pt: 
-    doi:
+    doi: https://doi.org/10.1109/TNNLS.2022.3190922
     year: 2022
   
   - title: Seizure localisation with attention-based graph neural networks
