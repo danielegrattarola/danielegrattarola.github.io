@@ -1,3 +1,9 @@
+- title: "Generalised Implicit Neural Representations"
+  venue: Neural Information Processing Systems
+  url: https://neurips.cc/Conferences/2022/Schedule
+  slides: /files/talks/2022-NeurIPS-GINR_short.pdf
+  period: 2022
+
 - title: "Introduction to Graph Neural Networks and Graph Pooling"
   venue: Graph Deep Learning course @ USI
   url: https://search.usi.ch/en/courses/35263629/graph-deep-learning
