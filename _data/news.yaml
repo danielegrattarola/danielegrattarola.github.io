@@ -1,3 +1,7 @@
+- news:
+    date: Nov 2022
+    text: "I'm thrilled to announce that I will be joining <a href=\"https://isomorphiclabs.com\">Isomorphic Labs</a> (London, UK) to help reimagine the drug discovery process using AI. Exciting times ahead!"
+
 - news: 
     date: Sep 2022
     text: "Our paper \"<a href=\"https://arxiv.org/abs/2205.15674\">Generalised implicit neural representations</a>\" has been accepted at NeurIPS 2022."

@@ -9,7 +9,7 @@ image: /images/header/publications.png
 
     <h1>Activity</h1>
 
-    <p>This is a summary of my academic activity, including teaching and participating as a member of the faculty at USI, supervising and mentoring students, giving talks, and serving as reviewer at top AI venues.</p>
+    <p>This page contains a summary of my activity and experience, including teaching, supervising students, and participating in the machine learning community.</p>
     
     </div>
 </article>
@@ -17,17 +17,23 @@ image: /images/header/publications.png
 <article>
     <div class="entry-content">
 
-    <h1>Teaching</h1>
-    
-    {% for item in site.data.teaching %}
-        <p>
-            <strong><a href="{{item.url}}">{{item.title}}</a></strong><br>
-            {{item.description}}
-            ({{item.period}}).
-        </p>
-    {% endfor %}
+    <h1>Academia</h1>
 
-    <h2>Faculty</h2>
+    <h2>Teaching</h2>
+    I have helped organize, teach, and supervise the following universtiy courses:
+    <ul>
+    {% for item in site.data.teaching %}
+        <li>
+            <a href="{{item.url}}">{{item.title}}</a>,
+            {{item.role}},
+            {{item.type}},
+            {{item.location}},
+            {{item.period}}.
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h2>Faculty roles</h2>
 
     I have been the Ph.D. representative for USI's Faculty of Informatics in the A.Y. 2018/2019. 
     <br>
@@ -94,7 +100,7 @@ image: /images/header/publications.png
     <h1>Reviewing</h1>
 
     <p>
-        I also serve as reviewer for the following artificial intelligence conferences, journals and workshops. 
+        I have served as reviewer for the following artificial intelligence conferences, journals and workshops. 
     </p>
     
     <h3>Conferences</h3>

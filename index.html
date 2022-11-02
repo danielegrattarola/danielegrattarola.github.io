@@ -8,14 +8,15 @@ image: /images/generic/daniele_grattarola.jpg
 <img src="/images/generic/daniele_grattarola.jpg" width=1000 height=667 style="grid-column: 1 / span 2;">
 
 <div class="entry-content">
-<p>I am a postdoctoral researcher at <a href="https://www.epfl.ch/">EPFL</a>, working with the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> laboratories.</p>
+<p>I am a postdoctoral researcher at <a href="https://www.epfl.ch/">EPFL</a>, working with the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> laboratories. <br>
+I will soon be a research scientist at <a href="https://isomorphiclabs.com">Isomorphic Labs</a>.</p>
 
-<p>I research graph neural networks and their applications to dynamical systems and computational biology, specifically for protein design. I am also the main developer of <a href="https://graphneural.network">Spektral</a>, a library for graph deep learning in TensorFlow/Keras.</p>
+<p>I research graph neural networks and their applications to dynamical systems and computational biology, specifically for protein and drug design. I am also the creator of <a href="https://graphneural.network">Spektral</a>, a library for graph deep learning in TensorFlow/Keras.</p>
 
-<p>I obtained my PhD at the <a href="https://idsia.ch/">Swiss AI Lab IDSIA</a>, in Lugano.    
+<p>I obtained my PhD at the <a href="https://idsia.ch/">Swiss AI Lab IDSIA</a>.    
 I hold an MSc in Computer Science and Engineering with honors from <a href="https://polimi.it">Politecnico di Milano</a>.</p> 
 
-<p>In my free time, I co-host and manage <a href="https://www.youtube.com/channel/UCEcWriMWPpO_RIbpkJvHc8w">Smarter Podcast</a>, a live streaming podcast in Italian in which we interview AI researchers from academia and industry.</p>
+<p>In my free time, I co-host and manage <a href="https://www.youtube.com/channel/UCEcWriMWPpO_RIbpkJvHc8w">Smarter Podcast</a>, a live-streaming podcast in Italian in which we interview AI researchers from academia and industry.</p>
 
 <br>
 
@@ -45,32 +46,11 @@ I hold an MSc in Computer Science and Engineering with honors from <a href="http
 </article>
 
 <article>
-    <h1 class="entry-title">Projects</h1>   
-
-    <div class="entry-content">
-        <p>
-            This is a summary of my active projects.
-            You can find a complete <a href="/publications">list of publications here</a> (including links to code) and a summary of <a href="/activity">my academic activity here</a>.
-        </p>
-
-        {% for item in site.data.projects %}
-            <p>
-                <strong>{{item.title}}.</strong>
-                {% if item.description %}
-                    <br>
-                    {{item.description}}
-                {% endif %}
-            </p>
-        {% endfor %}
-    </div> 
-</article>
-
-<article>
     <h1 class="entry-title">News</h1>   
 
     <div class="entry-content">
         
-        {% for item in site.data.news | limit: 10 %}
+        {% for item in site.data.news | limit: 100 %}
         <p>
         {% if item.news.date %}
         <span class="entry-date post-date date published updated">
