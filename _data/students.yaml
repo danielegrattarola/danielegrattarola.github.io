@@ -1,24 +1,29 @@
 - title: Exploring Implicit Neural Representations from a Signal Processing Perspective
   name: J. Deschenaux
-  type: Semester project (EPFL)
+  type: Semester project
+  location: EPFL
   year: 2022
 
 - title: Adaptive Neural Cellular Automata
   name: A. Charneca
-  type: Semester project (EPFL)
+  type: Semester project
+  location: EPFL
   year: 2022
 
 - title: <a href="https://www.logml.ai/people/mentor/daniele">Coarsening Disassortative Graphs</a>
   name: A. Bar, G. Gonzalez, A. Jamadandi, V. Polianskii, M. Thiessen, Z. Zhong
-  type: Student project at the <a href="https://logml.ai">LOGML summer school</a>
+  type: Student project 
+  location: <a href="https://logml.ai">LOGML summer school</a>
   year: 2021
 
 - title: Molecule Generation with Graph-based Generative Adversarial Networks
   name: M. Nobile
-  type: Master's thesis (USI)
+  type: Master's thesis
+  location: USI
   year: 2021
 
 - title: Prediction of Epileptic Seizures with Graph-based Deep Learning
   name: A. Ruggeri
-  type: Master's thesis (USI)
+  type: Master's thesis
+  location: USI
   year: 2020

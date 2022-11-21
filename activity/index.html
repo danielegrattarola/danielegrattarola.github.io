@@ -24,11 +24,10 @@ image: /images/header/publications.png
     <ul>
     {% for item in site.data.teaching %}
         <li>
-            <a href="{{item.url}}">{{item.title}}</a>,
-            {{item.role}},
-            {{item.type}},
-            {{item.location}},
-            {{item.period}}.
+            <a href="{{item.url}}"><strong>{{item.title}}</strong></a>
+            &nbsp;-&nbsp;
+            {{item.role}} 
+            ({{item.location}}, {{item.period}}).
         </li>
     {% endfor %}
     </ul>
@@ -62,7 +61,8 @@ image: /images/header/publications.png
     {% for item in site.data.students %}
         <p>
             <strong>{{item.title}}</strong><br>
-            {{item.name}}&nbsp;|&nbsp;{{item.type}} ({{item.year}})
+            {{item.name}}
+            &nbsp;|&nbsp; {{item.type}} ({{item.location}}, {{item.year}})
         </p>
     {% endfor %}
     
