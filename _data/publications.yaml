@@ -54,6 +54,12 @@
   type: Journal papers
   pubs:
 
+  - title: Unsupervised heterophilous network embedding via r-ego network discrimination
+    authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
+    venue: Transactions on Machine Learning Research
+    link: https://openreview.net/forum?id=sRgvmXjrmg
+    year: 2022
+
   - title: Understanding pooling in graph neural networks
     authors: D. Grattarola, D. Zambon, F. M. Bianchi, C. Alippi
     venue: IEEE Transactions on Neural Networks and Learning Systems
@@ -134,15 +140,11 @@
     doi: https://doi.org/10.1109/TNNLS.2019.2927301
     year: 2019
 
-- venue:
-  type: Preprints
-  pubs:
+# - venue:
+#   type: Preprints
+#   pubs:
 
-  - title: Unsupervised heterophilous network embedding via r-ego network discrimination
-    authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
-    venue: Preprint
-    link: https://arxiv.org/abs/2203.10866
-    year: 2022
+
 
 - venue:
   type: Others
