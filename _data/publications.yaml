@@ -7,6 +7,7 @@
     venue: Neural Information Processing Systems
     link: https://arxiv.org/abs/2205.15674
     code: https://github.com/danielegrattarola/GINR
+    poster: /files/publications/GINR_poster.pdf
     year: NeurIPS 2022
   
   - title: Learning graph cellular automata
@@ -134,15 +135,25 @@
     authors: D. Grattarola, D. Zambon, L. Livi, C. Alippi
     venue: IEEE Transactions on Neural Networks and Learning Systems
     link: https://arxiv.org/abs/1805.06299
-    code: https://github.com/danielegrattarola/cdt-ccm-aae"
+    code: https://github.com/danielegrattarola/cdt-ccm-aae
     code-tf: 
     code-pt: 
     doi: https://doi.org/10.1109/TNNLS.2019.2927301
     year: 2019
 
-# - venue:
-#   type: Preprints
-#   pubs:
+- venue:
+  type: Preprints
+  pubs:
+
+  - title: E(n)-equivariant graph neural cellular automata
+    authors: G. Gala, D. Grattarola, E. Quaeghebeur
+    venue: Preprint
+    link: https://arxiv.org/abs/2301.10497
+    code: https://github.com/gengala/egnca
+    code-tf: 
+    code-pt: 
+    doi: 
+    year: 2023
 
 
 
