@@ -1,6 +1,6 @@
 - title: Graph Deep Learning
   url: https://search.usi.ch/en/courses/35263629/graph-deep-learning
-  role: Guest lecturer
+  role: guest lecturer
   type: MSc
   location: USI
   semester: spring
@@ -8,7 +8,7 @@
 
 - title: Matrix Analysis
   url: https://edu.epfl.ch/coursebook/en/matrix-analysis-EE-312
-  role: Teaching assistant
+  role: teaching assistant
   type: BSc
   location: EPFL
   semester: spring
@@ -16,7 +16,7 @@
 
 - title: Graph Deep Learning
   url: https://search.usi.ch/it/corsi/35262194/graph-deep-learning
-  role: Guest lecturer and teaching assistant
+  role: guest lecturer and teaching assistant
   type: MSc
   location: USI
   semester: spring
@@ -24,7 +24,7 @@
 
 - title: Cyber-Physical Software Engineering
   url: https://search.usi.ch/en/courses/35262216/cyber-physical-software-engineering
-  role: Teaching assistant
+  role: teaching assistant
   type: MSc
   location: USI
   semester: fall
@@ -32,7 +32,7 @@
 
 - title: Machine Learning
   url: https://search.usi.ch/it/corsi/35259461/machine-learning
-  role: Teaching assistant
+  role: teaching assistant
   type: BSc
   location: USI
   semester: spring
@@ -40,7 +40,7 @@
 
 - title: Software Peformance
   url: https://search.usi.ch/it/corsi/35259376/software-performance
-  role: Teaching assistant
+  role: teaching assistant
   type: MSc
   location: USI
   semester: fall

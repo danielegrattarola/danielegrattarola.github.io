@@ -7,9 +7,26 @@ image: /images/header/publications.png
 <article>
     <div class="entry-content">
 
-    <h1>Activity</h1>
+    <h1>Experience</h1>
 
-    <p>This is a summary of my activity and experience, including teaching, supervising students, and participating in the machine learning community.</p>
+    <p>This is a summary of my work experience, including teaching, supervising students, and participating in the machine learning community.</p>
+    
+    </div>
+</article>
+
+<article>
+    <div class="entry-content">
+
+    <h1>Career</h1>
+
+    {% for item in site.data.experience %}
+        <p>
+            <a href="{{item.url}}"><strong>{{item.company}}</strong></a><br> 
+            {{item.title}}
+            <i>({{item.date}})</i><br>
+            {{item.description}}  
+        </p>
+    {% endfor %}
     
     </div>
 </article>
@@ -24,10 +41,9 @@ image: /images/header/publications.png
     <ul>
     {% for item in site.data.teaching %}
         <li>
-            <a href="{{item.url}}"><strong>{{item.title}}</strong></a>
-            &nbsp;-&nbsp;
+            <a href="{{item.url}}"><strong>{{item.title}}</strong></a>, 
             {{item.role}} 
-            ({{item.location}}, {{item.period}}).
+            ({{item.location}}, {{item.period}})
         </li>
     {% endfor %}
     </ul>
@@ -51,6 +67,9 @@ image: /images/header/publications.png
         <li>{{item}}</li>
     {% endfor %}
     </ul>
+
+    <h3>Spektral</h3>
+    I am the main developer of <a href="https://graphneural.network">Spektral</a>, an open-source Python library for creating graph neural networks in TensorFlow and Keras. The project has thousands of active users and was one of the first libraries ever made for graph deep learning.
 </article>
 
 <article>

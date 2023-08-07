@@ -18,9 +18,9 @@ image: /images/generic/publications.png
 <div class="entry-content">
 {% for pub in venue.pubs %}
     <p>
-    <a href="{{pub.link}}"><strong>{{pub.title}}.</strong></a>
+    <a href="{{pub.link}}"><strong>{{pub.title}}</strong></a>
     <br>
-    <i>{{pub.authors}}.</i>
+    <i>{{pub.authors}}</i>
     <br>
     <i>{{pub.venue}} ({{pub.year}})</i>
     {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
@@ -48,5 +48,7 @@ image: /images/generic/publications.png
 {% endfor %}
 
 <hr>
-<span>* Equal contribution</span>
+<span style="font-size: 14px;">* Equal contribution</span>
+<br>
+<span style="font-size: 14px;"><sup>†</sup> Work conducted as an independent researcher</span>
 </article>

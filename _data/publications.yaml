@@ -2,6 +2,17 @@
   type: Conference papers
   pubs:
 
+  - title: Hierarchical neural cellular automata
+    authors: R. Pande, D. Grattarola<sup> †</sup>
+    venue: Artificial Life Conference
+    link: https://direct.mit.edu/isal/proceedings/isal/35/20/116844
+    code: https://github.com/RituPande/hnca
+    code-tf:
+    code-pt:
+    poster:
+    doi: https://doi.org/10.1162/isal_a_00601
+    year: ALife 2023
+
   - title: Generalised implicit neural representations
     authors: D. Grattarola, P. Vandergheynst
     venue: Neural Information Processing Systems
@@ -146,7 +157,7 @@
   pubs:
 
   - title: E(n)-equivariant graph neural cellular automata
-    authors: G. Gala, D. Grattarola, E. Quaeghebeur
+    authors: G. Gala, D. Grattarola<sup> †</sup>, E. Quaeghebeur
     venue: Preprint
     link: https://arxiv.org/abs/2301.10497
     code: https://github.com/gengala/egnca
