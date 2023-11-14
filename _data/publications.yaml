@@ -3,7 +3,7 @@
   pubs:
 
   - title: Hierarchical neural cellular automata
-    authors: R. Pande, D. Grattarola<sup> †</sup>
+    authors: "R. Pande, D. Grattarola<sup> <a href=\"#fnote-cross\" style=\"border-bottom: none\" title=\"As independent researcher\">†</a></sup>"
     venue: Artificial Life Conference
     link: https://direct.mit.edu/isal/proceedings/isal/35/20/116844
     code: https://github.com/RituPande/hnca
@@ -43,7 +43,7 @@
     year: ICLR 2021
   
   - title: Spectral clustering with graph neural networks for graph pooling
-    authors: F. M. Bianchi*, D. Grattarola*, C. Alippi
+    authors: "F. M. Bianchi<a href=\"#fnote\" style=\"border-bottom: none\" title=\"Equal contribution\">*</a>, D. Grattarola<a href=\"#fnote\" style=\"border-bottom: none\" title=\"Equal contribution\">*</a>, C. Alippi"
     venue: International Conference on Machine Learning
     link: https://arxiv.org/abs/1907.00481
     code: 
@@ -53,7 +53,7 @@
     year: ICML 2020
   
   - title: Autoregressive models for sequences of graphs
-    authors: D. Zambon*, D. Grattarola*, L. Livi, C. Alippi
+    authors: "D. Zambon<a href=\"#fnote\" style=\"border-bottom: none\" title=\"Equal contribution\">*</a>, D. Grattarola<a href=\"#fnote\" style=\"border-bottom: none\" title=\"Equal contribution\">*</a>, L. Livi, C. Alippi"
     venue: International Joint Conference on Neural Networks
     link: https://arxiv.org/abs/1903.07299
     code: https://github.com/dzambon/NGAR
@@ -157,7 +157,7 @@
   pubs:
 
   - title: E(n)-equivariant graph neural cellular automata
-    authors: G. Gala, D. Grattarola<sup> †</sup>, E. Quaeghebeur
+    authors: "G. Gala, D. Grattarola<sup> <a href=\"#fnote-cross\" style=\"border-bottom: none\" title=\"As independent researcher\">†</a></sup>, E. Quaeghebeur"
     venue: Preprint
     link: https://arxiv.org/abs/2301.10497
     code: https://github.com/gengala/egnca
@@ -166,11 +166,21 @@
     doi: 
     year: 2023
 
-
-
 - venue:
   type: Others
   pubs:
+
+  - title: Performance and structural coverage of the latest, in-development AlphaFold model
+    authors: Google DeepMind AlphaFold Team, Isomorphic Labs Team
+    link: https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/a-glimpse-of-the-next-generation-of-alphafold/alphafold_latest_oct2023.pdf
+    venue: Whitepaper
+    year: 2023
+
+  - title: "Graph neural networks: operators and architectures"
+    authors: D. Grattarola
+    link: https://folia.unifr.ch/documents/319253/files/2021INFO014.pdf
+    venue: PhD thesis
+    year: 2021
   
   - title: Content-based approaches for cold-start job recommendations
     authors: M. Bianchi, F. Cesaro, F. Ciceri, M. Dagrada, A. Gasparin, D. Grattarola, I. Inajjar, A. M. Metelli, L. Cella
