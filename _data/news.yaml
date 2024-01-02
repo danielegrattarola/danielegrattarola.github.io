@@ -1,5 +1,9 @@
 - news:
-    date: October 2023
+    date: Dec 2023
+    text: "My second feature on the MLST channel was released <a href=\"https://www.youtube.com/watch?v=v5NysEyZkl0\">on Youtube</a>. It's from NeurIPS 2023, and I discuss our work on generalised implicit neural representations from my time at EPFL."
+
+- news:
+    date: Oct 2023
     text: "The team at Isolabs has released a <a 
 href=\"https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/a-glimpse-of-the-next-generation-of-alphafold/alphafold_latest_oct2023.pdf\">whitepaper</a> and a <a 
 href=\"https://www.isomorphiclabs.com/articles/a-glimpse-of-the-next-generation-of-alphafold\">blog post</a> in collaboration with Google DeepMind showcasing our latest research and progress on 
