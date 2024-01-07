@@ -48,7 +48,7 @@
     link: https://arxiv.org/abs/1907.00481
     code: 
     code-tf: https://graphneural.network/layers/pooling/#mincutpool
-    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.dense.dense_mincut_pool
+    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.dense.dense_mincut_pool.html
     doi: 
     year: ICML 2020
   
@@ -70,6 +70,7 @@
     authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
     venue: Transactions on Machine Learning Research
     link: https://openreview.net/forum?id=sRgvmXjrmg
+    code: https://github.com/zhiqiangzhongddu/SELENE
     year: 2022
 
   - title: Understanding pooling in graph neural networks
@@ -128,7 +129,7 @@
     link: https://arxiv.org/abs/1901.01343
     code: 
     code-tf: https://graphneural.network/layers/convolution/#armaconv
-    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.ARMAConv
+    code-pt: https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.conv.ARMAConv.html
     doi: https://doi.org/10.1109/TPAMI.2021.3054830
     year: 2021
   
