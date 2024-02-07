@@ -22,8 +22,9 @@ image: /images/header/publications.png
     {% for item in site.data.experience %}
         <p>
             <a href="{{item.url}}"><strong>{{item.company}}</strong></a><br> 
-            {{item.title}}
-            <i>({{item.date}})</i><br>
+            {% for pos in item.positions %}
+                {{pos.title}} ({{pos.date}}) {% unless forloop.last %}, {% endunless %}
+            {% endfor %}<br>
             {{item.description}}  
         </p>
     {% endfor %}

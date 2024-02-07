@@ -1,20 +1,25 @@
 - company: Isomorphic Labs
-  title: Research scientist
+  positions:
+    - title: Senior Research Scientist
+      date: 2024 - Present
+    - title: Research Scientist
+      date: 2023 - 2024
   description: Isomorphic Labs is a digital biology company and sister company of Google DeepMind, on a mission to reimagine drug discovery with an AI-first approach and, ultimately, to model and understand the fundamental mechanisms of life.
-  date: 2023 - Present
   location: London, UK
   url: https://isomorphiclabs.com
 
 - company: École Polytechnique Fédérale De Lausanne (EPFL)
-  title: Postdoctoral researcher
+  positions:
+    - title: Postdoctoral Researcher
+      date: 2022 - 2023
   description: At EPFL, I conducted research at the intersection of AI and structural biology, with a primary focus on applying neural fields and generative models to tackle the complex challenges of protein design.
-  date: 2022 - 2023
   location: Lausanne, CH
   url: https://epfl.ch
 
 - company: Krembil Research Institute
-  title: Visiting researcher
+  positions:
+    - title: Visiting Researcher
+      date: 2019 - 2020
   description:  The Krembil Institute is a world-leading neuroscience research organization based in Toronto. As a visiting researcher in the laboratory of Dr Taufik Valiante, I applied my research on geometric deep learning to the localization of epileptic seizures.
-  date: 2019 - 2020
   location: Toronto, CA
   url: https://www.uhn.ca/Research/Research_Institutes/Krembil
