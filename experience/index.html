@@ -23,7 +23,7 @@ image: /images/header/publications.png
         <p>
             <a href="{{item.url}}"><strong>{{item.company}}</strong></a><br> 
             {% for pos in item.positions %}
-                {{pos.title}} ({{pos.date}}) {% unless forloop.last %}, {% endunless %}
+                {{pos.title}} ({{pos.date}}){% unless forloop.last %}, {% endunless %}
             {% endfor %}<br>
             {{item.description}}  
         </p>
