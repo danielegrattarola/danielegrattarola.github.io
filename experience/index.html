@@ -23,7 +23,12 @@ image: /images/header/publications.png
         <p>
             <a href="{{item.url}}"><strong>{{item.company}}</strong></a><br> 
             {% for pos in item.positions %}
-                {{pos.title}} ({{pos.date}}){% unless forloop.last %}, {% endunless %}
+                {% if forloop.first %}
+                  {{pos.title}} ({{pos.date}})
+                  {% unless forloop.last %}<br>Previous roles: {% endunless %}
+                {% else %}
+                  {{pos.title}} ({{pos.date}}){% unless forloop.last %}, {% endunless %}
+                {% endif %}
             {% endfor %}<br>
             {{item.description}}  
         </p>
