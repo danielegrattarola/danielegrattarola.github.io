@@ -66,6 +66,13 @@
   type: Journal papers
   pubs:
 
+  - title: E(n)-equivariant graph neural cellular automata
+    authors: "G. Gala, D. Grattarola<sup> <a href=\"#fnote-cross\" style=\"border-bottom: none\" title=\"As independent researcher\">†</a></sup>, E. Quaeghebeur"
+    venue: Transactions on Machine Learning Research
+    link: https://openreview.net/forum?id=7PNJzAxkij
+    code: https://github.com/gengala/egnca
+    year: 2024
+
   - title: Unsupervised heterophilous network embedding via r-ego network discrimination
     authors: Z. Zhong, G. Gonzalez, D. Grattarola, J. Pang
     venue: Transactions on Machine Learning Research
@@ -152,20 +159,6 @@
     code-pt: 
     doi: https://doi.org/10.1109/TNNLS.2019.2927301
     year: 2019
-
-- venue:
-  type: Preprints
-  pubs:
-
-  - title: E(n)-equivariant graph neural cellular automata
-    authors: "G. Gala, D. Grattarola<sup> <a href=\"#fnote-cross\" style=\"border-bottom: none\" title=\"As independent researcher\">†</a></sup>, E. Quaeghebeur"
-    venue: Preprint
-    link: https://arxiv.org/abs/2301.10497
-    code: https://github.com/gengala/egnca
-    code-tf: 
-    code-pt: 
-    doi: 
-    year: 2023
 
 - venue:
   type: Others
