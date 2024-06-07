@@ -164,12 +164,6 @@
   type: Others
   pubs:
 
-  - title: Performance and structural coverage of the latest, in-development AlphaFold model
-    authors: Google DeepMind AlphaFold Team, Isomorphic Labs Team
-    link: https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/a-glimpse-of-the-next-generation-of-alphafold/alphafold_latest_oct2023.pdf
-    venue: Whitepaper
-    year: 2023
-
   - title: "Graph neural networks: operators and architectures"
     authors: D. Grattarola
     link: https://folia.unifr.ch/documents/319253/files/2021INFO014.pdf

@@ -6,13 +6,6 @@
     date: Dec 2023
     text: "I was featured for the second time on <a href=\"https://www.youtube.com/watch?v=v5NysEyZkl0\">Machine Learning Street Talk</a>. This interview was shot at NeurIPS 2023 last year, where I presented our work on generalized implicit neural representations from my time at EPFL."
 
-- news:
-    date: Oct 2023
-    text: "The team at Isolabs has released a <a 
-href=\"https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/a-glimpse-of-the-next-generation-of-alphafold/alphafold_latest_oct2023.pdf\">whitepaper</a> and a <a 
-href=\"https://www.isomorphiclabs.com/articles/a-glimpse-of-the-next-generation-of-alphafold\">blog post</a> in collaboration with Google DeepMind showcasing our latest research and progress on 
-AlphaFold."
-
 - news: 
     date: May 2023
     text: "I will be attending the <a href=\"https://www.moml2023.m2d2.io/\">Molecular ML Conference 2023</a> at 
