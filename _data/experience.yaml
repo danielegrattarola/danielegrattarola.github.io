@@ -1,10 +1,10 @@
 - company: Isomorphic Labs
   positions:
     - title: Senior Research Scientist
-      date: 2024 - Present
+      date: 2023 - Present
     - title: Research Scientist
       date: Jan 2023 - Jan 2024
-  description: I am a senior machine learning scientist and project lead, working on reimagining drug discovery with the power and scale of generative AI.
+  description: I am a senior ML research scientist and project lead, working on reimagining drug discovery with the power and scale of generative AI.
   location: London, UK
   url: https://isomorphiclabs.com
 
@@ -12,7 +12,7 @@
   positions:
     - title: Postdoctoral Researcher
       date: 2022 - 2023
-  description: At EPFL, I conducted research at the intersection of AI and structural biology, with a primary focus on applying neural fields and generative models to tackle the complex challenges of protein design.
+  description: At EPFL, I conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design.
   location: Lausanne, CH
   url: https://epfl.ch
 
