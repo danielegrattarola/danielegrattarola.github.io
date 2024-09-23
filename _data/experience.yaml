@@ -1,10 +1,10 @@
 - company: Isomorphic Labs
   positions:
-    - title: Senior Research Scientist
+    - title: Senior Research Scientist and Technical Lead
       date: 2023 - Present
     - title: Research Scientist
       date: Jan 2023 - Jan 2024
-  description: I am a senior ML research scientist and project lead, working on reimagining drug discovery with the power and scale of generative AI.
+  description: Working on reimagining drug discovery with the power and scale of generative AI.
   location: London, UK
   url: https://isomorphiclabs.com
 
@@ -12,7 +12,7 @@
   positions:
     - title: Postdoctoral Researcher
       date: 2022 - 2023
-  description: At EPFL, I conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design.
+  description: Conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design.
   location: Lausanne, CH
   url: https://epfl.ch
 
@@ -20,6 +20,6 @@
   positions:
     - title: Visiting Researcher
       date: 2019 - 2020
-  description:  The Krembil Institute is a world-leading neuroscience research organization based in Toronto. As a visiting researcher in the laboratory of Dr Taufik Valiante, I applied my research on geometric deep learning to the localization of epileptic seizures.
+  description: Conducted research on geometric deep learning for the localisation of epileptic seizures, with promising results on human clinical data.
   location: Toronto, CA
   url: https://www.uhn.ca/Research/Research_Institutes/Krembil
