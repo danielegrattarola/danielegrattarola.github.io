@@ -28,7 +28,7 @@ image: /images/header/publications.png
                   {{item.description}}
                   {% unless forloop.last %}<br>Previous roles: {% endunless %}
                 {% else %}
-                  {{pos.title}} ({{pos.date}}){% unless forloop.last %}, {% endunless %}.
+                  {{pos.title}}{% unless forloop.last %}, {% endunless %}.
                 {% endif %}
             {% endfor %}
         </p>
