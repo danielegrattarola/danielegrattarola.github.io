@@ -1,3 +1,3 @@
-# Daniele Grattarola's Personal Blog
+# Daniele Grattarola's personal website
 
-Live version @ [danielegrattarola.github.io](https://danielegrattarola.github.io)
+Live version available at [danielegrattarola.github.io](https://danielegrattarola.github.io)
