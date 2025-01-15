@@ -1,42 +1,42 @@
 /*--- PAGE ------------------------------------------------------------------*/
 
-$feature-image-height            : 400px; // min 150px recommended
-$front-page-feature-image-height : 300px; // min 150px recommended
-$column-width                    : 850px;
+$feature-image-height: 400px; // min 150px recommended
+$front-page-feature-image-height: 300px; // min 150px recommended
+$column-width: 850px;
 
 /*--- TYPOGRAPHY ------------------------------------------------------------*/
 
-$base-font                       : 'Lato', Calibri, Arial, sans-serif;
-$heading-font                    : $base-font;
-$caption-font                    : $base-font;
-$code-font                       : monospace;
-$alt-font                        : serif;
+$base-font: "Lato", Calibri, Arial, sans-serif;
+$heading-font: $base-font;
+$caption-font: $base-font;
+$code-font: monospace;
+$alt-font: serif;
 
-$doc-font-size                   : 18px;
-$code-font-size                  : 14px;
-$h1-font-size                    : 32px;
-$nav-link-font-size              : 16px;
-$blockquote-font-size            : 14px;
+$doc-font-size: 18px;
+$code-font-size: 14px;
+$h1-font-size: 32px;
+$nav-link-font-size: 16px;
+$blockquote-font-size: 14px;
 
-$doc-line-height                 : 1.7em;
-$code-line-height                : 1.5em;
+$doc-line-height: 1.7em;
+$code-line-height: 1.5em;
 
 /*--- COLORS ----------------------------------------------------------------*/
 
-$base-color                      : rgba(#222,0.8);
-$text-color                      : #606060;
-$link-color                      : #606060;
-$highlight-color				 : #f99d53;
+$base-color: rgba(#222, 0.8);
+$text-color: #606060;
+$link-color: #606060;
+$highlight-color: #f99d53;
 
-$body-color      				 : #f3f3f3;
-$article-background              : #ffffff;
-$border-color                    : lighten($base-color,60);
+$body-color: #f3f3f3;
+$article-background: #ffffff;
+$border-color: lighten($base-color, 60);
 
-$navbar-dark					 : rgba(0, 0, 0, 0.7);
-$navbar-light                    : #ffffff;
+$navbar-dark: rgba(0, 0, 0, 0.7);
+$navbar-light: #ffffff;
 
 /*--- SCREEN SIZES ----------------------------------------------------------*/
 
-$small                           : "only screen and (min-width: 20em)";
-$medium                          : "only screen and (min-width: 48em)";
-$large                           : "only screen and (min-width: 62.5em)";
+$small: "only screen and (min-width: 20em)";
+$medium: "only screen and (min-width: 48em)";
+$large: "only screen and (min-width: 62.5em)";
