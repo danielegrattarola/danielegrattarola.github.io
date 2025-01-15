@@ -1,6 +1,5 @@
-- venue:
-  type: Conference papers
-  pubs:
+- type: Conference papers
+  publications:
     - title: Hierarchical neural cellular automata
       authors: 'R. Pande, D. Grattarola<sup> <a href="#fnote-cross" style="border-bottom: none" title="As independent researcher">†</a></sup>'
       venue: Artificial Life Conference
@@ -18,6 +17,7 @@
       link: https://arxiv.org/abs/2205.15674
       code: https://github.com/danielegrattarola/GINR
       poster: /files/publications/GINR_poster.pdf
+      doi:
       year: NeurIPS 2022
 
     - title: Learning graph cellular automata
@@ -38,6 +38,7 @@
       code: https://gitlab.com/bpaassen/graph-edit-networks
       code-tf:
       code-pt:
+      poster:
       doi:
       year: ICLR 2021
 
@@ -48,6 +49,7 @@
       code:
       code-tf: https://graphneural.network/layers/pooling/#mincutpool
       code-pt: https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.nn.dense.dense_mincut_pool.html
+      poster:
       doi:
       year: ICML 2020
 
@@ -58,17 +60,19 @@
       code: https://github.com/dzambon/NGAR
       code-tf:
       code-pt:
+      poster:
       doi: https://doi.org/10.1109/IJCNN.2019.8852131
       year: IJCNN 2019
 
-- venue:
-  type: Journal papers
-  pubs:
+- type: Journal papers
+  publications:
     - title: E(n)-equivariant graph neural cellular automata
       authors: 'G. Gala, D. Grattarola<sup> <a href="#fnote-cross" style="border-bottom: none" title="As independent researcher">†</a></sup>, E. Quaeghebeur'
       venue: Transactions on Machine Learning Research
       link: https://openreview.net/forum?id=7PNJzAxkij
       code: https://github.com/gengala/egnca
+      code-tf:
+      code-pt:
       year: 2024
 
     - title: Unsupervised heterophilous network embedding via r-ego network discrimination
@@ -76,6 +80,8 @@
       venue: Transactions on Machine Learning Research
       link: https://openreview.net/forum?id=sRgvmXjrmg
       code: https://github.com/zhiqiangzhongddu/SELENE
+      code-tf:
+      code-pt:
       year: 2022
 
     - title: Understanding pooling in graph neural networks
@@ -158,13 +164,16 @@
       doi: https://doi.org/10.1109/TNNLS.2019.2927301
       year: 2019
 
-- venue:
-  type: Others
-  pubs:
+- type: Others
+  publications:
     - title: "Graph neural networks: operators and architectures"
       authors: D. Grattarola
-      link: https://folia.unifr.ch/documents/319253/files/2021INFO014.pdf
       venue: PhD thesis
+      link: https://folia.unifr.ch/documents/319253/files/2021INFO014.pdf
+      code:
+      code-tf:
+      code-pt:
+      doi:
       year: 2021
 
     - title: Content-based approaches for cold-start job recommendations

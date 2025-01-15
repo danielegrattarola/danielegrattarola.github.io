@@ -5,50 +5,55 @@ image: /images/generic/publications.png
 ---
 
 <article>
-    
-<h1 class="entry-title">Publications</h2>
+  <h1 class="entry-title">Publications</h1>
 
-<center>
-    <img src="/images/generic/publications.jpg" alt="Glitch art #1 (by Daniele Grattarola)" width=743 height=437 class="full-width"/>
-</center>
-<br>
+  <center>
+    <img
+      src="/images/generic/publications.jpg"
+      alt="Glitch art #1 (by Daniele Grattarola)"
+      width="743"
+      height="437"
+      class="full-width" />
+  </center>
+  <br />
 
-{% for venue in site.data.publications %}
-<h2 class="entry-title">{{venue.type}}</h2>
-<div class="entry-content">
-{% for pub in venue.pubs %}
+  {% for venue in site.data.publications %}
+  <h2 class="entry-title">{{venue.type}}</h2>
+  <div class="entry-content">
+    {% for pub in venue.publications %}
     <p>
-    <a href="{{pub.link}}"><strong>{{pub.title}}</strong></a>
-    <br>
-    <i>{{pub.authors}}</i>
-    <br>
-    <i>{{pub.venue}} ({{pub.year}})</i>
-    {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
-    <!-- <br> -->
-    &nbsp;|&nbsp;
-    {% endif %}
-    {% if pub.code %} 
-    <a href="{{pub.code}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code</a>&nbsp;
-    {% endif %}
-    {% if pub.code-tf %} 
-    <a href="{{pub.code-tf}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code (TF)</a>&nbsp;
-    {% endif %}
-    {% if pub.code-pt %} 
-    <a href="{{pub.code-pt}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-github-circled"></i> Code (Torch)</a>&nbsp;
-    {% endif %}
-    {% if pub.poster %} 
-    <a href="{{pub.poster}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-list-alt"></i> Poster</a>&nbsp;
-    {% endif %}
-    {% if pub.doi %} 
-    <a href="{{pub.doi}}" style="border-bottom: none; white-space: nowrap;"><i class="icon-book"></i> DOI</a>&nbsp;
-    {% endif %}
-    <p>
-{% endfor %}
-</div>
-{% endfor %}
+      <a href="{{pub.link}}"><strong>{{pub.title}}</strong></a>
+      <br />
+      <i>{{pub.authors}}</i>
+      <br />
+      <i>{{pub.venue}} ({{pub.year}})</i>
+      {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
+      <!-- <br> -->
+      &nbsp;|&nbsp; {% endif %} {% if pub.code %}
+      <a href="{{pub.code}}" style="border-bottom: none; white-space: nowrap"
+        ><i class="icon-github-circled"></i> Code</a
+      >&nbsp; {% endif %} {% if pub.code-tf %}
+      <a href="{{pub.code-tf}}" style="border-bottom: none; white-space: nowrap"
+        ><i class="icon-github-circled"></i> Code (TF)</a
+      >&nbsp; {% endif %} {% if pub.code-pt %}
+      <a href="{{pub.code-pt}}" style="border-bottom: none; white-space: nowrap"
+        ><i class="icon-github-circled"></i> Code (Torch)</a
+      >&nbsp; {% endif %} {% if pub.poster %}
+      <a href="{{pub.poster}}" style="border-bottom: none; white-space: nowrap"
+        ><i class="icon-list-alt"></i> Poster</a
+      >&nbsp; {% endif %} {% if pub.doi %}
+      <a href="{{pub.doi}}" style="border-bottom: none; white-space: nowrap"
+        ><i class="icon-book"></i> DOI</a
+      >&nbsp; {% endif %}
+    </p>
 
-<hr>
-<span id="fnote" style="font-size: 14px;">* Equal contribution</span>
-<br>
-<span id="fnote-cross" style="font-size: 14px;"><sup>†</sup> As independent researcher</span>
+    <p>{% endfor %}</p>
+  </div>
+
+  {% endfor %}
+
+  <hr />
+  <span id="fnote" style="font-size: 14px">* Equal contribution</span>
+  <br />
+  <span id="fnote-cross" style="font-size: 14px"><sup>†</sup> As independent researcher</span>
 </article>
