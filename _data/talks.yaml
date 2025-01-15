@@ -8,7 +8,7 @@
   venue: Graph Deep Learning course @ USI
   url: https://search.usi.ch/en/courses/35263629/graph-deep-learning
   slides: /files/talks/2022-02-28-USI_GDL.pdf
-  video: 
+  video:
   period: Feb 28, 2022
 
 - title: "Learning Graph Cellular Automata"
@@ -52,21 +52,21 @@
   venue: Graph Deep Learning course @ USI
   url: https://search.usi.ch/it/corsi/35262194/graph-deep-learning
   slides: /files/talks/2021-03-01-USI_GDL_GNNs.pdf
-  video: 
+  video:
   period: Mar 1, 2021
 
 - title: "Spectral Clustering with Graph Neural Networks for Graph Pooling"
   venue: International Conference on Machine Learning
   url: https://icml.cc/Conferences/2020/Schedule?showEvent=6018
   slides: /files/talks/2020-ICML-mincut.pdf
-  video: 
+  video:
   period: 2020
 
 - title: "Graph Neural Networks in Tensorflow and Keras with Spektral"
   venue: Graph Representation Learning and Beyond @ ICML
   url: https://grlplus.github.io/papers/
   slides: /files/talks/2020-ICML-spektral.pdf
-  video: 
+  video:
   period: 2020
 
 - title: "Graph Neural Networks e MinCut Pooling (in Italian)"
@@ -80,12 +80,12 @@
   venue: Advanced Topics in Machine Learning course @ USI
   url: https://search.usi.ch/en/courses/35262237/advanced-topics-in-machine-learning
   slides: /files/talks/2020-ATML_GAN.pdf
-  video: 
+  video:
   period: Sep 17, 2020
 
 - title: "Autoregressive Models for Sequences of Graphs"
   venue: International Joint Conference on Neural Networks
   url: http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=78918&copyownerid=105620
   slides: /files/talks/2019-ijcnn-ngar.pdf
-  video: 
+  video:
   period: 2019
