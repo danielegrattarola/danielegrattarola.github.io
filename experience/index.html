@@ -21,15 +21,15 @@ image: /images/header/publications.png
 
     {% for item in site.data.experience %}
         <p>
+            <span class="entry-date post-date date published update">{{item.date}}</span><br>
             <a href="{{item.url}}"><strong>{{item.company}}</strong></a><br> 
-            {% for pos in item.positions %}
+            {{item.title}}<br>
+            {{item.description}}
+            {% for role in item.previous_roles %}
                 {% if forloop.first %}
-                  {{pos.title}} ({{pos.date}})<br>
-                  {{item.description}}
                   {% unless forloop.last %}<br>Previous roles: {% endunless %}
-                {% else %}
-                  {{pos.title}}{% unless forloop.last %}, {% endunless %}.
                 {% endif %}
+                {{role.title}}{% unless forloop.last %}, {% else %}.{% endunless %}
             {% endfor %}
         </p>
     {% endfor %}
@@ -82,6 +82,8 @@ image: /images/header/publications.png
 
     <h3>Spektral</h3>
     I am the main developer of <a href="https://graphneural.network">Spektral</a>, an open-source Python library for creating graph neural networks in TensorFlow and Keras. The project has thousands of active users and was one of the first libraries ever created for graph deep learning.
+
+    </div>
 </article>
 
 <article>

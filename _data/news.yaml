@@ -1,68 +1,53 @@
-- news: 
-    date: Sep 2024
-    text: "I will be a mentor for the 2024 \"Mentoring for International Opportunity\" initiative by the association for <a href=\"https://talenteditalians.uk/mentoring\">Talented Italians in the UK</a>."
+- date: Jan 2025
+  text: "Starting off 2025 with another huge career milestone at Iso: I was promoted to Staff Research Scientist!"
 
-- news:
-    date: Jul 2024
-    text: "I was happy to take part in the <a href=\"https://twitter.com/IsomorphicLabs/status/1813872538889646211\">second episode</a> of \"In Conversation\", a series that promotes the research we do at Isomorphic Labs."
+- date: Sep 2024
+  text: "I will be a mentor for the 2024 \"Mentoring for International Opportunity\" initiative by the association for <a href=\"https://talenteditalians.uk/mentoring\">Talented Italians in the UK</a>."
 
-- news:
-    date: May 2024
-    text: "I will be attending ICLR 2024 in Vienna. Looking forward to connecting with people!"
+- date: Jul 2024
+  text: "I was happy to take part in the <a href=\"https://twitter.com/IsomorphicLabs/status/1813872538889646211\">second episode</a> of \"In Conversation\", a series that promotes the research we do at Isomorphic Labs."
 
-- news:
-    date: Feb 2024
-    text: "After one amazing year at Isomorphic Labs, I have been promoted to senior research scientist."
+- date: May 2024
+  text: "I will be attending ICLR 2024 in Vienna. Looking forward to connecting with people!"
 
-- news:
-    date: Dec 2023
-    text: "I was featured for the second time on <a href=\"https://www.youtube.com/watch?v=v5NysEyZkl0\">Machine Learning Street Talk</a>. This interview was shot at NeurIPS 2023 last year, where I presented our work on generalized implicit neural representations from my time at EPFL."
+- date: Feb 2024
+  text: "After one amazing year at Isomorphic Labs, I have been promoted to senior research scientist."
 
-- news: 
-    date: May 2023
-    text: "I will be attending the <a href=\"https://www.moml2023.m2d2.io/\">Molecular ML Conference 2023</a> at 
-Mila, in Montréal, on May 29th. See you there!"
+- date: Dec 2023
+  text: "I was featured for the second time on <a href=\"https://www.youtube.com/watch?v=v5NysEyZkl0\">Machine Learning Street Talk</a>. This interview was shot at NeurIPS 2023 last year, where I presented our work on generalized implicit neural representations from my time at EPFL."
 
-- news:
-    date: Nov 2022
-    text: "I'm thrilled to announce that I will be joining <a href=\"https://isomorphiclabs.com\">Isomorphic Labs</a> (London, UK) to help reimagine the drug discovery process using AI. Exciting times ahead!"
+- date: May 2023
+  text: "I will be attending the <a href=\"https://www.moml2023.m2d2.io/\">Molecular ML Conference 2023</a> at Mila, in Montréal, on May 29th. See you there!"
 
-- news: 
-    date: Sep 2022
-    text: "Our paper \"<a href=\"https://arxiv.org/abs/2205.15674\">Generalised implicit neural representations</a>\" was accepted at NeurIPS 2022."
+- date: Nov 2022
+  text: "I'm thrilled to announce that I will be joining <a href=\"https://isomorphiclabs.com\">Isomorphic Labs</a> (London, UK) to help reimagine the drug discovery process using AI. Exciting times ahead!"
 
-- news:
-    date: Aug 2022
-    text: "I will be Publicity Chair for the IEEE International Workshop on Machine Learning for Signal Processing (2023)."
+- date: Sep 2022
+  text: "Our paper \"<a href=\"https://arxiv.org/abs/2205.15674\">Generalised implicit neural representations</a>\" was accepted at NeurIPS 2022."
 
-- news:
-    date: Apr 2022
-    text: "I had the absolute pleasure of chatting about cellular automata, emergence, life, graphs, and much more with the amazing Tim and Keith of <a href=\"https://www.youtube.com/watch?v=MDt2e8XtUcA\">Machine Learning Street Talk</a>!"
+- date: Aug 2022
+  text: "I will be Publicity Chair for the IEEE International Workshop on Machine Learning for Signal Processing (2023)."
 
-- news:
-    date: Mar 2022
-    text: "In collaboration with part of the team that I mentored at <a href=\"https://www.logml.ai/logml2021/projects2021/project6/\">LOGML 2021</a>, we have released <a href=\"https://arxiv.org/abs/2203.10866\">a preprint</a> on unsupervised embedding of heterophilous graphs."
+- date: Apr 2022
+  text: "I had the absolute pleasure of chatting about cellular automata, emergence, life, graphs, and much more with the amazing Tim and Keith of <a href=\"https://www.youtube.com/watch?v=MDt2e8XtUcA\">Machine Learning Street Talk</a>!"
 
-- news:
-    date: Jan 2022
-    text: "I have become a member of the <a href=\"https://ellis.eu\">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI."
+- date: Mar 2022
+  text: "In collaboration with part of the team that I mentored at <a href=\"https://www.logml.ai/logml2021/projects2021/project6/\">LOGML 2021</a>, we have released <a href=\"https://arxiv.org/abs/2203.10866\">a preprint</a> on unsupervised embedding of heterophilous graphs."
 
-- news:
-    date: Jan 2022
-    text: "I am co-organizing a special session on Deep Learning for Graphs (DL4G) at WCCI 2022. <a href=\"https://sites.google.com/view/dl4g-2022\">Read the call for papers here.</a>"
+- date: Jan 2022
+  text: "I have become a member of the <a href=\"https://ellis.eu\">ELLIS Society</a>, one of the leading non-profit organizations for promoting European AI."
 
-- news:
-    date: Dec 10, 2021
-    text: "I have successfully defended my PhD dissertation!" 
+- date: Jan 2022
+  text: "I am co-organizing a special session on Deep Learning for Graphs (DL4G) at WCCI 2022. <a href=\"https://sites.google.com/view/dl4g-2022\">Read the call for papers here.</a>"
 
-- news: 
-    date: Oct 2021
-    text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.14237\">Learning graph cellular automata</a>\" will appear at NeurIPS 2021."
+- date: Dec 10, 2021
+  text: "I have successfully defended my PhD dissertation!" 
 
-- news: 
-    date: Oct 2021
-    text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.05292\">Understanding pooling in graph neural networks</a>\" is out on arXiv."
+- date: Oct 2021
+  text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.14237\">Learning graph cellular automata</a>\" will appear at NeurIPS 2021."
 
-- news: 
-    date: Sep 2021
-    text: "The paper from my collaboration with <a href=\"https://www.menten.ai/\">Menten AI</a>, \"<a href=\"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009037\">XENet: using a new graph convolution to accelerate the timeline for protein design on quantum computers</a>\", was published in PLOS Computational Biology."
+- date: Oct 2021
+  text: "Our paper \"<a href=\"https://arxiv.org/abs/2110.05292\">Understanding pooling in graph neural networks</a>\" is out on arXiv."
+
+- date: Sep 2021
+  text: "The paper from my collaboration with <a href=\"https://www.menten.ai/\">Menten AI</a>, \"<a href=\"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009037\">XENet: using a new graph convolution to accelerate the timeline for protein design on quantum computers</a>\", was published in PLOS Computational Biology."

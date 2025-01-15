@@ -10,7 +10,7 @@ image: /images/generic/daniele_grattarola.jpg
 <div class="entry-content">
 
 <p>
-    I am a senior ML scientist at <a href="https://isomorphiclabs.com">Isomorphic Labs</a>, a digital biology company on a mission to reimagine drug discovery with the power of AI.</p>
+    I am a Staff ML Research Scientist at <a href="https://isomorphiclabs.com">Isomorphic Labs</a>, a digital biology company on a mission to reimagine drug discovery with the power of AI.</p>
 
 <p>
     Previously, I was a researcher at <a href="https://www.epfl.ch/">EPFL</a>, where I worked on neural fields and generative models for protein design, as part of the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> labs.
@@ -61,15 +61,13 @@ image: /images/generic/daniele_grattarola.jpg
         
         {% for item in site.data.news | limit: 100 %}
         <p>
-        {% if item.news.date %}
         <span class="entry-date post-date date published updated">
-            <time datetime="{{ item.news.date | date_to_xmlschema }}">
-                {{ item.news.date | date: "%B %Y" }}
+            <time datetime="{{ item.date | date_to_xmlschema }}">
+                {{ item.date | date: "%B %Y" }}
             </time>
         </span>
         <br>
-        {% endif %}
-        {{item.news.text}} 
+        {{item.text}} 
         </p>
         {% endfor %}    
         

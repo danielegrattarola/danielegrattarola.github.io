@@ -72,14 +72,14 @@ a {
 .post-date {
     font-size: 14px;
 	text-transform: uppercase;
-    color: lighten($base-color,50);
+    color: lighten($base-color,40);
 
 	a {
-		color: lighten($base-color,50);
+		color: lighten($base-color,40);
 	}
     
     a:hover{
-        color: lighten($base-color,20);
+        color: lighten($base-color,40);
     }
 }
 

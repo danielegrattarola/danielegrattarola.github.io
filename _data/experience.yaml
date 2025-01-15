@@ -1,25 +1,25 @@
 - company: Isomorphic Labs
-  positions:
-    - title: Senior Research Scientist and Technical Lead
-      date: 2023 - Present
+  title: Staff Research Scientist and Team Lead
+  date: 2023 - Now
+  previous_roles:
     - title: Research Scientist
       date: Jan 2023 - Jan 2024
+    - title: Senior Research Scientist
+      date: Jan 2024 - Jan 2025
   description: Working on reimagining drug discovery with the power and scale of generative AI.
   location: London, UK
   url: https://isomorphiclabs.com
 
 - company: École Polytechnique Fédérale De Lausanne (EPFL)
-  positions:
-    - title: Postdoctoral Researcher
-      date: 2022 - 2023
+  title: Postdoctoral Researcher
+  date: 2022 - 2023
   description: Conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design.
   location: Lausanne, CH
   url: https://epfl.ch
 
 - company: Krembil Research Institute
-  positions:
-    - title: Visiting Researcher
-      date: 2019 - 2020
+  title: Visiting Researcher
+  date: 2019 - 2020
   description: Conducted research on geometric deep learning for the localisation of epileptic seizures, with promising results on human clinical data.
   location: Toronto, CA
   url: https://www.uhn.ca/Research/Research_Institutes/Krembil
