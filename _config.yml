@@ -2,17 +2,17 @@ title: Daniele Grattarola
 author: Daniele Grattarola
 description: "Artificial intelligence scientist"
 twitter:
-    username: riceasphait
+  username: riceasphait
 social:
-    name: Daniele Grattarola
-    links:
-        - https://github.com/danielegrattarola
-        - https://linkedin.com/in/danielegrattarola
-        - https://danielegrattarola.github.io/feed.xml
+  name: Daniele Grattarola
+  links:
+    - https://github.com/danielegrattarola
+    - https://linkedin.com/in/danielegrattarola
+    - https://danielegrattarola.github.io/feed.xml
 
-future:      false  # publish future dated posts --  true, false (default) 
+future: false # publish future dated posts --  true, false (default)
 highlighter: rouge
-markdown:    kramdown
+markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
@@ -28,7 +28,7 @@ permalink: /:categories/:year-:month-:day/:title.html
 
 # Amount of post to show on home page
 paginate: 5
-paginate_path: 'blog/page:num'
+paginate_path: "blog/page:num"
 
 #kramdown:
 #  input: GFM
@@ -38,11 +38,11 @@ paginate_path: 'blog/page:num'
 #  toc_levels: 1..6
 #  enable_coderay: false
 
-include: 
+include:
   - .htaccess
   - .well-known
 
-exclude: 
+exclude:
   - "*.less"
   - "*.sublime-project"
   - "*.sublime-workspace"

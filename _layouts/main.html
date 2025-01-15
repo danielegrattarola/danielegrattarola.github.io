@@ -1,27 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    {% include head.html %} {% seo %}
+  </head>
 
-<head>
-    {% include head.html %}
-    {% seo %}
-</head>
- 
-<body id="post-index">
-    {% include navbar.html %} 
+  <body id="post-index">
+    {% include navbar.html %}
 
-    <div id="main" role="main">
-      {{ content }}
-    </div>       
-</body>
+    <div id="main" role="main">{{ content }}</div>
+  </body>
 
-<footer>  
+  <footer>
     <div class="footer-wrapper">
-        <footer role="contentinfo">
-            {% include footer.html %}
-        </footer>
-    </div>   
-</footer>
+      <footer role="contentinfo">{% include footer.html %}</footer>
+    </div>
+  </footer>
 
-{% include scripts.html %} 
-
+  {% include scripts.html %}
 </html>

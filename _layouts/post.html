@@ -1,48 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-   
-<head>
-    {% include head.html %}
-    {% include head_post.html %}
-    {% seo %}
-</head>
+  <head>
+    {% include head.html %} {% include head_post.html %} {% seo %}
+  </head>
 
-<body id="post-index">
-    
-    {% include navbar.html %} 
+  <body id="post-index">
+    {% include navbar.html %}
 
     <div id="main" role="main">
-        <article class="hentry">
-            <h1 class="entry-title">{{ page.title }}</h1>
-            <div class="entry-content">
-                {{ content }}
-            </div>
-            {% if page.tags or page.date %}
-            <hr>
-            {% endif %}
-            <div class="inline-tags">
-                <span>
-                    {% for tag in page.tags %}
-                        <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
-                    {% endfor %}
-                </span>
-            </div>
-            <br>
-            <div class="post-date">
-                {{ page.date-string }}
-            </div>
-        </article>
+      <article class="hentry">
+        <h1 class="entry-title">{{ page.title }}</h1>
+        <div class="entry-content">{{ content }}</div>
+        {% if page.tags or page.date %}
+        <hr />
+        {% endif %}
+        <div class="inline-tags">
+          <span>
+            {% for tag in page.tags %}
+            <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+            {% endfor %}
+          </span>
+        </div>
+        <br />
+        <div class="post-date">{{ page.date-string }}</div>
+      </article>
     </div>
-</body>
+  </body>
 
-<footer>  
+  <footer>
     <div class="footer-wrapper">
-        <footer role="contentinfo">
-            {% include footer.html %}
-        </footer>
-    </div>   
-</footer> 
+      <footer role="contentinfo">{% include footer.html %}</footer>
+    </div>
+  </footer>
 
-{% include scripts.html %} 
-
+  {% include scripts.html %}
 </html>
