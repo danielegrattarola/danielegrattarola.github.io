@@ -110,7 +110,6 @@ image: /images/header/publications.png
     <p>
       <strong>{{item.title}}</strong><br />
       <a href="{{item.url}}">{{item.venue}}</a> ({{item.period}}) {% if item.slides or item.video %}
-      <!-- <br> -->
       &nbsp;|&nbsp; {% endif %} {% if item.slides %}
       <a href="{{item.slides}}" style="border-bottom: none"
         ><i class="icon-television"></i> Slides</a
@@ -131,23 +130,23 @@ image: /images/header/publications.png
 
     <h3>Conferences</h3>
     <ul>
-      {% for item in site.data.review %} {% if item.conference %}
-      <li>{{item.conference}}</li>
-      {% endif %} {% endfor %}
+      {% for item in site.data.review.conferences %}
+      <li>{{ item }}</li>
+      {% endfor %}
     </ul>
 
     <h3>Journals</h3>
     <ul>
-      {% for item in site.data.review %} {% if item.journal %}
-      <li>{{item.journal}}</li>
-      {% endif %} {% endfor %}
+      {% for item in site.data.review.journals %}
+      <li>{{ item }}</li>
+      {% endfor %}
     </ul>
 
     <h3>Workshops</h3>
     <ul>
-      {% for item in site.data.review %} {% if item.workshop %}
-      <li>{{item.workshop}}</li>
-      {% endif %} {% endfor %}
+      {% for item in site.data.review.workshops %}
+      <li>{{ item }}</li>
+      {% endfor %}
     </ul>
   </div>
 </article>

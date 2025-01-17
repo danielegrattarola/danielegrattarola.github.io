@@ -1,26 +1,29 @@
-- conference: Neural Information Processing Systems (NeurIPS)
-- conference: International Conference on Learning Representations (ICLR)
-- conference: International Conference on Machine Learning (ICML)
-- conference: Computer Vision and Pattern Recognition (CVPR)
-- conference: Learning on Graphs Conference (LoG)
-- conference: The Web Conference (WWW)
-- conference: International Joint Conference on Artificial Intelligence (IJCAI)
-- conference: International Joint Conference on Neural Networks (IJCNN)
-- conference: European Symposium on Artificial Neural Networks (ESANN)
-- conference: International Conference on Acoustics, Speech, & Signal Processing (ICASSP)
+conferences:
+  - Neural Information Processing Systems (NeurIPS)
+  - International Conference on Learning Representations (ICLR)
+  - International Conference on Machine Learning (ICML)
+  - Computer Vision and Pattern Recognition (CVPR)
+  - Learning on Graphs Conference (LoG)
+  - The Web Conference (WWW)
+  - International Joint Conference on Artificial Intelligence (IJCAI)
+  - International Joint Conference on Neural Networks (IJCNN)
+  - European Symposium on Artificial Neural Networks (ESANN)
+  - International Conference on Acoustics, Speech, & Signal Processing (ICASSP)
 
-- journal: Journal of Machine Learning Research (JMLR)
-- journal: Transactions on Machine Learning Research (TMLR)
-- journal: Transactions on Neural Networks and Learning Systems (TNNLS)
-- journal: Applied Soft Computing (ASOC)
-- journal: Neurocomputing
-- journal: Transactions on Knowledge Discovery from Data (TKDD)
-- journal: Transactions on Emerging Topics in Computational Intelligence (TETCI)
-- journal: Transactions on Geoscience and Remote Sensing (TGRS)
+journals:
+  - Journal of Machine Learning Research (JMLR)
+  - Transactions on Machine Learning Research (TMLR)
+  - Transactions on Neural Networks and Learning Systems (TNNLS)
+  - Applied Soft Computing (ASOC)
+  - Neurocomputing
+  - Transactions on Knowledge Discovery from Data (TKDD)
+  - Transactions on Emerging Topics in Computational Intelligence (TETCI)
+  - Transactions on Geoscience and Remote Sensing (TGRS)
 
-- workshop: "New Frontiers in Graph Learning: Challenges, Perspectives, and Solutions (NeurIPS 2022)"
-- workshop: Graph Neural Networks and Systems (MLSys 2021)
-- workshop: Graphs and more Complex structures for Learning and Reasoning (AAAI 2021, 2022)
-- workshop: ML Retrospectives (NeurIPS 2020)
-- workshop: Graph Representation Learning and Beyond (ICML 2020)
-- workshop: Graph Representation Learning (NeurIPS 2019)
+workshops:
+  - "New Frontiers in Graph Learning: Challenges, Perspectives, and Solutions (NeurIPS 2022)"
+  - Graph Neural Networks and Systems (MLSys 2021)
+  - Graphs and more Complex structures for Learning and Reasoning (AAAI 2021, 2022)
+  - ML Retrospectives (NeurIPS 2020)
+  - Graph Representation Learning and Beyond (ICML 2020)
+  - Graph Representation Learning (NeurIPS 2019)
