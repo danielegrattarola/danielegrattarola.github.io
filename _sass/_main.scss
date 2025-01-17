@@ -437,11 +437,11 @@ svg:not(:root) {
 .footer-wrapper {
   margin: 2em auto;
   text-align: center;
-  color: lighten($text-color, 20);
+  color: lighten($text-color, 5);
   font-size: 14px;
 
   a:link {
-    color: darken($text-color, 1);
+    color: lighten($text-color, 5);
   }
 
   a:hover {
