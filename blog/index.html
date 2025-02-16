@@ -1,11 +1,21 @@
 ---
 layout: main
 title: Blog
-image: /images/header/oz.jpg
+image: /images/main/oz.jpg
 ---
 
 <article>
   <h1 class="entry-title">{{page.title}}</h1>
+
+  <center>
+    <img
+      src="{{page.image}}"
+      alt="Australian landscape (by Daniele Grattarola)"
+      width="1318"
+      height="640"
+      class="full-width" />
+  </center>
+  <br />
 
   <div class="entry-content">
     {% for post in site.posts %}
