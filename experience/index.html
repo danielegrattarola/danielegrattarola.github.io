@@ -26,8 +26,8 @@ image: /images/header/publications.png
       ><br />
       {{item.title}}<br />
       {{item.description}} {% for role in item.previous_roles %} {% if forloop.first %} {% unless
-      forloop.last %}<br />Previous roles: {% endunless %} {% endif %} {{role.title}}{% unless
-      forloop.last %}, {% else %}.{% endunless %} {% endfor %}
+      forloop.last %}<br />Previously: {% endunless %} {% endif %} {{role.title}} ({{role.date}}){%
+      unless forloop.last %}, {% else %}.{% endunless %} {% endfor %}
     </p>
     {% endfor %}
   </div>
