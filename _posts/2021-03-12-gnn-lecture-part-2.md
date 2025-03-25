@@ -43,7 +43,7 @@ We will see a general framework called **message passing**, which will allow us 
 The idea of message passing networks was introduced in a paper by [Gilmer et al.]() in 2017 and it essentially boils GNN layers down to three main steps:
 
 1. Every node in the graph computes a __message__ for each of its neighbors. Messages are a function of the node, the neighbor, and the edge between them.
-2. Messages are sent, and every node __aggregates__ the messages it receives, using a permutation-invariant function (i.e., it doesn't matter in which order the messages are received). This function is usually a sum or an average, but it can be anything.
+2. Messages are sent, and every node __aggregates__ the messages it receives, using a permutation-invariant function (i.e., it doesn't matter in which order the messages are received). This function is usually a sum or an average.
 3. After receiving the messages, each node __updates__ its attributes as a function of its current attributes and the aggregated messages.
 
 This procedure happens synchronously for all nodes in the graph, so that at each message passing step all nodes are updated. 
@@ -60,7 +60,7 @@ If $$\mathbf{R}$$ has a non-zero diagonal, then each node also computes a messag
 
 Message passing is usually formalized with the equation in the slide above. 
 
-While it may look complicated at first, the formula simply describes the three steps that we saw before, and if you wanted to write it in pseudo-Python it would look something like this: 
+While it may look complicated at first, the formula simply describes the three steps that we just saw, and if we wanted to write it in Python it would look something like this: 
 
 ```py
 # For every node in the graph
@@ -76,29 +76,26 @@ for i in range(n_nodes):
     x[i] = update(x[i], aggregated)
 ```
 
-As long as `message`, `aggregate`, and `update` are differentiable functions, we can train any neural network to transforms its inputs like this. <br>
+As long as `message`, `aggregate`, and `update` are differentiable functions, we can train a neural network to transforms its inputs like this. <br>
 In fact, this framework is so general that virtually all libraries that implement GNNs are based on it. 
 
-For example, [Spektral](https://graphneural.network), [Pytorch Geometric](https://pytorch-geometric.readthedocs.io/), and [DGL](https://www.dgl.ai/) all have a `MessagePassing` class which looks like this: 
+For example, [Spektral](https://graphneural.network), [Pytorch Geometric](https://pytorch-geometric.readthedocs.io/), and [DGL](https://www.dgl.ai/) all have a `MessagePassing` class that looks like this: 
 
 ```py
-class MessagePassing(Layer): # Or `Module`
+class MessagePassing(Layer):
 
-    def call(self, inputs, **kwargs):  # Or `forward`
+    def call(self, inputs, **kwargs):
         # This is the actual message-passing step
         return self.propagate(*inputs)
 
     def propagate(self, x, a, e, **kwargs):
-        # process arguments and create *_kwargs
-        ...
-
-        # Message
+        # Compute messages
         messages = self.message(x, **msg_kwargs)
 
-        # Aggregate
+        # Aggregate messages
         aggregated = self.aggregate(messages, **agg_kwargs)
 
-        # Update
+        # Update self
         output = self.update(aggregated, **upd_kwargs)
 
         return output
@@ -128,7 +125,7 @@ $$
 $$
 
 
-If we wanted to implement this as a simple matrix multiplication we would have some troubles, because GNNs of the form $$\mathbf{R}\mathbf{X}\mathbf{\Theta}$$ assume that every node sends the same message to each of its neighbors. Here, instead, messages are a function of edges $$j \rightarrow i$$. 
+If we wanted to implement this as a matrix multiplication like we have done so far, we would have some troubles, because GNNs of the form $$\mathbf{R}\mathbf{X}\mathbf{\Theta}$$ assume that every node sends the same message to each of its neighbors. Here, instead, messages are a function of edges $$j \rightarrow i$$. 
 
 In fact, this is a limitation of every GNN with edge-dependent messages.
 
@@ -159,11 +156,9 @@ output = a[..., None] * messages  # shape: (n, n, channels)
 output = output.sum(1)  # shape: (n, channels)
 ```
 
-__This is not ideal__, because it cost us $$O(N^2)$$ to do something that should have a cost linear in the number of edges (which is a big difference when working with real-world graphs, which are usually very sparse). 
+Note that we had to compute messages for __all possible edges__ and then simply multiply some of the messages by zero using `a`.
 
-In general, using broadcasting to define edge-dependent GNNs means that we have to compute the messages for __all possible edges__ and then simply multiply some of the messages by zero by broadcasting `a`.
-
-This is because broadcasting is a "dense" operation.
+__This is not ideal__, because it cost us $$O(N^2)$$ to do something that should have a cost linear in the number of edges (this is a big difference when working with real-world graphs, which are usually very sparse). 
 
 A much better way to achieve our goal is to exploit the advanced indexing features offered by all libraries for tensor manipulation, using a technique called __gather-scatter__.
 
@@ -188,7 +183,7 @@ col = [0, 2, 2, 0, 1]  # Nodes that are receiving a message
 
 which simply tells us the indices of the non-zero entries of `a` (we usually also have an extra array that tells us the actual values of the entries, but we won't need it for now).
 
-It's easy to see, now, that if we look at all edges of the form $$j \rightarrow i$$, then the attributes of all nodes that are sending a message can be retrieved with `x[row]`. 
+If we consider all edges $$j \rightarrow i$$, then the attributes of all nodes that are _sending_ a message can be retrieved with `x[row]`. 
 Similarly, the attributes of nodes that are receiving a message can be retrieved with `x[col]`.
 
 This is called __gathering__ the nodes.
@@ -214,7 +209,7 @@ For instance, in the small example above we know that node 2 will receive a mess
 We can do this using some special operations available more or less in all libraries for tensor manipulation:
 
 - In TensorFlow, we have `tf.math.segment_[sum|prod|mean|max|min]`.
-- For PyTorch, we have the [Torch Scatter](https://github.com/rusty1s/pytorch_scatter) library by ‪Matthias Fey.
+- For PyTorch, we have the [Torch Scatter](https://github.com/rusty1s/pytorch_scatter) library by Matthias Fey.
 - In Jax, we only have `jax.ops.segment_sum`.
 
 These operations apply a reduction to "segments" of a tensor, where the segments are defined by integer indices. Something like this: 
@@ -226,7 +221,7 @@ segments = [0, 0, 0, 1, 2, 2, 3, 3]  # Segment indices (we have 4 segments)
 
 output = [0] * (max(segments) + 1)   # One result for each segment
 for i, s in enumerate(segments):
-    output[s] += data[i]             # It could be a product, max, etc...
+    output[s] += data[i]             # It could also be a product, max, etc...
 
 >>> output 
 [13, 2, 7, 4]
@@ -235,31 +230,31 @@ for i, s in enumerate(segments):
 So for instance, if we want to sum all messages based on their intended recipient, we can do: 
 
 ```py
-# recipients = col
-aggregated = jax.ops.segment_sum(messages, recipients)
+aggregated = jax.ops.segment_sum(messages, col) 
 ```
 
 Now we can put all of this together to create our Edge Convolution layer with a gather-scatter implementation: 
 
 ```py
+import scipy
+
 x = ...  # Node attributes of shape [n, f]
 a = ...  # Adjacency matrix of shape [n, n]
 
 # Get indices of the non-zero entries of the adjacency matrix
-import scipy
-senders, recipients, _ = scipy.sparse.find(a)
+senders, receivers, _ = scipy.sparse.find(a)
 
 # Calculate difference of nodes for each edge j -> i
-x_diff = x[senders] - x[recipients]  # shape: (n_edges, f)
+x_diff = x[senders] - x[receivers]  # shape: (n_edges, f)
 
 # Concatenate x_i with (x_i - x_j) for each edge j -> i
-x_all = jnp.concatenate([x[recipients], x_diff], axis=-1)  # shape: (n_edges, 2 * f)
+x_all = jnp.concatenate([x[receivers], x_diff], axis=-1)  # shape: (n_edges, 2 * f)
 
 # Give x_i || (x_i - x_j) as input to an MLP
 messages = mlp(x_all)  # shape: (n_edges, channels)
 
-# Aggregate all messages according to their intended recipient
-output = jax.ops.segment_sum(messages, recipients)  # shape: (n, channels)
+# Aggregate all messages according to their intended receiver
+output = jax.ops.segment_sum(messages, receivers)  # shape: (n, channels)
 ```
 
 Wrap this up in a layer and we're done!
@@ -268,55 +263,53 @@ Here's what it looks like [in Spektral](https://github.com/danielegrattarola/spe
 
 ## Methods
 
-Since now we've moved past the simple models based on reference operators and edge-independent messages that we saw in the first part of this series, we can look at some more advanced methods.
+We have now moved past the simple GNNs based on a multiplication by the reference operator and with edge-independent messages that we saw in the first part of this series. Let's look at some more advanced methods!
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-17.svg" width="100%" style="border: solid 1px;"/>
 
 For instance, the popular [Graph Attention Networks](https://arxiv.org/abs/1710.10903) by Veličković et al. can be implemented as a message-passing network using gather-scatter: 
 
 ```py
-# Transform node attributes with a dense layer (defined elsewhere)
+# Transform node attributes with a dense layer
 h = dense(x)
 
-# Concatenate attributes of recipients/senders
-h_cat = jnp.concatenate([h[recipients], h[senders]], axis=-1)
+# Concatenate attributes of receivers/senders
+h_cat = jnp.concatenate([h[receivers], h[senders]], axis=-1)
 
-# Compute attention logits w/ a dense layer (single output, LeakyReLU)
+# Compute attention logits with a dense layer (output dim = 1, LeakyReLU)
 logits = dense(h_cat)
 
-# Apply softmax only to the logits in the same segment, as defined by recipients
+# Apply softmax only to the logits in the same segment, as defined by receivers
 # i.e., normalize the scores only among the neighbors of each node.
-#
 # Note that segment_softmax does **not** reduce the tensor: `coef` has the same 
-# size as `logits`.
-#
+# shape as `logits`.
 # This function is available in Spektral and PyG.
-coef = segment_softmax(logits, recipients)
+coef = segment_softmax(logits, receivers)
 
 # Now we aggregate with a weighted sum (weights given by coef)
-output = jax.ops.segment_sum(coef * h[senders], recipients)
+output = jax.ops.segment_sum(coef * h[senders], receivers)
 ```
 
 <img src="{{ site.url }}/images/2021-03-03/presentation-18.svg" width="100%" style="border: solid 1px;"/>
 
-And, easily enough, we can also define a message-passing network that includes edge attributes in the computation of messages. One of my favorite models is the [Edge-Conditioned Convolution](https://arxiv.org/abs/1704.02901) by Simonovsky & Komodakis, of which I've summarized the math in the slide above. 
+Easily enough, we can also define a message-passing network that includes edge attributes in the computation of messages. One of my favorite models is the [Edge-Conditioned Convolution](https://arxiv.org/abs/1704.02901) by Simonovsky & Komodakis, of which I've summarized the math in the slide above. 
 
 To implement it with gather-scatter we can do: 
 
 ```py
-# Use a Filter-Generating Network to create the weights (defined elsewhere)
-kernel = fgn(e)
+# Use a Filter-Generating Network to create a feature of size (f * f_,) for each 
+# edge
+kernel = filter_generating_netrwok(e)
 
 # Reshape the weights so that we have a matrix of shape (f, f_) for each edge
 kernel = jnp.reshape(kernel, (-1, f, f_))
 
 # Multiply the node attribute of each neighbor by the associated edge-dependent
-# kernel. 
-# We can use einsum to do this efficiently
+# kernel. We can use einsum to do this efficiently.
 messages = jnp.einsum("ab,abc->ac", x[senders], kernel)
 
 # Aggergate with a sum
-output = jax.ops.segment_sum(messages, recipients)
+output = jax.ops.segment_sum(messages, receivers)
 ```
 
 Once you get the hang of it, building GNNs becomes so intuitive that you'll never want to go back to the matrix-multiplication-based implementations. 
@@ -324,7 +317,7 @@ Although, sometimes, it makes sense to do it. But that's a story for another day
 
 ---
 
-With the first two parts of this blog series in your toolbelt, you should be able to go a long way in the world of GNNs. 
+With the first two parts of this blog series in your arsenal, you should be able to go a long way in the world of GNNs. 
 
 The next and final part will take a more historical and mathematical journey in the world of GNNs. We'll cover spectral graph theory and how we can define the operation of __convolution__ on graphs. 
 
