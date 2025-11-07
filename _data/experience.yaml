@@ -1,21 +1,27 @@
 - company: Isomorphic Labs
-  title: Staff Research Scientist and Team Lead
-  date: 2023 - Now
+  title: Staff Research Scientist
+  date: 2023 - 2025
   previous_roles:
     - title: Research Scientist
-      date: 2023 - 2024
+      # date: 1y2m
     - title: Senior Research Scientist
-      date: 2024 - 2025
-  description: Working on reimagining drug discovery with the power and scale of generative AI.
+      # date: 1y
+  description: Leading the Generative Models team. Our work delivered substantial impact across multiple drug discovery programs, spearheading the use of generative AI in molecule design.
   location: London, UK
   url: https://isomorphiclabs.com
 
 - company: École Polytechnique Fédérale De Lausanne (EPFL)
   title: Postdoctoral Researcher
   date: 2022 - 2023
-  description: Conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design.
+  description: Conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design. Member of the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> labs.
   location: Lausanne, CH
   url: https://epfl.ch
+
+- company: Juvenescence, Menten AI, Vant AI
+  title: External consultant
+  date: 2019 - 2022
+  description: Advised early-stage biotech startups on building graph ML models to accelerate drug discovery pipelines.
+  url: "javascript:;" # no link available
 
 - company: Krembil Research Institute
   title: Visiting Researcher

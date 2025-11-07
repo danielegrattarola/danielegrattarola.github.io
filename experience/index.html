@@ -24,10 +24,11 @@ image: /images/header/publications.png
       <span class="entry-date post-date date published update">{{item.date}}</span><br />
       <a href="{{item.url}}"><strong>{{item.company}}</strong></a
       ><br />
-      {{item.title}}<br />
-      {{item.description}} {% for role in item.previous_roles %} {% if forloop.first %} {% unless
-      forloop.last %}<br />Previously: {% endunless %} {% endif %} {{role.title}} ({{role.date}}){%
-      unless forloop.last %}, {% else %}.{% endunless %} {% endfor %}
+      <strong>{{item.title}}</strong><br />
+      {{ item.description }} {% for role in item.previous_roles %} {% if forloop.first %} {% unless
+      forloop.last %}
+      <br />Previously: {% endunless %} {% endif %}{{ role.title }}{% if role.date %} ({{ role.date
+      }}){% endif %}{% unless forloop.last %}, {% else %}.{% endunless %}{% endfor %}
     </p>
     {% endfor %}
   </div>
@@ -53,7 +54,7 @@ image: /images/header/publications.png
     I have been Ph.D. representative for USI's Faculty of Computer Science in 2018/2019.
     <br />
     During that time, I was the official point of contact between the Faculty and its doctoral
-    students, participating in Faculty meetings and contributing to the strategical decisions of the
+    students, participating in Faculty meetings and contributing to the strategic decisions of the
     University.
 
     <h3>Awards</h3>
@@ -73,7 +74,7 @@ image: /images/header/publications.png
 
 <article>
   <div class="entry-content">
-    <h1>Community</h1>
+    <h1>Community & Open Source</h1>
     This is a list of my past and current roles as a member of the AI community:
     <ul>
       {% for item in site.data.community %}
@@ -106,17 +107,24 @@ image: /images/header/publications.png
   <div class="entry-content">
     <h1>Talks</h1>
 
-    {% for item in site.data.talks %}
+    {% assign grouped_talks = site.data.talks | group_by: "title" %} {% for group in grouped_talks
+    %}
     <p>
-      <strong>{{item.title}}</strong><br />
-      <a href="{{item.url}}">{{item.venue}}</a> ({{item.period}}) {% if item.slides or item.video %}
-      &nbsp;|&nbsp; {% endif %} {% if item.slides %}
-      <a href="{{item.slides}}" style="border-bottom: none"
-        ><i class="icon-television"></i> Slides</a
-      >&nbsp; {% endif %} {% if item.video %}
-      <a href="{{item.video}}" style="border-bottom: none"
-        ><i class="icon-youtube-play"></i> Video</a
-      >&nbsp; {% endif %}
+      <strong>{{ group.name }}</strong><br />
+
+      {% for item in group.items %}
+      <a href="{{ item.url }}">{{ item.venue }}</a> ({{ item.period }}) {% if item.slides or
+      item.video %} &nbsp;|&nbsp; {% endif %} {% if item.slides %}
+      <a href="{{ item.slides }}" style="border-bottom: none">
+        <i class="icon-television"></i> Slides
+      </a>
+      &nbsp; {% endif %} {% if item.video %}
+      <a href="{{ item.video }}" style="border-bottom: none">
+        <i class="icon-youtube-play"></i> Video
+      </a>
+      &nbsp; {% endif %}
+      <br />
+      {% endfor %}
     </p>
     {% endfor %}
   </div>
