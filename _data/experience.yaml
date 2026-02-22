@@ -1,3 +1,17 @@
+- company: Proxima
+  title: Head of Machine Learning
+  date: 2026 - Now
+  description: Leading the machine learning team across multiple research streams developing frontier models for proximity modulator design.
+  location: New York, United States (Remote)
+  url: https://proximabio.com
+
+- company: Mistral AI
+  title: AI Scientist
+  date: 2025 - 2026
+  description: Working on large-scale synthetic data generation and post-training for multimodal LLMs.
+  location: Paris, France (Remote)
+  url: https://mistral.ai
+
 - company: Isomorphic Labs
   title: Staff Research Scientist
   date: 2023 - 2025
@@ -7,17 +21,17 @@
     - title: Senior Research Scientist
       # date: 1y
   description: Leading the Generative Models team. Our work delivered substantial impact across multiple drug discovery programs, spearheading the use of generative AI in molecule design.
-  location: London, UK
+  location: London, United Kingdom
   url: https://isomorphiclabs.com
 
 - company: École Polytechnique Fédérale De Lausanne (EPFL)
   title: Postdoctoral Researcher
   date: 2022 - 2023
   description: Conducted research at the intersection of AI and structural biology, with a primary focus on neural fields and generative models for protein design. Member of the <a href="https://lts2.epfl.ch/">LTS2</a> and <a href="https://www.epfl.ch/labs/lpdi/">LPDI</a> labs.
-  location: Lausanne, CH
+  location: Lausanne, Switzerland
   url: https://epfl.ch
 
-- company: Juvenescence, Menten AI, Vant AI
+- company: Juvenescence, Menten AI, VantAI
   title: External consultant
   date: 2019 - 2022
   description: Advised early-stage biotech startups on building graph ML models to accelerate drug discovery pipelines.
@@ -27,5 +41,5 @@
   title: Visiting Researcher
   date: 2019 - 2020
   description: Conducted research on geometric deep learning for the localisation of epileptic seizures, with promising results on human clinical data.
-  location: Toronto, CA
+  location: Toronto, Canada
   url: https://www.uhn.ca/Research/Research_Institutes/Krembil

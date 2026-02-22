@@ -166,6 +166,13 @@
 
 - type: Others
   publications:
+    - title: "Ministral 3"
+      authors: A. Liu et al.
+      venue: Preprint
+      link: https://arxiv.org/abs/2601.08584
+      code: https://huggingface.co/collections/mistralai/ministral-3
+      year: 2026
+
     - title: "Graph neural networks: operators and architectures"
       authors: D. Grattarola
       venue: PhD thesis
