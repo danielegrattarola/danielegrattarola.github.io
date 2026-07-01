@@ -52,13 +52,12 @@ a {
   }
 
   &:focus {
-    outline: none;
     color: $link-color;
   }
 
-  &:hover,
-  &:active {
-    outline: 0;
+  &:focus-visible {
+    outline: 2px solid $highlight-color;
+    outline-offset: 2px;
   }
 }
 
@@ -274,6 +273,18 @@ pre {
   }
 }
 
+.social-icon {
+  line-height: 1;
+}
+
+.social-icon-sm {
+  font-size: 15px;
+}
+
+.social-icon-lg {
+  font-size: 30px;
+}
+
 /*--- DIVIDING LINE ---------------------------------------------------------*/
 
 hr {
@@ -346,7 +357,7 @@ svg:not(:root) {
 
 .image-grid {
   display: grid;
-  grid-auto-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 }
 
@@ -365,7 +376,7 @@ svg:not(:root) {
 
 .has-jax {
   font: inherit;
-  font-size: 100;
+  font-size: 100%;
   background: inherit;
   border: inherit;
   color: #006699;
@@ -446,6 +457,41 @@ svg:not(:root) {
   a:hover {
     color: $highlight-color;
   }
+}
+
+.content-center {
+  text-align: center;
+}
+
+.resource-link {
+  border-bottom: none !important;
+  white-space: nowrap;
+}
+
+.footnote-text {
+  font-size: 14px;
+}
+
+.footnote-sup {
+  font-size: 10px;
+}
+
+.unstyled-link {
+  border-bottom: none !important;
+}
+
+.slide-image {
+  border: 1px solid $border-color;
+}
+
+.inline-media-row {
+  text-align: center;
+}
+
+.inline-media {
+  display: inline-block;
+  margin: auto;
+  width: 30%;
 }
 
 /*--- BROWSER UPGRADE -------------------------------------------------------*/

@@ -7,14 +7,16 @@ image: /images/main/publications.jpg
 <article>
   <h1 class="entry-title">Publications</h1>
 
-  <center>
+  <div class="content-center">
     <img
       src="{{page.image}}"
       alt="Glitch art #1 (by Daniele Grattarola)"
       width="743"
       height="437"
+      loading="eager"
+      decoding="async"
       class="full-width" />
-  </center>
+  </div>
   <br />
 
   {% for venue in site.data.publications %}
@@ -22,7 +24,7 @@ image: /images/main/publications.jpg
   <div class="entry-content">
     {% for pub in venue.publications %}
     <p>
-      <a href="{{pub.link}}"><strong>{{pub.title}}</strong></a>
+      <a href="{{pub.link}}" target="_blank" rel="noopener noreferrer"><strong>{{pub.title}}</strong></a>
       <br />
       <i>{{pub.authors}}</i>
       <br />
@@ -30,30 +32,29 @@ image: /images/main/publications.jpg
       {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
       <!-- <br> -->
       &nbsp;|&nbsp; {% endif %} {% if pub.code %}
-      <a href="{{pub.code}}" style="border-bottom: none; white-space: nowrap"
+      <a href="{{pub.code}}" class="resource-link" target="_blank" rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code</a
       >&nbsp; {% endif %} {% if pub.code-tf %}
-      <a href="{{pub.code-tf}}" style="border-bottom: none; white-space: nowrap"
+      <a href="{{pub.code-tf}}" class="resource-link" target="_blank" rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code (TF)</a
       >&nbsp; {% endif %} {% if pub.code-pt %}
-      <a href="{{pub.code-pt}}" style="border-bottom: none; white-space: nowrap"
+      <a href="{{pub.code-pt}}" class="resource-link" target="_blank" rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code (Torch)</a
       >&nbsp; {% endif %} {% if pub.poster %}
-      <a href="{{pub.poster}}" style="border-bottom: none; white-space: nowrap"
+      <a href="{{pub.poster}}" class="resource-link"
         ><i class="icon-list-alt"></i> Poster</a
       >&nbsp; {% endif %} {% if pub.doi %}
-      <a href="{{pub.doi}}" style="border-bottom: none; white-space: nowrap"
+      <a href="{{pub.doi}}" class="resource-link" target="_blank" rel="noopener noreferrer"
         ><i class="icon-book"></i> DOI</a
       >&nbsp; {% endif %}
     </p>
-
-    <p>{% endfor %}</p>
+    {% endfor %}
   </div>
 
   {% endfor %}
 
   <hr />
-  <span id="fnote" style="font-size: 14px">* Equal contribution</span>
+  <span id="fnote" class="footnote-text">* Equal contribution</span>
   <br />
-  <span id="fnote-cross" style="font-size: 14px"><sup>†</sup> As independent researcher</span>
+  <span id="fnote-cross" class="footnote-text"><sup>†</sup> As independent researcher</span>
 </article>

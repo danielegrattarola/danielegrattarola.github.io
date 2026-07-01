@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include head.html %} {% include head_post.html %} {% seo %}
+    {% include head.html %}
+    {% if page.math %}
+      {% include head_post.html %}
+    {% endif %}
+    {% seo %}
   </head>
 
   <body id="post-index">
@@ -25,13 +29,11 @@
         <div class="post-date">{{ page.date-string }}</div>
       </article>
     </div>
+
+    <footer role="contentinfo">
+      <div class="footer-wrapper">{% include footer.html %}</div>
+    </footer>
+
+    {% include scripts.html %}
   </body>
-
-  <footer>
-    <div class="footer-wrapper">
-      <footer role="contentinfo">{% include footer.html %}</footer>
-    </div>
-  </footer>
-
-  {% include scripts.html %}
 </html>

@@ -5,6 +5,7 @@ title: "A practical introduction to GNNs - Part 2"
 image: /images/2021-03-03/presentation-1.png
 tags: [GNN, lecture]
 date-string: MARCH 12, 2021
+math: true
 ---
 
 _This is Part 2 of an introductory lecture on graph neural networks that I gave for the "Graph Deep Learning" course at the University of Lugano._
@@ -38,7 +39,7 @@ We will see a general framework called **message passing**, which will allow us 
 
 ## Message Passing Networks
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-14.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-14.svg" width="100%" class="slide-image" />
 
 The idea of message passing networks was introduced in a paper by [Gilmer et al.]() in 2017 and it essentially boils GNN layers down to three main steps:
 
@@ -56,7 +57,7 @@ If we look back at our super-simple GNN formulation $$\mathbf{X}' = \mathbf{R}\m
 If $$\mathbf{R}$$ has a non-zero diagonal, then each node also computes a message "from itself to itself" using $$\mathbf{\Theta}$$.
 
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-15.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-15.svg" width="100%" class="slide-image" />
 
 Message passing is usually formalized with the equation in the slide above. 
 
@@ -265,7 +266,7 @@ Here's what it looks like [in Spektral](https://github.com/danielegrattarola/spe
 
 We have now moved past the simple GNNs based on a multiplication by the reference operator and with edge-independent messages that we saw in the first part of this series. Let's look at some more advanced methods!
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-17.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-17.svg" width="100%" class="slide-image" />
 
 For instance, the popular [Graph Attention Networks](https://arxiv.org/abs/1710.10903) by Veličković et al. can be implemented as a message-passing network using gather-scatter: 
 
@@ -290,7 +291,7 @@ coef = segment_softmax(logits, receivers)
 output = jax.ops.segment_sum(coef * h[senders], receivers)
 ```
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-18.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-18.svg" width="100%" class="slide-image" />
 
 Easily enough, we can also define a message-passing network that includes edge attributes in the computation of messages. One of my favorite models is the [Edge-Conditioned Convolution](https://arxiv.org/abs/1704.02901) by Simonovsky & Komodakis, of which I've summarized the math in the slide above. 
 

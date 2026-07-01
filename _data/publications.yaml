@@ -1,7 +1,7 @@
 - type: Conference papers
   publications:
     - title: Hierarchical neural cellular automata
-      authors: 'R. Pande, D. Grattarola<sup> <a href="#fnote-cross" style="border-bottom: none" title="As independent researcher">†</a></sup>'
+      authors: 'R. Pande, D. Grattarola<sup> <a href="#fnote-cross" class="unstyled-link" title="As independent researcher">†</a></sup>'
       venue: Artificial Life Conference
       link: https://direct.mit.edu/isal/proceedings/isal/35/20/116844
       code: https://github.com/RituPande/hnca
@@ -43,7 +43,7 @@
       year: ICLR 2021
 
     - title: Spectral clustering with graph neural networks for graph pooling
-      authors: 'F. M. Bianchi<a href="#fnote" style="border-bottom: none" title="Equal contribution">*</a>, D. Grattarola<a href="#fnote" style="border-bottom: none" title="Equal contribution">*</a>, C. Alippi'
+      authors: 'F. M. Bianchi<a href="#fnote" class="unstyled-link" title="Equal contribution">*</a>, D. Grattarola<a href="#fnote" class="unstyled-link" title="Equal contribution">*</a>, C. Alippi'
       venue: International Conference on Machine Learning
       link: https://arxiv.org/abs/1907.00481
       code:
@@ -54,7 +54,7 @@
       year: ICML 2020
 
     - title: Autoregressive models for sequences of graphs
-      authors: 'D. Zambon<a href="#fnote" style="border-bottom: none" title="Equal contribution">*</a>, D. Grattarola<a href="#fnote" style="border-bottom: none" title="Equal contribution">*</a>, L. Livi, C. Alippi'
+      authors: 'D. Zambon<a href="#fnote" class="unstyled-link" title="Equal contribution">*</a>, D. Grattarola<a href="#fnote" class="unstyled-link" title="Equal contribution">*</a>, L. Livi, C. Alippi'
       venue: International Joint Conference on Neural Networks
       link: https://arxiv.org/abs/1903.07299
       code: https://github.com/dzambon/NGAR
@@ -67,7 +67,7 @@
 - type: Journal papers
   publications:
     - title: E(n)-equivariant graph neural cellular automata
-      authors: 'G. Gala, D. Grattarola<sup> <a href="#fnote-cross" style="border-bottom: none" title="As independent researcher">†</a></sup>, E. Quaeghebeur'
+      authors: 'G. Gala, D. Grattarola<sup> <a href="#fnote-cross" class="unstyled-link" title="As independent researcher">†</a></sup>, E. Quaeghebeur'
       venue: Transactions on Machine Learning Research
       link: https://openreview.net/forum?id=7PNJzAxkij
       code: https://github.com/gengala/egnca

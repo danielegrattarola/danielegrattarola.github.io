@@ -1,6 +1,9 @@
 title: Daniele Grattarola
 author: Daniele Grattarola
 description: "Artificial intelligence scientist"
+url: https://danielegrattarola.github.io
+baseurl: ""
+logo: /images/main/daniele_grattarola.jpg
 twitter:
   username: riceasphait
 social:
@@ -15,7 +18,6 @@ highlighter: rouge
 markdown: kramdown
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
   - jekyll-gist
   - jekyll-feed
   - jekyll-seo-tag
@@ -25,10 +27,6 @@ sass:
   style: compressed
 
 permalink: /:categories/:year-:month-:day/:title.html
-
-# Amount of post to show on home page
-paginate: 5
-paginate_path: "blog/page:num"
 
 #kramdown:
 #  input: GFM
@@ -69,3 +67,10 @@ exclude:
 excerpt_separator: <!--more-->
 
 navbar_text: DANIELE GRATTAROLA°
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      image: /images/main/daniele_grattarola.jpg

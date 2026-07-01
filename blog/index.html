@@ -7,14 +7,16 @@ image: /images/main/oz.jpg
 <article>
   <h1 class="entry-title">{{page.title}}</h1>
 
-  <center>
+  <div class="content-center">
     <img
       src="{{page.image}}"
       alt="Australian landscape (by Daniele Grattarola)"
       width="1318"
       height="640"
+      loading="eager"
+      decoding="async"
       class="full-width" />
-  </center>
+  </div>
   <br />
 
   <div class="entry-content">
@@ -24,7 +26,7 @@ image: /images/main/oz.jpg
       <br />
       <span class="entry-date post-date date published updated">
         <time datetime="{{ post.date | date_to_xmlschema }}">
-          <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
+          <a href="{{ post.url | relative_url }}">{{ post.date | date: "%B %d, %Y" }}</a>
         </time>
         &nbsp;|&nbsp;
       </span>

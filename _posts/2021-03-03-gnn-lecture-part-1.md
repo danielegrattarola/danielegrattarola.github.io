@@ -5,6 +5,7 @@ title: "A practical introduction to GNNs - Part 1"
 image: /images/2021-03-03/presentation-1.png
 tags: [GNN, lecture]
 date-string: MARCH 3, 2021
+math: true
 ---
 
 _This is Part 1 of an introductory lecture on graph neural networks that I gave for the "Graph Deep Learning" course at the University of Lugano._
@@ -28,7 +29,7 @@ An image can be in color or in grayscale but, as long as the arrangement of pixe
 
 We could go as far as saying that an image is only an image because its pixels are arranged in a particular structure: pixels that represent points close in space or time should also be next to each other in the collection. Change this structure, and the image loses meaning. 
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-4.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-4.svg" width="100%" class="slide-image" />
 
 CNNs are designed to take this __locality__ into account. They are designed to transform the value of each pixel, not as a function of the whole image (like a MLP would do), but as a function of the pixel's immediate surroundings. Its neighbors.
 
@@ -39,7 +40,7 @@ You can also interpret it the other way around. The kind of processing that the 
 
 In any case, the important thing to note is that the grid structure does not depend on the specific pixel values. __We separate the values of the data points from the underlying structure that supports them.__
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-5.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-5.svg" width="100%" class="slide-image" />
 
 With this perspective in mind, the question of "how to make CNNs work on graphs" becomes: 
 
@@ -49,7 +50,7 @@ In other words, since we know that data and structure are different things, can 
 
 The only thing that we require is that the CNN does the same kind of local processing as it did for the regular grid: transform each node as a function of its neighbors. 
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-6.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-6.svg" width="100%" class="slide-image" />
 
 If we look at what this request entails, we immediately see some problems: 
 
@@ -60,7 +61,7 @@ We can't do that easily for an arbitrary graph. Since nodes can have a variable 
 
 To go from CNN to GNN we need to solve these problems.
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-7.svg" width="100%" style="border: solid 1px;"/> 
+<img src="{{ site.url }}/images/2021-03-03/presentation-7.svg" width="100%" class="slide-image" />
 
 _[I recall notation here because the students had already seen most of these things anyway, but the concept of "reference operator" gave me a nice segue into the next slide.]_
 
@@ -87,7 +88,7 @@ Since we're more interested in this specific property than in the actual values 
 
 Also note: so far we are considering graphs with undirected edges. This means that all reference operators will be symmetric (if edge i-j exists, then edge j-i exists).
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-8.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-8.svg" width="100%" class="slide-image" />
 
 Reference operators are nice. 
 
@@ -124,7 +125,7 @@ We went from graph signal to graph signal, with new node attributes that we obta
 
 Done! We have our first GNN: $$\mathbf{X}' = \mathbf{R} \mathbf{X} \mathbf{\Theta}$$.
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-9.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-9.svg" width="100%" class="slide-image" />
 
 One thing that is still missing from our relatively simple implementation is the ability to have kernels that span more than the immediate neighborhood of a node. In fact, in a CNN this is usually a hyperparameter. Also, depending on the reference operator that we use, we may or may not consider a node itself when computing its transformation: it depends on whether $$\mathbf{R}$$ has a non-zero diagonal.
 
@@ -135,7 +136,7 @@ Apply a reference operator once, and all nodes will "read" from their immediate 
 
 In other words: if we multiply a graph signal by $$\mathbf{R}^{K}$$, each node will update itself with the node attributes of nodes $$K$$ steps away.
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-10.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-10.svg" width="100%" class="slide-image" />
 
 In a CNN, this would be equivalent to having a kernel shaped like an empty square.
 To make the kernel full, we simply sum all "empty square" kernels up to the desired size. In our case, instead of considering $$\mathbf{R}^{K}$$, we consider a polynomial of $$\mathbf{R}$$ up to order $$K$$.
@@ -149,7 +150,7 @@ Note that this filter solves both problems that we had before, and also makes ou
 3. Since we can treat neighborhoods separately, we can also have different weights $$\mathbf{\Theta}^{(k)}$$ for each $$k$$-hop neighborhood. This is like having a radial filter, a function that only depends on the radius from the origin.
 
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-11.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-11.svg" width="100%" class="slide-image" />
 
 This idea of using a polynomial filter to create a GNN was first introduced in a paper by [Defferrard et al.](https://arxiv.org/abs/1606.09375), which can be seen as the first scalable and practical implementation of a GNN ever proposed.
 
@@ -160,7 +161,7 @@ Then, using the recursive formulation of Chebyshev polynomials, they build a pol
 
 The reason why they use these polynomials and not the simple ones we saw above is not important, for now. Let us just say: they have some desirable properties and they are fast to compute. 
 
-<img src="{{ site.url }}/images/2021-03-03/presentation-12.svg" width="100%" style="border: solid 1px;"/>
+<img src="{{ site.url }}/images/2021-03-03/presentation-12.svg" width="100%" class="slide-image" />
 
 Just a few months after the paper by Defferrard et al. was published on ArXiv, a new paper by [Kipf & Welling]() also appeared online.
 

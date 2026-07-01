@@ -5,6 +5,7 @@ title: "Implementing a Network-based Model of Epilepsy with Numpy and Numba"
 image: /images/2019-10-03/2_nodes_complex_plane.png
 tags: [tutorial, code, epilepsy]
 date-string: OCTOBER 03, 2019
+math: true
 ---
 
 ![]({{ site.url }}/images/2019-10-03/2_nodes_complex_plane.png){: .full-width}
@@ -97,7 +98,7 @@ Since the system is so precisely defined, we only need to convert the mathematic
 
 While developing this, I quickly realized that my original, kinda straightforward implementation was painfully slow and that it would have required some optimization to be usable.  
 
-This was the perfect occasion to use [Numba](http://numba.pydata.org/), a JIT compiler for Python that claims to yield speedups of up to two orders of magnitude.  
+This was the perfect occasion to use [Numba](https://numba.pydata.org/), a JIT compiler for Python that claims to yield speedups of up to two orders of magnitude.  
 Numba can be used to JIT compile any function implemented in pure Python, and natively supports a vast number of Numpy operations as well. 
 The juicy part of Numba consists of compiling functions in `nopython` mode, meaning that the code will run without ever using the Python interpreter. 
 To achieve this, it is sufficient to decorate your functions with the `@njit` decorator and then simply run your script as usual. 

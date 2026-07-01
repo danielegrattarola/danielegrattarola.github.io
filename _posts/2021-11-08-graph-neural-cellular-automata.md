@@ -30,7 +30,12 @@ We can also bring this idea of locality to the extreme, by keeping it as the onl
 For example, if we make the states continuous and change the size of the neighbourhood, we get [the mesmerizing Lenia CA](https://arxiv.org/abs/1812.05433) with its _insanely_ life-like creatures that move around smoothly, reproduce, and even organize themselves into higher-order organisms.
 
 <div class='video-container'>
-    <iframe src="https://www.youtube-nocookie.com/embed/iE46jKYcI4Y" frameborder="0" allowfullscreen></iframe>
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/iE46jKYcI4Y"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
 </div>
 
 By this principle, we can also derive an even more general version of CA, in which the neighbourhoods of the cells no longer have a fixed shape and size. Instead, the cells of the CA are organized in an arbitrary graph.
@@ -55,7 +60,7 @@ This is not a new idea.
 
 We can go back to NeurIPS 1992 to find a seminal work on [learning CA rules with neural networks](https://papers.nips.cc/paper/1992/hash/d6c651ddcd97183b2e40bc464231c962-Abstract.html) (they use convolutional neural networks, although back then they were called "sum-product networks with shared weights"). 
 
-Since then, we've seen other approaches to learn CA rules, like these papers using [genetic algorithms](https://mobile.aau.at/~welmenre/papers/elmenreich-iwsos2011.pdf) or [compositional pattern-producing networks](https://ieeexplore.ieee.org/abstract/document/8004527) to find rules that lead to a desired configuration of states, a task called **morphogenesis**.<sup style="font-size: 10px;"> [Papers not on arXiv, sorry](https://sci-hub.se/)</sup>
+Since then, we've seen other approaches to learn CA rules, like these papers using [genetic algorithms](https://mobile.aau.at/~welmenre/papers/elmenreich-iwsos2011.pdf) or [compositional pattern-producing networks](https://ieeexplore.ieee.org/abstract/document/8004527) to find rules that lead to a desired configuration of states, a task called **morphogenesis**.<sup class="footnote-sup"> [Papers not on arXiv, sorry](https://sci-hub.se/)</sup>
 
 More recently, convolutional networks have been shown to be extremely versatile in learning CA rules. 
 [This work by William Gilpin](https://arxiv.org/abs/1809.02942), for example, shows that we can implement any desired transition rule with CNNs by smartly setting their weights. 
@@ -95,25 +100,25 @@ However, regardless of what the theory says, we want to know whether we can lear
 
 ![Voronoi GCA]({{ site.url }}/images/2021-11-08/voronoi.png){: .half-width}
 
-We can start from the simplest possible binary GCA, inspired by the 1992 NeurIPS paper I mentioned before. The difference is that our CA cells are the [Voronoi tasselletion](https://en.wikipedia.org/wiki/Voronoi_diagram) of some random points. 
+We can start from the simplest possible binary GCA, inspired by the 1992 NeurIPS paper I mentioned before. The difference is that our CA cells are the [Voronoi tessellation](https://en.wikipedia.org/wiki/Voronoi_diagram) of some random points. 
 Alternatively, you can think of this GCA as being defined on the [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) of the points. 
 
 We use an [outer-totalistic rule](https://en.wikipedia.org/wiki/Life-like_cellular_automaton.) that swaps the state of a cell if the density of its alive neighbours exceeds a certain threshold, not too different from the Game of Life. 
 
 We try to see if our model can learn this kind of transition rule. In particular, we can train the model to approximate the 1-step dynamics in a supervised way, given that we know the true transition rule. 
 
-<div style="text-align: center">
-<img src="{{ site.url }}/images/2021-11-08/learn_gca_loss_v_epoch.svg" width="30%" style="display: inline-block; margin:auto;">&nbsp;
-<img src="{{ site.url }}/images/2021-11-08/learn_gca_acc_v_epoch.svg" width="30%" style="display: inline-block; margin:auto;">
+<div class="inline-media-row">
+<img src="{{ site.url }}/images/2021-11-08/learn_gca_loss_v_epoch.svg" width="30%" class="inline-media" />&nbsp;
+<img src="{{ site.url }}/images/2021-11-08/learn_gca_acc_v_epoch.svg" width="30%" class="inline-media" />
 </div>
 
 The results are encouraging. We see that the GNCA achieves 100% accuracy with no trouble and, if we let it evolve autonomously, it does not diverge from the real trajectory. 
 
 ### Boids
-<div style="text-align: center">
-<img src="{{ site.url }}/images/2021-11-08/alignment.png" width="30%" style="display: inline-block; margin:auto;">&nbsp;
-<img src="{{ site.url }}/images/2021-11-08/cohesion.png" width="30%" style="display: inline-block; margin:auto;">&nbsp;
-<img src="{{ site.url }}/images/2021-11-08/separation.png" width="30%" style="display: inline-block; margin:auto;">
+<div class="inline-media-row">
+<img src="{{ site.url }}/images/2021-11-08/alignment.png" width="30%" class="inline-media" />&nbsp;
+<img src="{{ site.url }}/images/2021-11-08/cohesion.png" width="30%" class="inline-media" />&nbsp;
+<img src="{{ site.url }}/images/2021-11-08/separation.png" width="30%" class="inline-media" />
 </div>
 
 For our second experiment, we keep a similar setting but make the target GCA much more complicated. 

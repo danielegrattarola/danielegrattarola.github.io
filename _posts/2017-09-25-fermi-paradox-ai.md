@@ -9,7 +9,7 @@ date-string: SEPTEMBER 25, 2017
 
 ![The Allen Telescope Array (Public domain)]({{ site.url }}/images/2017-09-25/seti.jpg){: .full-width}
 
-Attirbuted to Enrico Fermi as a back-of-the-envelope astrobiological philosphy 
+Attributed to Enrico Fermi as a back-of-the-envelope astrobiological philosophy 
 exercise, Fermi's paradox is a simply put question: _where is everybody?_  
 In other words, if life is a truly common phenomenon in the universe, then
 the probability of a civilization solving the problem of interstellar travel

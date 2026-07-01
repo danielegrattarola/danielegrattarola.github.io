@@ -1,7 +1,7 @@
 ---
 layout: main
 title: Activity
-image: /images/header/publications.png
+image: /images/main/publications.jpg
 ---
 
 <article>
@@ -21,9 +21,13 @@ image: /images/header/publications.png
 
     {% for item in site.data.experience %}
     <p>
-      <span class="entry-date post-date date published update">{{item.date}}</span><br />
-      <a href="{{item.url}}"><strong>{{item.company}}</strong></a
-      ><br />
+      <span class="entry-date post-date date published updated">{{item.date}}</span><br />
+      {% if item.url %}
+      <a href="{{item.url}}" target="_blank" rel="noopener noreferrer"><strong>{{item.company}}</strong></a>
+      {% else %}
+      <strong>{{item.company}}</strong>
+      {% endif %}
+      <br />
       <strong>{{item.title}}</strong><br />
       {{ item.description }} {% for role in item.previous_roles %} {% if forloop.first %} {% unless
       forloop.last %}
@@ -113,13 +117,14 @@ image: /images/header/publications.png
       <strong>{{ group.name }}</strong><br />
 
       {% for item in group.items %}
-      <a href="{{ item.url }}">{{ item.venue }}</a> ({{ item.period }}) {% if item.slides or
-      item.video %} &nbsp;|&nbsp; {% endif %} {% if item.slides %}
-      <a href="{{ item.slides }}" style="border-bottom: none">
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a> ({{
+      item.period }}) {% if item.slides or item.video %} &nbsp;|&nbsp; {% endif %} {% if item.slides
+      %}
+      <a href="{{ item.slides }}" class="unstyled-link">
         <i class="icon-television"></i> Slides
       </a>
       &nbsp; {% endif %} {% if item.video %}
-      <a href="{{ item.video }}" style="border-bottom: none">
+      <a href="{{ item.video }}" class="unstyled-link" target="_blank" rel="noopener noreferrer">
         <i class="icon-youtube-play"></i> Video
       </a>
       &nbsp; {% endif %}

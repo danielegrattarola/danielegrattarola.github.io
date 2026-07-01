@@ -5,6 +5,7 @@ title: "MinCUT Pooling in Graph Neural Networks"
 image: /images/2019-07-25/horses.png
 tags: [AI, GNN, pooling]
 date-string: JULY 25, 2019
+math: true
 ---
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/horses.png){: .full-width}
@@ -307,7 +308,7 @@ The dataset that we used were:
 
 1. [The Benchmark Data Sets for Graph Kernels](https://ls11-www.cs.tu-dortmund.de/staff/morris/graphkerneldatasets);
 2. [A synthetic dataset created by F. M. Bianchi to test GNNs](https://github.com/FilippoMB/Benchmark_dataset_for_graph_classification);
-3. [The QM9 dataset for the prediction of chemical properties of molecules](http://quantum-machine.org/datasets/).
+3. [The QM9 dataset for the prediction of chemical properties of molecules](https://quantum-machine.org/datasets/).
 
 I'm not gonna report the comparisons with other methods, but I will highlight an interesting sanity check that we performed in order to see whether using GNNs and graph pooling even made sense at all. 
 
