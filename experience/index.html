@@ -1,29 +1,31 @@
 ---
 layout: main
 title: Activity
-image: /images/main/publications.jpg
+image: /images/main/daniele_grattarola_cofold_summit_2026.png
 ---
-
-<article>
-  <div class="entry-content">
-    <h1>Experience</h1>
-
-    <p>
-      This is a summary of my professional experience, including teaching, supervising students, and
-      participating in the machine learning community.
-    </p>
-  </div>
-</article>
 
 <article>
   <div class="entry-content">
     <h1>Career</h1>
 
+    <div class="content-center">
+      <img
+        src="{{page.image}}"
+        alt="A picture of Daniele Grattarola giving a talk at the 2026 CoFold Summit in Barcelona."
+        width="743"
+        height="437"
+        loading="eager"
+        decoding="async"
+        class="full-width" />
+    </div>
+
     {% for item in site.data.experience %}
     <p>
       <span class="entry-date post-date date published updated">{{item.date}}</span><br />
       {% if item.url %}
-      <a href="{{item.url}}" target="_blank" rel="noopener noreferrer"><strong>{{item.company}}</strong></a>
+      <a href="{{item.url}}" target="_blank" rel="noopener noreferrer"
+        ><strong>{{item.company}}</strong></a
+      >
       {% else %}
       <strong>{{item.company}}</strong>
       {% endif %}
@@ -120,9 +122,7 @@ image: /images/main/publications.jpg
       <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a> ({{
       item.period }}) {% if item.slides or item.video %} &nbsp;|&nbsp; {% endif %} {% if item.slides
       %}
-      <a href="{{ item.slides }}" class="unstyled-link">
-        <i class="icon-television"></i> Slides
-      </a>
+      <a href="{{ item.slides }}" class="unstyled-link"> <i class="icon-television"></i> Slides </a>
       &nbsp; {% endif %} {% if item.video %}
       <a href="{{ item.video }}" class="unstyled-link" target="_blank" rel="noopener noreferrer">
         <i class="icon-youtube-play"></i> Video
