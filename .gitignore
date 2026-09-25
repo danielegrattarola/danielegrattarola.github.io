@@ -5,5 +5,3 @@ _site/
 .jekyll-cache/
 vendor/
 .bundle/
-Gemfile
-Gemfile.lock
