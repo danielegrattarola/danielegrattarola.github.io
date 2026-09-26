@@ -1,14 +1,14 @@
 - company: Proxima
   title: Head of Machine Learning
   date: 2026 - Now
-  description: Leading the machine learning team across multiple research streams developing frontier models for proximity modulator design.
+  description: Leading a team of 10+ AI scientists developing a frontier generative AI platform spanning biomolecular structure prediction, proximity modulator design, and structural proteomics, deployed across multiple internal and external drug discovery programs.
   location: New York, United States (Remote)
   url: https://proximabio.com
 
 - company: Mistral AI
   title: AI Scientist
   date: 2025 - 2026
-  description: Working on large-scale synthetic data generation and post-training for multimodal LLMs.
+  description: Worked on large-scale synthetic data generation and post-training for multimodal LLMs.
   location: Paris, France (Remote)
   url: https://mistral.ai
 
@@ -20,7 +20,7 @@
       # date: 1y2m
     - title: Senior Research Scientist
       # date: 1y
-  description: Leading the Generative Models team. Our work delivered substantial impact across multiple drug discovery programs, spearheading the use of generative AI in molecule design.
+  description: Led the Generative Models team, pioneering generative AI methods across multiple drug design modalities that delivered strong results in several internal and external drug discovery programs.
   location: London, United Kingdom
   url: https://isomorphiclabs.com
 
@@ -34,12 +34,12 @@
 - company: Juvenescence, Menten AI, VantAI
   title: External consultant
   date: 2019 - 2022
-  description: Advised early-stage biotech startups on building graph ML models to accelerate drug discovery pipelines.
+  description: Advised early-stage biotech startups on building graph ML models to accelerate their drug discovery pipelines.
   url:
 
 - company: Krembil Research Institute
   title: Visiting Researcher
   date: 2019 - 2020
-  description: Conducted research on geometric deep learning for the localisation of epileptic seizures, with promising results on human clinical data.
+  description: Conducted research on geometric deep learning for the localisation of epileptic seizures from human intracranial EEG recordings.
   location: Toronto, Canada
   url: https://www.uhn.ca/Research/Research_Institutes/Krembil
