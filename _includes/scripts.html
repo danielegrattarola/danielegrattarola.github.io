@@ -1,5 +1,8 @@
 <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  crossorigin="anonymous"
+></script>
 
 <!-- SlickNav -->
 <script src="{{ '/assets/js/jquery.slicknav.min.js' | relative_url }}"></script>
@@ -8,7 +11,8 @@
     if (window.jQuery && $("#menu").length) {
       $("#menu").slicknav({
         label: "",
-        brand: '<a class="brand" href="{{ "/" | relative_url }}">{{ site.navbar_text }}</a>',
+        brand:
+          '<a class="brand" href="{{ "/" | relative_url }}">{{ site.navbar_text }}</a>',
       });
     }
 
@@ -22,13 +26,15 @@
       }
     });
 
-    document.querySelectorAll(".entry-content iframe").forEach(function (iframe, index) {
-      if (!iframe.hasAttribute("loading")) {
-        iframe.setAttribute("loading", "lazy");
-      }
-      if (!iframe.hasAttribute("title")) {
-        iframe.setAttribute("title", "Embedded media " + (index + 1));
-      }
-    });
+    document
+      .querySelectorAll(".entry-content iframe")
+      .forEach(function (iframe, index) {
+        if (!iframe.hasAttribute("loading")) {
+          iframe.setAttribute("loading", "lazy");
+        }
+        if (!iframe.hasAttribute("title")) {
+          iframe.setAttribute("title", "Embedded media " + (index + 1));
+        }
+      });
   });
 </script>

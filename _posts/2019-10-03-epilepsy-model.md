@@ -10,33 +10,33 @@ math: true
 
 ![]({{ site.url }}/images/2019-10-03/2_nodes_complex_plane.png){: .full-width}
 
-Mathematically modeling how epilepsy acts on the brain is one of the major topics of research in neuroscience. 
+Mathematically modeling how epilepsy acts on the brain is one of the major topics of research in neuroscience.
 Recently I came across [this paper](https://mathematical-neuroscience.springeropen.com/articles/10.1186/2190-8567-2-1) by Oscar Benjamin et al., which I thought that it would be cool to implement and experiment with.
 
-The idea behind the paper is simple enough. First, they formulate a mathematical model of how a seizure might happen in a single region of the brain. Then, they expand this model to consider the interplay between different areas of the brain, effectively modeling it as a network. 
+The idea behind the paper is simple enough. First, they formulate a mathematical model of how a seizure might happen in a single region of the brain. Then, they expand this model to consider the interplay between different areas of the brain, effectively modeling it as a network.
 
 <!--more-->
 
 ## Single system
 
-We start from a complex dynamical system defined as follows: 
+We start from a complex dynamical system defined as follows:
 
 $$
     \dot{z} = f(z) = (\lambda - 1 + i \omega)z + 2z|z|^2 - z|z|^4
 $$
 
-where \\( z \in \mathbb{C} \\) and \\(\lambda\\) controls the possible attractors of the system. 
+where \\( z \in \mathbb{C} \\) and \\(\lambda\\) controls the possible attractors of the system.
 For \\( 0 < \lambda < 1 \\), the system has two stable attractors: one fixed point and one attractor that oscillates with an angular velocity of \\(\omega\\) rad/s.  
-We can consider the stable attractor as a simplification of the brain in its resting state, while the oscillating attractor is taken to be the *ictal* state (i.e., when the brain is having a seizure). 
+We can consider the stable attractor as a simplification of the brain in its resting state, while the oscillating attractor is taken to be the _ictal_ state (i.e., when the brain is having a seizure).
 
-We can also consider a *noise-driven* version of the system: 
+We can also consider a _noise-driven_ version of the system:
 
 $$
     dz(t) = f(z)\,dt + \alpha\,dW(t)
 $$
 
 where \\( W(t) \\) is a Wiener process rescaled by a factor \\( \alpha \\).  
-A Wiener process \\( W(t)\_\{t\ge0\} \\), sometimes called *Brownian motion*, is a stochastic process with the following properties:
+A Wiener process \\( W(t)\_\{t\ge0\} \\), sometimes called _Brownian motion_, is a stochastic process with the following properties:
 
 - \\(W(0) = 0\\);
 - the increments between two consecutive observations are normally distributed with a variance equal to the time between the observations:
@@ -45,12 +45,12 @@ $$
     W(t + \tau) - W(t) \sim \mathcal{N}(0, \tau).
 $$
 
-In the noise-driven version of the system, it is guaranteed that the system will eventually *escape* any region of phase space, moving from one attractor to the other. 
+In the noise-driven version of the system, it is guaranteed that the system will eventually _escape_ any region of phase space, moving from one attractor to the other.
 
-In short, we have a system that due to external, unpredictable inputs (the noise), will randomly switch from a state of rest to a state of oscillation, which we consider as a seizure. 
+In short, we have a system that due to external, unpredictable inputs (the noise), will randomly switch from a state of rest to a state of oscillation, which we consider as a seizure.
 
-The two figures below show an example of the system starting from the stable attractor and then moving to the oscillator. 
-Since the system is complex, we can observe its dynamics in phase space: 
+The two figures below show an example of the system starting from the stable attractor and then moving to the oscillator.
+Since the system is complex, we can observe its dynamics in phase space:
 
 ![]({{ site.url }}/images/2019-10-03/1_nodes_complex_plane.png){: .centered}
 
@@ -60,14 +60,13 @@ Or we can observe the real part of \\( f(t) \\) as if we were reading an EEG of 
 
 See how the change of attractor almost looks like an epileptic seizure?
 
-
 ## Network model
 
-While this simple model of seizure initiation is interesting on its own, we can also take our modeling a step further and explicitly represent the connections between different areas of the brain (or sub-systems, if you will) and how they might affect the propagation of seizures from one area to the other. 
+While this simple model of seizure initiation is interesting on its own, we can also take our modeling a step further and explicitly represent the connections between different areas of the brain (or sub-systems, if you will) and how they might affect the propagation of seizures from one area to the other.
 
 We do this by defining a connectivity matrix \\( A \\) where \\( A\_{ij} = 1 \\) if sub-system \\( i \\) has a direct influence on sub-system \\( j \\), and \\( A\_{ij} = 0 \\) otherwise. In practice, we also normalize the matrix by dividing each row element-wise by the product of the square roots of the node's out-degree and in-degree.
 
-Starting from the system described above, the dynamics of one node in the networked system are described by: 
+Starting from the system described above, the dynamics of one node in the networked system are described by:
 
 $$
     dz_{i}(t) = \big( f(z_i) + \beta \sum\limits_{j \ne i} A_{ji} (z_j - z_i) \big) + \alpha\,dW_{i}(t)
@@ -77,7 +76,7 @@ If we look at the individual nodes, their behavior may not seem different than w
 
 ![]({{ site.url }}/images/2019-10-03/4_graph.png){: .centered}
 
-Here's what the networked system of 4 nodes pictured above looks like in phase space: 
+Here's what the networked system of 4 nodes pictured above looks like in phase space:
 
 ![]({{ site.url }}/images/2019-10-03/4_nodes_complex_plane.png){: .centered}
 
@@ -85,27 +84,27 @@ And again we can also look at the real part of each node:
 
 ![]({{ site.url }}/images/2019-10-03/4_nodes_re_v_time.png){: .centered}
 
-If you want to have more details on how to control the different attractors of the system, I suggest you look at the [original paper](https://mathematical-neuroscience.springeropen.com/articles/10.1186/2190-8567-2-1). They analyze in depth the attractors and *escape times* of all possible 2-nodes and 3-nodes networks, as well as giving an overview of higher-order networks.
+If you want to have more details on how to control the different attractors of the system, I suggest you look at the [original paper](https://mathematical-neuroscience.springeropen.com/articles/10.1186/2190-8567-2-1). They analyze in depth the attractors and _escape times_ of all possible 2-nodes and 3-nodes networks, as well as giving an overview of higher-order networks.
 
 ## Implementing the system with Numpy and Numba
 
-Now that we got the math sorted out, let's look at how to translate this system in Numpy.  
+Now that we got the math sorted out, let's look at how to translate this system in Numpy.
 
-Since the system is so precisely defined, we only need to convert the mathematical formulation into code. In short, we will need: 
+Since the system is so precisely defined, we only need to convert the mathematical formulation into code. In short, we will need:
 
 1. The core functions to compute the complex dynamical system;
 2. The main loop to compute the evolution of the system starting from an initial condition.
 
-While developing this, I quickly realized that my original, kinda straightforward implementation was painfully slow and that it would have required some optimization to be usable.  
+While developing this, I quickly realized that my original, kinda straightforward implementation was painfully slow and that it would have required some optimization to be usable.
 
 This was the perfect occasion to use [Numba](https://numba.pydata.org/), a JIT compiler for Python that claims to yield speedups of up to two orders of magnitude.  
-Numba can be used to JIT compile any function implemented in pure Python, and natively supports a vast number of Numpy operations as well. 
-The juicy part of Numba consists of compiling functions in `nopython` mode, meaning that the code will run without ever using the Python interpreter. 
-To achieve this, it is sufficient to decorate your functions with the `@njit` decorator and then simply run your script as usual. 
+Numba can be used to JIT compile any function implemented in pure Python, and natively supports a vast number of Numpy operations as well.
+The juicy part of Numba consists of compiling functions in `nopython` mode, meaning that the code will run without ever using the Python interpreter.
+To achieve this, it is sufficient to decorate your functions with the `@njit` decorator and then simply run your script as usual.
 
 ## Code
 
-At the very start, let's deal with imports and define a couple of helper functions that we are going to use only once: 
+At the very start, let's deal with imports and define a couple of helper functions that we are going to use only once:
 
 ```python
 import numpy as np
@@ -195,7 +194,7 @@ def delta_wiener(size, dt):
 At the time of writing this, Numba [does not support](https://numba.pydata.org/numba-doc/dev/reference/numpysupported.html#distributions) the `size` argument in `np.random.normal` but it does support `np.random.randn`. Instead of setting the `scale` parameter explicitly, we simply multiply the sampled values by the scale.  
 Since we are using the scale, and not the variance, we have to take the square root of the time increment `dt`.
 
-Finally, we can compute the increment of a complex Wiener process as \\( U(t) + jV(t) \\), where both \\( U \\) and \\( V \\) are simple Wiener processes: 
+Finally, we can compute the increment of a complex Wiener process as \\( U(t) + jV(t) \\), where both \\( U \\) and \\( V \\) are simple Wiener processes:
 
 ```python
 @njit
@@ -244,23 +243,23 @@ Originally, I had implemented the following line
 
 ```python
 delta_z = z.reshape(-1, 1) - z.reshape(1, -1)
-``` 
+```
 
-as 
+as
 
 ```python
 delta_z = z[..., None] - z[None, ...]
 ```
 
-but Numba does not support adding new axes with `None` or `np.newaxis`.  
+but Numba does not support adding new axes with `None` or `np.newaxis`.
 
-Also, when computing `diffusive_coupling`, a more efficient way of doing 
+Also, when computing `diffusive_coupling`, a more efficient way of doing
 
 ```python
 np.diag(A.T.dot(B))
-``` 
+```
 
-would have been 
+would have been
 
 ```python
 np.einsum('ij,ij->j', A, B)
@@ -305,13 +304,13 @@ timesteps = evolve_system(z0, steps)
 timesteps = np.array(timesteps)
 ```
 
-You can now run any analysis on `timesteps`, which will be a Numpy array of `np.complex128`. Note also how we had to cast the initial conditions `z0` to this `dtype`, in order to have strict typing in the JIT-compiled code. 
+You can now run any analysis on `timesteps`, which will be a Numpy array of `np.complex128`. Note also how we had to cast the initial conditions `z0` to this `dtype`, in order to have strict typing in the JIT-compiled code.
 
 [I published the full code as a Gist, including the code I used to make the plots.](https://gist.github.com/danielegrattarola/c663346b529e758f0224c8313818ad77)
 
 ## General notes on performance
 
-My original implementation was based on a `Simulator` class that implemented all the same methods in a compact abstraction: 
+My original implementation was based on a `Simulator` class that implemented all the same methods in a compact abstraction:
 
 ```python
 class Simulator(object):
@@ -322,7 +321,7 @@ class Simulator(object):
     def f(z, lamb=0., omega=1):
         ...
 
-    @staticmethod    
+    @staticmethod
     def delta_weiner(size, dt):
         ...
 
@@ -339,11 +338,11 @@ class Simulator(object):
 
 There were some issues with this implementation, the biggest one being that it is much more messy to JIT compile an entire class with Numba (the substance of the code did not change much, and I've explicitly highlighted all implementation changes above).
 
-Having moved to a more functional style feels cleaner and it honestly looks more elegant (opinions, I know). Crucially, it also allowed me to optimize each function to work flawlessly with Numba. 
+Having moved to a more functional style feels cleaner and it honestly looks more elegant (opinions, I know). Crucially, it also allowed me to optimize each function to work flawlessly with Numba.
 
 After optimizing all that was optimizable, I tested the old code against the new one and the speedup was about 31x, going from \~8k iterations/s to \~250k iterations/s.
 
-Most of the improvement came from Numba and removing the overhead of Python's interpreter, but it must be said that the true core of the system is dealt with by Numpy. In fact, as we increase the number of nodes the bottleneck becomes the matrix multiplication in Numpy, eventually leading to virtually no performance difference between using Numba or not (verified for `N=1000` - the 31x speedup was for `N=2`). 
+Most of the improvement came from Numba and removing the overhead of Python's interpreter, but it must be said that the true core of the system is dealt with by Numpy. In fact, as we increase the number of nodes the bottleneck becomes the matrix multiplication in Numpy, eventually leading to virtually no performance difference between using Numba or not (verified for `N=1000` - the 31x speedup was for `N=2`).
 
 <br>
 I hope that you enjoyed this post and hopefully learned something new, be it about models of the epileptic brain or Python optimization.

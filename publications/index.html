@@ -15,7 +15,8 @@ image: /images/main/publications.jpg
       height="437"
       loading="eager"
       decoding="async"
-      class="full-width" />
+      class="full-width"
+    />
   </div>
   <br />
 
@@ -24,7 +25,9 @@ image: /images/main/publications.jpg
   <div class="entry-content">
     {% for pub in venue.publications %}
     <p>
-      <a href="{{pub.link}}" target="_blank" rel="noopener noreferrer"><strong>{{pub.title}}</strong></a>
+      <a href="{{pub.link}}" target="_blank" rel="noopener noreferrer"
+        ><strong>{{pub.title}}</strong></a
+      >
       <br />
       <i>{{pub.authors}}</i>
       <br />
@@ -32,19 +35,35 @@ image: /images/main/publications.jpg
       {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
       <!-- <br> -->
       &nbsp;|&nbsp; {% endif %} {% if pub.code %}
-      <a href="{{pub.code}}" class="resource-link" target="_blank" rel="noopener noreferrer"
+      <a
+        href="{{pub.code}}"
+        class="resource-link"
+        target="_blank"
+        rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code</a
       >&nbsp; {% endif %} {% if pub.code-tf %}
-      <a href="{{pub.code-tf}}" class="resource-link" target="_blank" rel="noopener noreferrer"
+      <a
+        href="{{pub.code-tf}}"
+        class="resource-link"
+        target="_blank"
+        rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code (TF)</a
       >&nbsp; {% endif %} {% if pub.code-pt %}
-      <a href="{{pub.code-pt}}" class="resource-link" target="_blank" rel="noopener noreferrer"
+      <a
+        href="{{pub.code-pt}}"
+        class="resource-link"
+        target="_blank"
+        rel="noopener noreferrer"
         ><i class="icon-github-circled"></i> Code (Torch)</a
       >&nbsp; {% endif %} {% if pub.poster %}
       <a href="{{pub.poster}}" class="resource-link"
         ><i class="icon-list-alt"></i> Poster</a
       >&nbsp; {% endif %} {% if pub.doi %}
-      <a href="{{pub.doi}}" class="resource-link" target="_blank" rel="noopener noreferrer"
+      <a
+        href="{{pub.doi}}"
+        class="resource-link"
+        target="_blank"
+        rel="noopener noreferrer"
         ><i class="icon-book"></i> DOI</a
       >&nbsp; {% endif %}
     </p>
@@ -56,5 +75,7 @@ image: /images/main/publications.jpg
   <hr />
   <span id="fnote" class="footnote-text">* Equal contribution</span>
   <br />
-  <span id="fnote-cross" class="footnote-text"><sup>†</sup> As independent researcher</span>
+  <span id="fnote-cross" class="footnote-text"
+    ><sup>†</sup> As independent researcher</span
+  >
 </article>

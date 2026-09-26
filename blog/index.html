@@ -15,7 +15,8 @@ image: /images/main/oz.jpg
       height="640"
       loading="eager"
       decoding="async"
-      class="full-width" />
+      class="full-width"
+    />
   </div>
   <br />
 
@@ -26,7 +27,9 @@ image: /images/main/oz.jpg
       <br />
       <span class="entry-date post-date date published updated">
         <time datetime="{{ post.date | date_to_xmlschema }}">
-          <a href="{{ post.url | relative_url }}">{{ post.date | date: "%B %d, %Y" }}</a>
+          <a href="{{ post.url | relative_url }}"
+            >{{ post.date | date: "%B %d, %Y" }}</a
+          >
         </time>
         &nbsp;|&nbsp;
       </span>

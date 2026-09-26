@@ -16,12 +16,14 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
         height="437"
         loading="eager"
         decoding="async"
-        class="full-width" />
+        class="full-width"
+      />
     </div>
 
     {% for item in site.data.experience %}
     <p>
-      <span class="entry-date post-date date published updated">{{item.date}}</span><br />
+      <span class="entry-date post-date date published updated">{{item.date}}</span
+      ><br />
       {% if item.url %}
       <a href="{{item.url}}" target="_blank" rel="noopener noreferrer"
         ><strong>{{item.company}}</strong></a
@@ -31,10 +33,11 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
       {% endif %}
       <br />
       <strong>{{item.title}}</strong><br />
-      {{ item.description }} {% for role in item.previous_roles %} {% if forloop.first %} {% unless
-      forloop.last %}
-      <br />Previously: {% endunless %} {% endif %}{{ role.title }}{% if role.date %} ({{ role.date
-      }}){% endif %}{% unless forloop.last %}, {% else %}.{% endunless %}{% endfor %}
+      {{ item.description }} {% for role in item.previous_roles %} {% if forloop.first
+      %} {% unless forloop.last %}
+      <br />Previously: {% endunless %} {% endif %}{{ role.title }}{% if role.date %}
+      ({{ role.date }}){% endif %}{% unless forloop.last %}, {% else %}.{% endunless
+      %}{% endfor %}
     </p>
     {% endfor %}
   </div>
@@ -45,7 +48,8 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
     <h1>Academia</h1>
 
     <h3>Teaching</h3>
-    I have contributed to teaching, organizing, and supervising these university courses:
+    I have contributed to teaching, organizing, and supervising these university
+    courses:
     <ul>
       {% for item in site.data.teaching %}
       <li>
@@ -59,9 +63,9 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
 
     I have been Ph.D. representative for USI's Faculty of Computer Science in 2018/2019.
     <br />
-    During that time, I was the official point of contact between the Faculty and its doctoral
-    students, participating in Faculty meetings and contributing to the strategic decisions of the
-    University.
+    During that time, I was the official point of contact between the Faculty and its
+    doctoral students, participating in Faculty meetings and contributing to the
+    strategic decisions of the University.
 
     <h3>Awards</h3>
 
@@ -89,10 +93,10 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
     </ul>
 
     <h3>Spektral</h3>
-    I am the main developer of <a href="https://graphneural.network">Spektral</a>, an open-source
-    Python library for creating graph neural networks in TensorFlow and Keras. The project has
-    thousands of active users and was one of the first libraries ever created for graph deep
-    learning.
+    I am the main developer of <a href="https://graphneural.network">Spektral</a>, an
+    open-source Python library for creating graph neural networks in TensorFlow and
+    Keras. The project has thousands of active users and was one of the first libraries
+    ever created for graph deep learning.
   </div>
 </article>
 
@@ -113,18 +117,27 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
   <div class="entry-content">
     <h1>Talks</h1>
 
-    {% assign grouped_talks = site.data.talks | group_by: "title" %} {% for group in grouped_talks
-    %}
+    {% assign grouped_talks = site.data.talks | group_by: "title" %} {% for group in
+    grouped_talks %}
     <p>
       <strong>{{ group.name }}</strong><br />
 
       {% for item in group.items %}
-      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.venue }}</a> ({{
-      item.period }}) {% if item.slides or item.video %} &nbsp;|&nbsp; {% endif %} {% if item.slides
-      %}
-      <a href="{{ item.slides }}" class="unstyled-link"> <i class="icon-television"></i> Slides </a>
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer"
+        >{{ item.venue }}</a
+      >
+      ({{ item.period }}) {% if item.slides or item.video %} &nbsp;|&nbsp; {% endif %}
+      {% if item.slides %}
+      <a href="{{ item.slides }}" class="unstyled-link">
+        <i class="icon-television"></i> Slides
+      </a>
       &nbsp; {% endif %} {% if item.video %}
-      <a href="{{ item.video }}" class="unstyled-link" target="_blank" rel="noopener noreferrer">
+      <a
+        href="{{ item.video }}"
+        class="unstyled-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <i class="icon-youtube-play"></i> Video
       </a>
       &nbsp; {% endif %}
