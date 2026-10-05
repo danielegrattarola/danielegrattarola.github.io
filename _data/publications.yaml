@@ -164,10 +164,50 @@
       doi: https://doi.org/10.1109/TNNLS.2019.2927301
       year: 2019
 
+- type: Patents
+  publications:
+    - title: Unified structure model for molecule property and structure prediction
+      authors: C.-C. Hung, M. E. Jaderberg, J. P. Bambrick, J. W. Briody, K. M. Schaarschmidt, L. Rampášek, C. J. Feinauer, T. Ayoola, A. Osokin, B. A. Rózemberczki, A. Malinin, A. Ashukha, D. Grattarola, J. S. Abramson, J. T. Dunger, R. A. Evans, V. C. Bapst, W. Czarnecki, D. Reiman, Z. Wu
+      venue: WIPO patent application WO2026052718A1
+      link: https://patents.google.com/patent/WO2026052718A1/en
+      year: 2026
+
+    - title: Automated ligand design
+      authors: D. Grattarola, M. E. Jaderberg, C. J. Feinauer
+      venue: WIPO patent application WO2026037746A1
+      link: https://patents.google.com/patent/WO2026037746A1/en
+      year: 2026
+
+    - title: Designing ligands using generative models
+      authors: M. E. Jaderberg, C. J. Feinauer, D. Grattarola, S. Bartunov, C. A. Vignac
+      venue: WIPO patent application WO2025202392A1
+      link: https://patents.google.com/patent/WO2025202392A1/en
+      year: 2025
+
 - type: Others
   publications:
     - title: "Ministral 3"
-      authors: A. Liu et al.
+      authors: >-
+        A. H. Liu, K. Khandelwal, S. Subramanian, V. Jouault, A. Rastogi, A. Sadé,
+        A. Jeffares, A. Jiang, A. Cahill, A. Gavaudan, A. Sablayrolles, A. Héliou,
+        A. You, A. Ehrenberg, A. Lo, A. Eliseev, A. Calvi, A. Sooriyarachchi,
+        B. Bout, B. Rozière, B. De Monicault, C. Lanfranchi, C. Barreau, C. Courtot,
+        D. Grattarola, D. Dabert, D. de las Casas, E. Chane-Sane, F. Ahmed,
+        G. Berrada, G. Ecrepont, G. Guinet, G. Novikov, G. Kunsch, G. Lample,
+        G. Martin, G. Gupta, J. Ludziejewski, J. Rute, J. Studnia, J. Amar,
+        J. Delas, J. S. Roberts, K. Yadav, K. Chandu, K. Jain, L. Aitchison,
+        L. Fainsin, L. Blier, L. Zhao, L. Martin, L. Saulnier, L. Gao, M. Buyl,
+        M. Jennings, M. Pellat, M. Prins, M. Poirée, M. Guillaumin, M. Dinot,
+        M. Futeral, M. Darrin, M. Augustin, M. Chiquier, M. Schimpf, N. Grinsztajn,
+        N. Gupta, N. Raghuraman, O. Bousquet, O. Duchenne, P. Wang, P. von Platen,
+        P. Jacob, P. Wambergue, P. Kurylowicz, P. R. Muddireddy, P. Chagniot,
+        P. Stock, P. Agrawal, Q. Torroba, R. Sauvestre, R. Soletskyi, R. Menneer,
+        S. Vaze, S. Barry, S. Gandhi, S. Waghjale, S. Gandhi, S. Ghosh, S. Mishra,
+        S. Aithal, S. Antoniak, T. Le Scao, T. Cachet, T. S. Sorg, T. Lavril,
+        T. Nait Saada, T. Chabal, T. Foubert, T. Robert, T. Wang, T. Lawson,
+        T. Bewley, T. Bewley, T. Edwards, U. Jamil, U. Tomasini, V. Nemychnikova,
+        V. Phung, V. Maladière, V. Richard, W. Bouaziz, W.-D. Li, W. Marshall,
+        X. Li, X. Yang, Y. El Ouahidi, Y. Wang, Y. Tang, Z. Ramzi
       venue: Preprint
       link: https://arxiv.org/abs/2601.08584
       code: https://huggingface.co/collections/mistralai/ministral-3

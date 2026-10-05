@@ -29,7 +29,8 @@ image: /images/main/publications.jpg
         ><strong>{{pub.title}}</strong></a
       >
       <br />
-      <i>{{pub.authors}}</i>
+      {% assign authors = pub.authors | split: ", " %}
+      <i>{% if authors.size > 10 %}{{ authors | first }} et al.{% else %}{{ pub.authors }}{% endif %}</i>
       <br />
       <i>{{pub.venue}} ({{pub.year}})</i>
       {% if pub.code or pub.code-tf or pub.code-pt or pub.poster or pub.doi%}
