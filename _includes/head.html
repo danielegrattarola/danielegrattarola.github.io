@@ -1,6 +1,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+{% assign page_title = page.title | default: site.title %}
+<title>{% if page_title != site.title %}{{ page_title | escape }} | {% endif %}{{ site.title | escape }}</title>
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
