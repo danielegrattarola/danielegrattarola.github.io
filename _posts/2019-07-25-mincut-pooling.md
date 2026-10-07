@@ -28,7 +28,7 @@ In this post, I'll describe the working principles of minCUT pooling and show so
 
 ![Embeddings]({{ site.url }}/images/2019-07-25/mincut_problem.png)
 
-The [K-way normalized minCUT](https://en.wikipedia.org/wiki/Minimum_k-cut) is an optimization problem to find K clusters on a graph by minimizing the overall intra-cluster edge weight. This is equivalent to solving:
+The [K-way normalized minCUT](https://en.wikipedia.org/wiki/Minimum_k-cut) is an optimization problem to find K clusters on a graph by minimizing the overall inter-cluster edge weight. This is equivalent to solving:
 
 $$
     \text{maximize} \;\; \frac{1}{K} \sum_{k=1}^K \frac{\sum_{i,j \in \mathcal{V}_k} \mathcal{E}_{i,j} }{\sum_{i \in \mathcal{V}_k, j \in \mathcal{V} \backslash \mathcal{V}_k} \mathcal{E}_{i,j}},
@@ -341,3 +341,5 @@ If you want to use MinCutPool in your own work, you can cite us with:
 ```
 
 Cheers!
+
+Updated 2026-10-07: thank you to Moritz Groß for spotting and reporting a typo more than 7 years after the publication of this post!
