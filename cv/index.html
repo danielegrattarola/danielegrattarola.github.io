@@ -1,12 +1,13 @@
 ---
 layout: main
-title: Experience
+title: CV
+redirect_from: /experience/
 image: /images/main/daniele_grattarola_cofold_summit_2026.png
 ---
 
 <article>
   <div class="entry-content">
-    <h1>Career</h1>
+    <h1>CV</h1>
 
     <div class="content-center">
       <img
@@ -174,5 +175,21 @@ image: /images/main/daniele_grattarola_cofold_summit_2026.png
       <li>{{ item }}</li>
       {% endfor %}
     </ul>
+  </div>
+</article>
+
+<article>
+  <div class="entry-content">
+    <h1>Education</h1>
+
+    {% for item in site.data.education %}
+    <p>
+      <span class="entry-date post-date date published updated">{{item.date}}</span
+      ><br />
+      <strong>{{item.institution}}</strong><br />
+      <strong>{{item.title}}</strong><br />
+      {{item.description}}
+    </p>
+    {% endfor %}
   </div>
 </article>

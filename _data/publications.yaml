@@ -165,18 +165,19 @@
       year: 2019
 
 - type: Patents
+  # Years refer to the application/filing year.
   publications:
     - title: Unified structure model for molecule property and structure prediction
       authors: C.-C. Hung, M. E. Jaderberg, J. P. Bambrick, J. W. Briody, K. M. Schaarschmidt, L. Rampášek, C. J. Feinauer, T. Ayoola, A. Osokin, B. A. Rózemberczki, A. Malinin, A. Ashukha, D. Grattarola, J. S. Abramson, J. T. Dunger, R. A. Evans, V. C. Bapst, W. Czarnecki, D. Reiman, Z. Wu
       venue: WIPO patent application WO2026052718A1
       link: https://patents.google.com/patent/WO2026052718A1/en
-      year: 2026
+      year: 2025
 
     - title: Automated ligand design
       authors: D. Grattarola, M. E. Jaderberg, C. J. Feinauer
       venue: WIPO patent application WO2026037746A1
       link: https://patents.google.com/patent/WO2026037746A1/en
-      year: 2026
+      year: 2025
 
     - title: Designing ligands using generative models
       authors: M. E. Jaderberg, C. J. Feinauer, D. Grattarola, S. Bartunov, C. A. Vignac
